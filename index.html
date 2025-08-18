@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>APP International - Japanese Spare Parts & ALL Type of Machinery Exporter</title>
+  <title>APP International - Japanese Vehicle & Machinery Exporter</title>
   <!-- Google Fonts for Partner Companies -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto+Slab:wght@700&family=Pacifico&family=Oswald:wght@600&display=swap" rel="stylesheet">
 
@@ -25,7 +25,20 @@
       top: 0;
       z-index: 100;
     }
-    header h1 { margin: 0; font-size: 20px; color: #003366; }
+    header .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    header img {
+      height: 50px;
+      width: auto;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+      color: #003366;
+    }
     nav a {
       margin: 0 12px;
       text-decoration: none;
@@ -170,7 +183,12 @@
 <body>
 
 <header>
-  <h1>APP International</h1>
+  <div class="logo-container">
+    <a href="#">
+      <img src="images/1.png" alt="APP International Logo">
+    </a>
+    <h1>APP International</h1>
+  </div>
   <nav>
     <a href="#cars">Available Cars</a>
     <a href="#excavators">Excavators</a>
