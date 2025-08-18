@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>APP International - Japanese Vehicle & Machinery Exporter</title>
+  <!-- Google Fonts for Partner Companies -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto+Slab:wght@700&family=Pacifico&family=Oswald:wght@600&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
@@ -115,6 +118,39 @@
       font-size: 14px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     }
+
+    /* Partner Companies Section */
+    .partners {
+      text-align: center;
+      padding: 60px 20px;
+      background: #f9f9f9;
+    }
+    .partners h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .partner {
+      padding: 20px;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .partner:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .partner.p1 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #2c3e50; }
+    .partner.p2 { font-family: 'Roboto Slab', serif; font-size: 1.4rem; color: #1a73e8; }
+    .partner.p3 { font-family: 'Pacifico', cursive; font-size: 1.6rem; color: #e67e22; }
+    .partner.p4 { font-family: 'Oswald', sans-serif; font-size: 1.5rem; color: #27ae60; }
+
     footer {
       background: #f1f1f1;
       padding: 30px 20px;
@@ -240,6 +276,17 @@
     <div class="step"><h4>3. Payment</h4><p>Pay via Bank Transfer/LC.</p></div>
     <div class="step"><h4>4. Shipping</h4><p>We ship via trusted carriers.</p></div>
     <div class="step"><h4>5. Customs & Pickup</h4><p>Clear customs and drive home.</p></div>
+  </div>
+</section>
+
+<!-- Partner Companies Section -->
+<section class="partners">
+  <h2>Our Partner Companies</h2>
+  <div class="partner-grid">
+    <div class="partner p1">Hikaru Auto Lanka</div>
+    <div class="partner p2">LAKE Spare Parts</div>
+    <div class="partner p3">ISW International</div>
+    <div class="partner p4">GAIN MAX</div>
   </div>
 </section>
 
