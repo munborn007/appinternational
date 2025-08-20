@@ -1,0 +1,99 @@
+[
+  {
+    "id": "toyota-aqua",
+    "name": "Toyota Aqua 2017",
+    "year": "2017",
+    "mileage": "45,000 km",
+    "engine": "1500cc Hybrid",
+    "transmission": "Automatic",
+    "fuel": "Petrol + Hybrid",
+    "color": "Pearl White",
+    "price": "$3,200",
+    "mainImage": "images/2018 Toyota Aqua Hybrid (Prius C).jpg",
+    "gallery": [
+      "images/aqua1.jpg",
+      "images/aqua2.jpg",
+      "images/aqua3.jpg"
+    ]
+  },
+  {
+    "id": "nissan-note",
+    "name": "Nissan Note 2018",
+    "year": "2018",
+    "mileage": "38,000 km",
+    "engine": "1200cc Petrol",
+    "transmission": "Automatic",
+    "fuel": "Petrol",
+    "color": "Silver",
+    "price": "$3,800",
+    "mainImage": "images/🚗 2018 Nissan Note.jpg",
+    "gallery": [
+      "images/note1.jpg",
+      "images/note2.jpg"
+    ]
+  },
+  {
+    "id": "honda-fit",
+    "name": "Honda Fit 2019",
+    "year": "2019",
+    "mileage": "29,000 km",
+    "engine": "1300cc Petrol",
+    "transmission": "Automatic",
+    "fuel": "Petrol",
+    "color": "Blue",
+    "price": "$4,200",
+    "mainImage": "images/ホンダ・フィットRS Honda SENSING 内装・外装など35枚 【画像・写真】 - webCG.jpg",
+    "gallery": [
+      "images/fit1.jpg",
+      "images/fit2.jpg"
+    ]
+  },
+  {
+    "id": "komatsu-pc200",
+    "name": "Komatsu PC200",
+    "year": "2016",
+    "mileage": "—",
+    "engine": "Diesel",
+    "transmission": "Hydraulic",
+    "fuel": "Diesel",
+    "color": "Yellow",
+    "price": "$22,500",
+    "mainImage": "images/Komatsu PC200LC-8 Specs & Dimensions.jpg",
+    "gallery": [
+      "images/komatsu1.jpg",
+      "images/komatsu2.jpg"
+    ]
+  },
+  {
+    "id": "hitachi-zx85",
+    "name": "Hitachi ZX85US-5",
+    "year": "2017",
+    "mileage": "—",
+    "engine": "Diesel",
+    "transmission": "Hydraulic",
+    "fuel": "Diesel",
+    "color": "Orange",
+    "price": "$25,000",
+    "mainImage": "images/HITACHI ZX85US-5  https___autoline_info_-_sale_mini-diggers_HITACHI-ZX85US-5--15102613115518433600.jpg",
+    "gallery": [
+      "images/hitachi1.jpg",
+      "images/hitachi2.jpg"
+    ]
+  },
+  {
+    "id": "kobelco-sk200",
+    "name": "Kobelco SK200-8",
+    "year": "2015",
+    "mileage": "—",
+    "engine": "Diesel",
+    "transmission": "Hydraulic",
+    "fuel": "Diesel",
+    "color": "Green",
+    "price": "$21,000",
+    "mainImage": "images/Kobelco SK200-8 SK210LC-8 Hydraulic Excavator Service Repair Manual PDF.jpg",
+    "gallery": [
+      "images/kobelco1.jpg",
+      "images/kobelco2.jpg"
+    ]
+  }
+]
