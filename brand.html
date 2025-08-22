@@ -1,44 +1,31 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Brand • APP International</title>
-<style>
-  body{margin:0;font-family:Arial,sans-serif;background:#f9fafc;color:#222}
-  header{background:#fff;border-bottom:1px solid #ddd;padding:15px 30px;display:flex;align-items:center;justify-content:space-between}
-  .wrap{max-width:1100px;margin:30px auto;padding:0 20px}
-  .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-  .card{background:#fff;border:1px solid #ddd;border-radius:10px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.08);text-decoration:none;color:inherit}
-  .card img{width:100%;height:180px;object-fit:cover}
-  .card .card-body{padding:14px}
-  .price{color:#003366;font-weight:bold}
-</style>
-</head><body>
-<header>
-  <a href="index.html"><img src="images/1.png" alt="APP Logo" style="height:44px"></a>
-  <nav><a href="index.html">Home</a></nav>
-</header>
-
-<div class="wrap">
-  <h1 id="brand-title">Brand</h1>
-  <div class="grid" id="brand-grid"></div>
-</div>
-
-<script src="data.js"></script>
-<script>
-const p=new URLSearchParams(location.search);
-const brand=decodeURIComponent(p.get("brand")||"");
-document.getElementById("brand-title").textContent = brand || "All Vehicles";
-
-const items = (window.DB.vehicles||[]).filter(v=>!brand || v.brand===brand);
-const grid=document.getElementById("brand-grid");
-if(items.length===0){grid.innerHTML="<p>No vehicles found for this brand.</p>";}
-items.forEach(item=>{
-  const a=document.createElement("a");
-  a.href=`vehicle.html?id=${item.id}`; a.className="card"; a.title=item.title;
-  a.innerHTML = `<img src="${item.img}" alt="${item.title}">
-    <div class="card-body"><h3>${item.title}</h3>
-      ${item.mileage?`<div>Mileage: ${item.mileage}</div>`:""}
-      <div class="price">${item.price}</div></div>`;
-  grid.appendChild(a);
-});
-</script>
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Brand Inventory | APP International</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header><a href="index.html">⬅ Back to Home</a></header>
+  <main>
+    <h1 id="brand-title"></h1>
+    <div id="brand-items"></div>
+  </main>
+  <script src="data.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const brand = params.get("brand");
+    document.getElementById("brand-title").textContent = brand+" Inventory";
+    const items = window.DB.vehicles.filter(v=>v.brand===brand);
+    const wrap = document.getElementById("brand-items");
+    wrap.innerHTML = items.map(i=>`
+      <a href="vehicle.html?id=${i.id}" style="display:block;margin:20px 0">
+        <img src="${i.img}" alt="${i.title}" style="max-width:300px;width:100%">
+        <h3>${i.title}</h3>
+        <p>${i.price}</p>
+      </a>
+    `).join("");
+  </script>
+</body>
+</html>
