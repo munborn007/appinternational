@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vehicle Detail • APP International</title>
+<style>
+  body{margin:0;font-family:Arial,sans-serif;background:#f9fafc;color:#222}
+  header{background:#fff;border-bottom:1px solid #ddd;padding:15px 30px;display:flex;align-items:center;justify-content:space-between}
+  header img{height:44px}
+  a{color:#003366}
+  .wrap{max-width:1100px;margin:30px auto;padding:0 20px}
+  .layout{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+  .gallery img{width:100%;border-radius:10px;border:1px solid #ddd}
+  .card{background:#fff;border:1px solid #ddd;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,.08);padding:16px}
+  .price{color:#003366;font-weight:bold;font-size:22px}
+  table{width:100%;border-collapse:collapse}
+  td{padding:8px;border-bottom:1px solid #eee}
+  .btn{display:inline-block;background:#003366;color:#fff;padding:10px 16px;border-radius:6px;text-decoration:none;margin-top:8px}
+</style>
+</head><body>
+<header>
+  <a href="index.html"><img src="images/1.png" alt="APP Logo"></a>
+  <nav><a href="index.html">Home</a></nav>
+</header>
+
+<div class="wrap" id="content"><!-- filled by JS --></div>
+
+<script src="data.js"></script>
+<script>
+const params=new URLSearchParams(location.search);
+const id=params.get("id");
+const item = (window.DB.vehicles||[]).find(v=>v.id===id);
+
+const content=document.getElementById("content");
+if(!item){content.innerHTML='<p>Item not found. <a href="index.html">Back to home</a>.</p>';throw new Error("Not found")}
+
+content.appendChild((()=> {
+  const box=document.createElement("div");
+  box.className="layout";
+
+  // left side
+  const left=document.createElement("div");
+  const g=document.createElement("div"); g.className="gallery";
+  (item.gallery&&item.gallery.length?item.gallery:[item.img]).forEach(src=>{
+    const im=document.createElement("img"); im.src=src; im.alt=item.title; g.appendChild(im);
+  });
+  left.appendChild(g);
+
+  // right side
+  const right=document.createElement("div");
+  const head=document.createElement("div"); head.className="card";
+  head.innerHTML = `<h1>${item.title}</h1>
+    <div class="price">${item.price}</div>
+    ${item.mileage?`<div>Mileage: ${item.mileage}</div>`:""}
+    <div>Year: ${item.year||"-"}</div>
+    <p style="margin-top:8px">${item.description||""}</p>
+    <a class="btn" href="mailto:appinternational@gmail.com?subject=${encodeURIComponent('Inquiry: '+item.title)}&body=${encodeURIComponent('Hello APP International,%0D%0A%0D%0AI am interested in '+item.title+' ('+item.id+'). Please send CIF/FOB quotation.%0D%0A%0D%0AThanks.')}">Request Invoice</a>
+    <a class="btn" href="https://wa.me/818073136728?text=${encodeURIComponent('Hello, I am interested in '+item.title)}" target="_blank">WhatsApp</a>`;
+  right.appendChild(head);
+
+  const spec=document.createElement("div"); spec.className="card";
+  spec.innerHTML="<h3>Specifications</h3>";
+  const t=document.createElement("table");
+  Object.entries(item.specs||{}).forEach(([k,v])=>{
+    const tr=document.createElement("tr");
+    tr.innerHTML=`<td style="width:40%;font-weight:bold">${k}</td><td>${v}</td>`;
+    t.appendChild(tr);
+  });
+  spec.appendChild(t);
+  right.appendChild(spec);
+
+  box.appendChild(left); box.appendChild(right);
+  return box;
+})());
+</script>
+</body></html>
