@@ -1,299 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>APP International - Japanese Vehicle Spare Parts & Machinery Exporter</title>
-  <!-- Google Fonts for Partner Companies -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>APP International — Japanese Vehicles & Machinery Exporter</title>
+
+  <!-- Meta / SEO -->
+  <meta name="description" content="APP International — Trusted exporter of Japanese cars and heavy machinery. Cars, Trucks, Buses, Excavators. CIF/FOB quotes.">
+  <meta property="og:title" content="APP International — Japanese Vehicles & Machinery Exporter">
+  <meta property="og:description" content="Cars • Trucks • Buses • Excavators • Heavy Machinery">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/1.png">
+  <link rel="icon" href="images/1.png" type="image/png"/>
+
+  <!-- Fonts (for partner styles, optional) -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto+Slab:wght@700&family=Pacifico&family=Oswald:wght@600&display=swap" rel="stylesheet">
 
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #f9fafc; color: #222; }
-    header {
-      background: #ffffff; border-bottom: 1px solid #ddd;
-      padding: 15px 30px; display: flex; align-items: center; justify-content: space-between;
-      position: sticky; top: 0; z-index: 100;
+    :root{
+      --brand:#003366;
+      --brand-2:#0055aa;
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --ring:#e5e7eb;
+      --shadow:0 2px 8px rgba(0,0,0,.08);
+      --radius:12px;
     }
-    header .logo-container { display: flex; align-items: center; gap: 10px; }
-    header img { height: 50px; width: auto; }
-    header h1 { margin: 0; font-size: 20px; color: #003366; }
-    nav a { margin: 0 12px; text-decoration: none; color: #444; font-weight: 500; }
-    nav a:hover { color: #003366; }
-    .lang-switch { margin-left: 20px; }
-    .lang-switch button {
-      border: none; background: #003366; color: white; padding: 6px 10px;
-      margin: 0 2px; border-radius: 4px; cursor: pointer; font-weight: bold;
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:#111}
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:10;
+      background:#fff;border-bottom:1px solid var(--ring);
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 20px;
     }
-    .lang-switch button:hover { background: #0055aa; }
-    .hero {
-      background: url("https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1500&q=80") center/cover no-repeat;
-      color: white; text-align: center; padding: 80px 20px;
+    .logo-wrap{display:flex;align-items:center;gap:10px}
+    .logo-wrap img{height:44px;width:auto}
+    .logo-title{margin:0;font-size:18px;color:var(--brand);font-weight:700}
+    nav a{
+      margin:0 10px;text-decoration:none;color:#374151;font-weight:600;
     }
-    .hero h2 { font-size: 36px; margin-bottom: 15px; }
-    .hero p { font-size: 18px; margin-bottom: 25px; }
-    .btn {
-      background: #003366; color: white; padding: 10px 18px;
-      border-radius: 6px; text-decoration: none; font-weight: bold;
-      margin: 5px; display: inline-block;
+    nav a:hover{color:var(--brand)}
+    .lang-switch button{
+      border:none;background:var(--brand);color:#fff;font-weight:700;
+      padding:6px 10px;border-radius:8px;cursor:pointer;margin-left:6px;
     }
-    .btn:hover { background: #0055aa; }
-    section { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
-    section h2 { text-align: center; margin-bottom: 25px; font-size: 26px; color: #003366; }
-    .grid { display: grid; gap: 20px; }
-    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-    .card {
-      background: #fff; border: 1px solid #ddd; border-radius: 10px;
-      overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    .lang-switch button:hover{background:var(--brand-2)}
+
+    /* Hero */
+    .hero{
+      position:relative;overflow:hidden;color:#fff;text-align:center;
+      padding:80px 16px;
+      background:linear-gradient(120deg, #0f172a 0%, #0b3a75 50%, #0f172a 100%);
     }
-    .card img { width: 100%; height: 180px; object-fit: cover; }
-    .card-body { padding: 15px; }
-    .card-body h3 { margin: 0 0 10px; font-size: 18px; }
-    .price { color: #003366; font-weight: bold; margin-top: 5px; }
-    .brands {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;
+    .hero::after{
+      content:"";position:absolute;inset:-40% -20% auto -20%;
+      height:120%; background: radial-gradient(60% 40% at 50% 40%, rgba(255,255,255,.12), transparent 60%);
+      pointer-events:none;
     }
-    .brand {
-      padding: 12px 18px; border: 1px solid #ddd; border-radius: 8px;
-      background: #fff; font-weight: 500; color: #003366;
+    .hero h2{margin:0 0 10px;font-size:36px;letter-spacing:.2px}
+    .hero p{margin:0 0 18px;font-size:18px;opacity:.95}
+    .btn{
+      background:var(--brand);color:#fff;border-radius:10px;
+      padding:12px 18px;text-decoration:none;font-weight:800;display:inline-block;margin:6px 4px;
+      box-shadow:var(--shadow);
     }
-    .steps {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px;
+    .btn:hover{background:var(--brand-2)}
+
+    /* Sections */
+    section{max-width:1160px;margin:48px auto;padding:0 18px}
+    section h2{margin:0 0 18px;text-align:center;font-size:26px;color:var(--brand)}
+
+    /* Grids */
+    .grid{display:grid;gap:18px}
+    .grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .card{
+      background:var(--card);border:1px solid var(--ring);border-radius:var(--radius);
+      box-shadow:var(--shadow); overflow:hidden; transition:transform .18s ease, box-shadow .18s ease;
+      text-decoration:none; color:inherit;
     }
-    .step {
-      background: #fff; border: 1px solid #ddd; border-radius: 10px;
-      padding: 20px; text-align: center;
+    .card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.10)}
+    .card img{width:100%;height:180px;object-fit:cover;display:block}
+    .card-body{padding:14px}
+    .card-body h3{margin:0 0 6px;font-size:18px;line-height:1.25}
+    .meta{color:var(--muted);font-size:14px}
+    .price{color:var(--brand);font-weight:800;margin-top:6px}
+
+    /* Brands */
+    .brands{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+    .brand{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 14px;border:1px solid var(--ring);border-radius:999px;
+      background:#fff;color:var(--brand);font-weight:700;text-decoration:none;
+      box-shadow:var(--shadow);
     }
-    .testimonials {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;
+    .brand:hover{background:#f0f6ff;border-color:#c6dbff}
+
+    /* Steps / partners / testimonials */
+    .step, .partner, .testi{
+      background:#fff;border:1px solid var(--ring);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)
     }
-    .testimonial {
-      background: #fff; border: 1px solid #ddd; border-radius: 10px;
-      padding: 15px; font-size: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    .partner{ text-align:center }
+    .p1{ font-family:'Playfair Display',serif;font-size:1.4rem;color:#2c3e50 }
+    .p2{ font-family:'Roboto Slab',serif;font-size:1.3rem;color:#1a73e8 }
+    .p3{ font-family:'Pacifico',cursive;font-size:1.4rem;color:#e67e22 }
+    .p4{ font-family:'Oswald',sans-serif;font-size:1.4rem;color:#27ae60 }
+
+    /* Footer */
+    footer{
+      background:#f1f5f9;border-top:1px solid var(--ring);
+      padding:28px 18px;margin-top:56px;text-align:center;color:#475569
     }
-    /* Partner Companies Section */
-    .partners { text-align: center; padding: 60px 20px; background: #f9f9f9; }
-    .partners h2 { font-size: 2rem; margin-bottom: 30px; color: #333; }
-    .partner-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;
+    footer a{color:var(--brand);text-decoration:none;font-weight:700;margin:0 8px}
+    footer a:hover{color:var(--brand-2)}
+
+    /* Small tweaks */
+    .badge{display:inline-block;padding:4px 8px;border-radius:6px;background:#eef2ff;color:#3730a3;font-size:12px;font-weight:700}
+    @media (max-width:720px){
+      .hero h2{font-size:28px}
+      nav{display:none} /* keep header clean on mobile */
     }
-    .partner {
-      padding: 20px; border-radius: 10px; background: white;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .partner:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-    .partner.p1 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #2c3e50; }
-    .partner.p2 { font-family: 'Roboto Slab', serif; font-size: 1.4rem; color: #1a73e8; }
-    .partner.p3 { font-family: 'Pacifico', cursive; font-size: 1.6rem; color: #e67e22; }
-    .partner.p4 { font-family: 'Oswald', sans-serif; font-size: 1.5rem; color: #27ae60; }
-    footer {
-      background: #f1f1f1; padding: 30px 20px; margin-top: 50px;
-      text-align: center; font-size: 14px; color: #555;
-    }
-    footer .social a { margin: 0 8px; color: #003366; text-decoration: none; font-weight: bold; }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="logo-container">
-    <a href="#"><img src="images/1.png" alt="APP International Logo"></a>
-    <h1 id="site-title">APP International</h1>
-  </div>
-  <nav>
-    <a href="#cars" id="nav-cars">Available Cars</a>
-    <a href="#excavators" id="nav-excavators">Excavators</a>
-    <a href="#how" id="nav-how">How to Buy</a>
-    <a href="#testimonials" id="nav-testimonials">Testimonials</a>
-    <a href="#contact" id="nav-contact">Contact</a>
-  </nav>
-  <div class="lang-switch">
-    <button onclick="setLanguage('en')">EN</button>
-    <button onclick="setLanguage('jp')">日本語</button>
-  </div>
-</header>
-
-<section class="hero">
-  <h2 id="hero-title">Trusted Japanese Vehicle & Machinery Exporter</h2>
-  <p id="hero-sub">Cars • Trucks • Buses • Excavators • Heavy Machinery</p>
-  <a href="#cars" class="btn" id="btn-cars">Browse Cars</a>
-  <a href="#excavators" class="btn" id="btn-excavators">Browse Excavators</a>
-</section>
-
-<section id="cars">
-  <h2 id="cars-title">Available Cars</h2>
-  <div class="grid grid-3">
-    <div class="card">
-      <img src="images/2018 Toyota Aqua Hybrid (Prius C).jpg" alt="Toyota Aqua"/>
-      <div class="card-body">
-        <h3>Toyota Aqua 2018</h3>
-        <p>Mileage: 45,000 km</p>
-        <p class="price">$3,200</p>
-      </div>
+  <!-- Header -->
+  <header>
+    <div class="logo-wrap">
+      <a href="index.html" aria-label="APP International — Home">
+        <img src="images/1.png" alt="APP International Logo" loading="eager">
+      </a>
+      <h1 id="site-title" class="logo-title">APP International</h1>
     </div>
-    <div class="card">
-      <img src="images/🚗 2018 Nissan Note.jpg" alt="Nissan Note"/>
-      <div class="card-body">
-        <h3>Nissan Note 2018</h3>
-        <p>Mileage: 38,000 km</p>
-        <p class="price">$3,800</p>
-      </div>
+
+    <nav>
+      <a href="#cars" id="nav-cars">Available Cars</a>
+      <a href="#excavators" id="nav-excavators">Excavators</a>
+      <a href="#how" id="nav-how">How to Buy</a>
+      <a href="#testimonials" id="nav-testimonials">Testimonials</a>
+      <a href="#contact" id="nav-contact">Contact</a>
+    </nav>
+
+    <div class="lang-switch" aria-label="Language">
+      <button type="button" onclick="setLanguage('en')" aria-label="English">EN</button>
+      <button type="button" onclick="setLanguage('jp')" aria-label="Japanese">日本語</button>
     </div>
-    <div class="card">
-      <img src="images/ホンダ・フィットRS Honda SENSING 内装・外装など35枚 【画像・写真】 - webCG.jpg" alt="Honda Fit"/>
-      <div class="card-body">
-        <h3>Honda Fit 2019</h3>
-        <p>Mileage: 29,000 km</p>
-        <p class="price">$4,200</p>
-      </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2 id="hero-title">Trusted Japanese Vehicle & Machinery Exporter</h2>
+    <p id="hero-sub">Cars • Trucks • Buses • Excavators • Heavy Machinery</p>
+    <a href="#cars" class="btn" id="btn-cars">Browse Cars</a>
+    <a href="#excavators" class="btn" id="btn-excavators">Browse Excavators</a>
+    <div style="margin-top:10px"><span class="badge">Tokyo, Japan</span></div>
+  </section>
+
+  <!-- Cars -->
+  <section id="cars" aria-labelledby="cars-title">
+    <h2 id="cars-title">Available Cars</h2>
+    <div class="grid grid-3" id="car-grid"></div>
+  </section>
+
+  <!-- Excavators -->
+  <section id="excavators" aria-labelledby="excavators-title">
+    <h2 id="excavators-title">Available Excavators</h2>
+    <div class="grid grid-3" id="exc-grid"></div>
+  </section>
+
+  <!-- Brands -->
+  <section aria-labelledby="brands-title">
+    <h2 id="brands-title">Explore by Brands</h2>
+    <div class="brands" id="brand-list"></div>
+  </section>
+
+  <!-- How to buy -->
+  <section id="how" aria-labelledby="how-title">
+    <h2 id="how-title">How to Buy</h2>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+      <div class="step"><h3>1. Browse & Select</h3><p>Find your car or excavator from our live stock.</p></div>
+      <div class="step"><h3>2. Get Invoice</h3><p>We send CIF/FOB quotation in minutes.</p></div>
+      <div class="step"><h3>3. Payment</h3><p>Bank Transfer / LC supported.</p></div>
+      <div class="step"><h3>4. Shipping</h3><p>Trusted carriers, fast export processing.</p></div>
+      <div class="step"><h3>5. Customs & Pickup</h3><p>Clear customs and drive home confidently.</p></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="excavators">
-  <h2 id="excavators-title">Available Excavators</h2>
-  <div class="grid grid-3">
-    <div class="card">
-      <img src="images/Komatsu PC200LC-8 Specs & Dimensions.jpg" alt="Komatsu Excavator"/>
-      <div class="card-body">
-        <h3>Komatsu PC200</h3>
-        <p>Year: 2016</p>
-        <p class="price">$22,500</p>
-      </div>
+  <!-- Partners -->
+  <section class="partners" aria-labelledby="partners-title">
+    <h2 id="partners-title">Our Partner Companies</h2>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+      <div class="partner p1">Hikaru Auto Lanka</div>
+      <div class="partner p2">LAKE Spare Parts</div>
+      <div class="partner p3">ISW International</div>
+      <div class="partner p4">GAIN MAX</div>
+      <div class="partner">TIMINA INDIW ENTERPRISE</div>
     </div>
-    <div class="card">
-      <img src="images/HITACHI ZX85US-5  https___autoline_info_-_sale_mini-diggers_HITACHI-ZX85US-5--15102613115518433600.jpg" alt="Hitachi Excavator"/>
-      <div class="card-body">
-        <h3>Hitachi ZX85US-5</h3>
-        <p>Year: 2017</p>
-        <p class="price">$25,000</p>
-      </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" aria-labelledby="testimonials-title">
+    <h2 id="testimonials-title">What Buyers Say</h2>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+      <div class="testi">“Smooth process and fast shipment. Highly recommended.” <br>– Sahan, Sri Lanka</div>
+      <div class="testi">“Car condition was exactly as described. Trustworthy exporter.” <br>– Grace, Kenya</div>
+      <div class="testi">“Transparent pricing and great support during customs.” <br>– Luis, Chile</div>
     </div>
-    <div class="card">
-      <img src="images/Kobelco SK200-8 SK210LC-8 Hydraulic Excavator Service Repair Manual PDF.jpg" alt="Kobelco Excavator"/>
-      <div class="card-body">
-        <h3>Kobelco SK210</h3>
-        <p>Year: 2015</p>
-        <p class="price">$21,000</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <h2 id="brands-title">Explore by Brands</h2>
-  <div class="brands">
-    <div class="brand">Toyota</div>
-    <div class="brand">Nissan</div>
-    <div class="brand">Honda</div>
-    <div class="brand">Mitsubishi</div>
-    <div class="brand">Isuzu</div>
-    <div class="brand">Subaru</div>
-    <div class="brand">Suzuki</div>
-    <div class="brand">Mazda</div>
-    <div class="brand">Daihatsu</div>
-    <div class="brand">Komatsu</div>
-    <div class="brand">Hitachi</div>
-    <div class="brand">Kobelco</div>
-    <div class="brand">CAT</div>
-    <div class="brand">Kubota</div>
-    <div class="brand">Yanmar</div>
-  </div>
-</section>
+  <!-- Footer -->
+  <footer id="contact">
+    <p><strong id="footer-company">APP International</strong> — post code 270-1471, Chiba-ken, Funabashi-shi, Komuro-cho 1112-13 — APP INTERNATIONAL LLC.</p>
+    <p>fax/tell 0474048717 / 080 7313 6728 | ✉️ <a href="mailto:appinternational@gmail.com">appinternational@gmail.com</a></p>
+    <p>
+      <a href="https://facebook.com/YOURPAGE" target="_blank" rel="noopener">Facebook</a> |
+      <a href="https://instagram.com/YOURPAGE" target="_blank" rel="noopener">Instagram</a> |
+      <a href="https://www.linkedin.com/company/YOURPAGE" target="_blank" rel="noopener">LinkedIn</a> |
+      <a href="https://youtube.com/@YOURCHANNEL" target="_blank" rel="noopener">YouTube</a> |
+      <a href="https://wa.me/818073136728" target="_blank" rel="noopener">WhatsApp</a>
+    </p>
+    <p id="footer-text">© 2025 APP International. All rights reserved.</p>
+  </footer>
 
-<section id="how">
-  <h2 id="how-title">How to Buy</h2>
-  <div class="steps">
-    <div class="step"><h4>1. Browse & Select</h4><p>Find your car or excavator.</p></div>
-    <div class="step"><h4>2. Get Invoice</h4><p>Receive CIF/FOB quotation.</p></div>
-    <div class="step"><h4>3. Payment</h4><p>Pay via Bank Transfer/LC.</p></div>
-    <div class="step"><h4>4. Shipping</h4><p>We ship via trusted carriers.</p></div>
-    <div class="step"><h4>5. Customs & Pickup</h4><p>Clear customs and drive home.</p></div>
-  </div>
-</section>
+  <!-- DATA + RENDERING -->
+  <!-- 1) Inventory data (must be loaded before the script below) -->
+  <script src="data.js"></script>
 
-<section class="partners">
-  <h2 id="partners-title">Our Partner Companies</h2>
-  <div class="partner-grid">
-    <div class="partner p1">Hikaru Auto Lanka</div>
-    <div class="partner p2">LAKE Spare Parts</div>
-    <div class="partner p3">ISW International</div>
-    <div class="partner p4">GAIN MAX</div>
-    <div class="partner p5">TIMINA INDIW ENTERPRISE</div>
-  </div>
-</section>
+  <!-- 2) Page rendering -->
+  <script>
+    // ------- helpers -------
+    const $ = sel => document.querySelector(sel);
+    const el = (tag, attrs={}, children=[])=>{
+      const n=document.createElement(tag);
+      for(const [k,v] of Object.entries(attrs||{})){ k==='class' ? n.className=v : n.setAttribute(k,v) }
+      ;(Array.isArray(children)?children:[children]).filter(Boolean)
+        .forEach(c=>n.appendChild(typeof c==='string'?document.createTextNode(c):c));
+      return n;
+    };
 
-<section id="testimonials">
-  <h2 id="testimonials-title">What Buyers Say</h2>
-  <div class="testimonials">
-    <div class="testimonial">“Smooth process and fast shipment. Highly recommended.” <br>– Sahan, Sri Lanka</div>
-    <div class="testimonial">“Car condition was exactly as described. Trustworthy exporter.” <br>– Grace, Kenya</div>
-    <div class="testimonial">“Transparent pricing and great support during customs.” <br>– Luis, Chile</div>
-  </div>
-</section>
+    function card(item){
+      return el("a",{href:`vehicle.html?id=${encodeURIComponent(item.id)}`, class:"card", title:item.title},
+        [
+          el("img",{src:item.img,alt:item.title,loading:"lazy"}),
+          el("div",{class:"card-body"},[
+            el("h3",{},item.title),
+            el("div",{class:"meta"},[(item.mileage?`Mileage: ${item.mileage}`:"")]),
+            el("div",{class:"price"},item.price)
+          ])
+        ]);
+    }
 
-<footer id="contact">
-  <p><strong id="footer-company">APP International</strong> – Tokyo, Japan</p>
-  <p>📞 fax/tell 0474048717 / 080 7313 6728 | ✉️ appinternational@gmail.com </p>
-  <div class="social">
-    <a href="#">Facebook</a> | 
-    <a href="#">Instagram</a> | 
-    <a href="#">LinkedIn</a> | 
-    <a href="#">YouTube</a>
-  </div>
-  <p id="footer-text">© 2025 APP International. All rights reserved.</p>
-</footer>
+    function renderHome(){
+      const list = window.DB?.vehicles || [];
+      const cars = list.filter(v=>v.type==="car");
+      const ex   = list.filter(v=>v.type==="excavator");
 
-<script>
-const translations = {
-  en: {
-    "site-title": "APP International",
-    "nav-cars": "Available Cars",
-    "nav-excavators": "Excavators",
-    "nav-how": "How to Buy",
-    "nav-testimonials": "Testimonials",
-    "nav-contact": "Contact",
-    "hero-title": "Trusted Japanese Vehicle & Machinery Exporter",
-    "hero-sub": "Cars • Trucks • Buses • Excavators • Heavy Machinery",
-    "btn-cars": "Browse Cars",
-    "btn-excavators": "Browse Excavators",
-    "cars-title": "Available Cars",
-    "excavators-title": "Available Excavators",
-    "brands-title": "Explore by Brands",
-    "how-title": "How to Buy",
-    "partners-title": "Our Partner Companies",
-    "testimonials-title": "What Buyers Say",
-    "footer-company": "APP International",
-    "footer-text": "© 2025 APP International. All rights reserved."
-  },
-  jp: {
-    "site-title": "APPインターナショナル",
-    "nav-cars": "販売中の車",
-    "nav-excavators": "油圧ショベル",
-    "nav-how": "購入方法",
-    "nav-testimonials": "お客様の声",
-    "nav-contact": "お問い合わせ",
-    "hero-title": "信頼できる日本車・建設機械輸出業者",
-    "hero-sub": "自動車 • トラック • バス • 油圧ショベル • 重機",
-    "btn-cars": "車を見る",
-    "btn-excavators": "油圧ショベルを見る",
-    "cars-title": "販売中の車",
-    "excavators-title": "販売中の油圧ショベル",
-    "brands-title": "メーカー別に探す",
-    "how-title": "購入の流れ",
-    "partners-title": "パートナー企業",
-    "testimonials-title": "お客様の声",
-    "footer-company": "APPインターナショナル",
-    "footer-text": "© 2025 APPインターナショナル. 無断転載を禁ず。"
-  }
-};
-function setLanguage(lang) {
-  for (const id in translations[lang]) {
-    const el = document.getElementById(id);
-    if (el) el.textContent = translations[lang][id];
-  }
-}
-</script>
+      const cg = $("#car-grid"); const eg = $("#exc-grid");
+      cg.innerHTML = ""; eg.innerHTML = "";
+      cars.forEach(v=>cg.appendChild(card(v)));
+      ex.forEach(v=>eg.appendChild(card(v)));
 
+      // Brands (chips)
+      const brandWrap = $("#brand-list"); brandWrap.innerHTML = "";
+      (window.DB?.brands||[]).forEach(b=>{
+        // Count items per brand for a nice touch
+        const count = list.filter(v=>v.brand===b).length;
+        const label = count ? `${b} (${count})` : b;
+        const a = el("a",{href:`brand.html?brand=${encodeURIComponent(b)}`, class:"brand", title:`View ${b} inventory`}, label);
+        brandWrap.appendChild(a);
+      });
+    }
+
+    // Language support
+    const translations = {
+      en: {
+        "site-title":"APP International","nav-cars":"Available Cars","nav-excavators":"Excavators","nav-how":"How to Buy",
+        "nav-testimonials":"Testimonials","nav-contact":"Contact","hero-title":"Trusted Japanese Vehicle & Machinery Exporter",
+        "hero-sub":"Cars • Trucks • Buses • Excavators • Heavy Machinery","btn-cars":"Browse Cars","btn-excavators":"Browse Excavators",
+        "cars-title":"Available Cars","excavators-title":"Available Excavators","brands-title":"Explore by Brands",
+        "how-title":"How to Buy","partners-title":"Our Partner Companies","testimonials-title":"What Buyers Say",
+        "footer-company":"APP International","footer-text":"© 2025 APP International. All rights reserved."
+      },
+      jp: {
+        "site-title":"APPインターナショナル","nav-cars":"販売中の車","nav-excavators":"油圧ショベル","nav-how":"購入方法",
+        "nav-testimonials":"お客様の声","nav-contact":"お問い合わせ","hero-title":"信頼できる日本車・建設機械輸出業者",
+        "hero-sub":"自動車 • トラック • バス • 油圧ショベル • 重機","btn-cars":"車を見る","btn-excavators":"油圧ショベルを見る",
+        "cars-title":"販売中の車","excavators-title":"販売中の油圧ショベル","brands-title":"メーカー別に探す",
+        "how-title":"購入の流れ","partners-title":"パートナー企業","testimonials-title":"お客様の声",
+        "footer-company":"APPインターナショナル","footer-text":"© 2025 APPインターナショナル. 無断転載を禁ず。"
+      }
+    };
+    function setLanguage(lang){
+      const t = translations[lang] || translations.en;
+      Object.keys(t).forEach(id=>{
+        const node = document.getElementById(id);
+        if(node) node.textContent = t[id];
+      });
+      try{ localStorage.setItem("lang", lang); }catch(e){}
+    }
+
+    // Boot
+    (function init(){
+      renderHome();
+      // restore language choice
+      let lang = "en";
+      try{ lang = localStorage.getItem("lang") || "en"; }catch(e){}
+      setLanguage(lang);
+    })();
+  </script>
 </body>
 </html>
