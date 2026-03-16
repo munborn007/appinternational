@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Vehicle Details | APP International</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <a href="index.html">⬅ Back to Home</a>
+  </header>
+
+  <main id="detail"></main>
+
+  <script src="data.js"></script>
+  <script>
+    const container = document.getElementById("detail");
+    let id = (window.location.hash || "").replace(/^#/, "").trim();
+    if (!id) {
+      id = new URLSearchParams(window.location.search).get("id");
+    }
+    const vehicles = (window.DB && window.DB.vehicles) || [];
+    const item = id ? vehicles.find(v => v.id === id) : null;
+
+    if (!id) {
+      const firstVehicle = vehicles[0];
+      const sampleLink = firstVehicle ? ` Or view <a href="vehicle.html#${encodeURIComponent(firstVehicle.id)}">${firstVehicle.title}</a> directly.` : "";
+      container.innerHTML = `
+        <section class="detail-layout" aria-label="Vehicle details">
+          <div>
+            <h1 class="detail-title">No vehicle selected</h1>
+            <p class="detail-price-note">
+              Please <a href="index.html">browse our inventory</a> and click on a vehicle card to view full details.${sampleLink}
+            </p>
+          </div>
+        </section>
+      `;
+    } else if (!item) {
+      container.innerHTML = `
+        <section class="detail-layout" aria-label="Vehicle details">
+          <div>
+            <h1 class="detail-title">Vehicle not found</h1>
+            <p class="detail-price-note">
+              This vehicle may have been sold or the link may be incorrect.
+              <a href="index.html">Browse available stock →</a>
+            </p>
+          </div>
+        </section>
+      `;
+    } else {
+      document.title = (item.title || "Vehicle") + " | APP International";
+      const imagesRaw = (item.images && item.images.length ? item.images : []);
+      const images = imagesRaw.map(function(img){
+        return typeof img === "string" ? img : (img && img.url);
+      }).filter(Boolean);
+      const firstImg = item.featuredImage || images[0] || "";
+      const allImages = firstImg && !images.includes(firstImg) ? [firstImg].concat(images) : (images.length ? images : [firstImg].filter(Boolean));
+      const specsEntries = Object.entries(item.specs || {});
+      const descEn = (item.description && item.description.en) || "Well maintained Japanese unit inspected before export.";
+      const conditionNotes = (item.condition && item.condition.notes && item.condition.notes.en) || "";
+
+      const related = vehicles
+        .filter(v => v.id !== item.id && v.type === item.type)
+        .slice(0, 3);
+
+      const shippingRegions = (window.DB && window.DB.shippingRegions) || [];
+
+      container.innerHTML = `
+        <section class="detail-layout" aria-label="Vehicle details">
+          <div>
+            <div class="gallery-main">
+              <img id="main-photo"
+                   src="${firstImg}"
+                   alt="${item.title}"
+                   loading="eager"
+                   onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80';this.onerror=null;">
+            </div>
+            <div class="gallery-thumbs" aria-label="Vehicle photos">
+              ${allImages.map(function(src, i){
+                return `
+                <button class="gallery-thumb ${i === 0 ? "is-active" : ""}" data-src="${src}" type="button">
+                  <img src="${src}"
+                       alt="${item.title} photo ${i + 1}"
+                       loading="lazy"
+                       onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80';this.onerror=null;">
+                </button>`;
+              }).join("")}
+            </div>
+
+            <div class="detail-panel detail-description">
+              <h3>Full description</h3>
+              <p class="detail-description-text">${descEn}</p>
+              ${conditionNotes ? `<div class="detail-condition-notes"><strong>Condition notes:</strong> ${conditionNotes}</div>` : ""}
+              <div class="muted" style="margin-top:12px;">
+                <span class="small-label">STOCK NO.</span>
+                ${item.stockNo || "On request"}
+              </div>
+            </div>
+
+            <div class="detail-panel detail-all-images">
+              <h3>All images</h3>
+              <div class="detail-image-grid" aria-label="All vehicle images">
+                ${allImages.map(function(src, i){
+                  return `
+                  <button class="detail-image-cell ${i === 0 ? "is-active" : ""}" data-src="${src}" type="button">
+                    <img src="${src}"
+                         alt="${item.title} - Image ${i + 1}"
+                         loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80';this.onerror=null;">
+                  </button>`;
+                }).join("")}
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h1 class="detail-title">${item.title}</h1>
+            <p class="detail-sub">
+              <span class="badge-status">Available • Ready for export</span>
+              ${item.brand ? `<span class="pill">${item.brand}</span>` : ""}
+              ${item.type ? `<span class="pill">${item.type === "car" ? "Passenger vehicle" : "Heavy machinery"}</span>` : ""}
+            </p>
+
+            <div class="detail-price">${window.DB.utils.formatPrice(item.priceCIF || item.priceFOB, item.currency)}</div>
+            <p class="detail-price-note">Price is indicative. Final CIF/FOB depends on destination port and options.</p>
+
+            <table class="spec-table" aria-label="Key specifications">
+              <tbody>
+                ${specsEntries.map(([k, v]) => `
+                  <tr>
+                    <th>${k.charAt(0).toUpperCase() + k.slice(1)}</th>
+                    <td>${v}</td>
+                  </tr>
+                `).join("")}
+                ${item.mileage ? `
+                  <tr>
+                    <th>Mileage</th>
+                    <td>${window.DB.utils.formatMileage(item.mileage)}</td>
+                  </tr>
+                ` : ""}
+                ${item.stockNo ? `
+                  <tr>
+                    <th>Stock No.</th>
+                    <td>${item.stockNo}</td>
+                  </tr>
+                ` : ""}
+              </tbody>
+            </table>
+
+            <div class="detail-panel">
+              <h3>Request invoice / proforma</h3>
+              <p>Send us your destination port and we will reply with a detailed CIF / FOB quotation for this unit.</p>
+              <div class="cta-row">
+                <a
+                  class="btn"
+                  href="mailto:${window.DB.contact.email}?subject=Inquiry about ${encodeURIComponent(item.title)} (${encodeURIComponent(item.stockNo || "no stock number")})&body=Hello%20APP%20International%2C%0D%0A%0D%0AI%20am%20interested%20in%20the%20following%20unit%3A%0D%0A%0D%0A-%20Title%3A%20${encodeURIComponent(item.title)}%0D%0A-%20Stock%20No.%3A%20${encodeURIComponent(item.stockNo || "N/A")}%0D%0A%0D%0APlease%20send%20me%20a%20CIF%2FFOB%20invoice%20to%20the%20following%20destination%20port%3A%0D%0A%0D%0A-%20Country%3A%0D%0A-%20Port%3A%0D%0A-%20Preferred%20shipping%20month%3A%0D%0A%0D%0AThank%20you.">
+                  Email proforma invoice
+                </a>
+                <a
+                  class="btn secondary"
+                  href="${(window.DB.socials && window.DB.socials.whatsapp) || "#"}?text=${encodeURIComponent("Hello, I am interested in " + item.title + " (" + (item.stockNo || "no stock number") + "). Please send me more photos and full quotation.")}"
+                  target="_blank"
+                  rel="noopener">
+                  WhatsApp us
+                </a>
+              </div>
+              <p class="muted">We usually reply within the same business day (Tokyo time).</p>
+            </div>
+
+            <div class="detail-panel">
+              <h3>Shipping & delivery</h3>
+              <label class="small-label" for="shipping-region">Destination region</label>
+              <select id="shipping-region" class="shipping-select">
+                <option value="">Select your region</option>
+                ${shippingRegions.map(r => `
+                  <option value="${r.id}">${r.label}</option>
+                `).join("")}
+              </select>
+              <p id="shipping-info" class="shipping-note">
+                Transit time and total cost depend on your exact port and shipping schedule.
+              </p>
+              <ul>
+                <li>We arrange yard inspection and export paperwork in Japan.</li>
+                <li>Units are shipped on RORO vessel or container depending on destination.</li>
+                <li>Original documents are sent by courier for smooth customs clearance.</li>
+              </ul>
+            </div>
+
+            ${related.length ? `
+              <div class="detail-panel">
+                <h3>Similar units you may like</h3>
+                <div class="grid grid-3">
+                  ${related.map(v => {
+                    const relatedImg =
+                      v.featuredImage ||
+                      (v.images && v.images.length && (typeof v.images[0] === "string" ? v.images[0] : v.images[0].url)) ||
+                      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80";
+                    const relatedPrice = window.DB.utils.formatPrice(v.priceCIF || v.priceFOB, v.currency);
+                    const relatedMileage = window.DB.utils.formatMileage(v.mileage);
+                    return `
+                    <a class="card" href="vehicle.html#${encodeURIComponent(v.id)}">
+                      <img src="${relatedImg}"
+                           alt="${v.title}"
+                           loading="lazy"
+                           onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80';this.onerror=null;">
+                      <div class="card-body">
+                        <h3>${v.title}</h3>
+                        <div class="meta">${relatedMileage}</div>
+                        <div class="price">${relatedPrice}</div>
+                      </div>
+                    </a>
+                    `;
+                  }).join("")}
+                </div>
+              </div>
+            ` : ""}
+          </div>
+        </section>
+      `;
+
+      // Set up gallery interactions (thumbs + image grid)
+      const mainPhoto = document.getElementById("main-photo");
+      const selectImage = (src) => {
+        if (src && mainPhoto) mainPhoto.src = src;
+        document.querySelectorAll(".gallery-thumb").forEach(b => b.classList.toggle("is-active", b.getAttribute("data-src") === src));
+        document.querySelectorAll(".detail-image-cell").forEach(b => b.classList.toggle("is-active", b.getAttribute("data-src") === src));
+      };
+      document.querySelectorAll(".gallery-thumb").forEach(btn => {
+        btn.addEventListener("click", () => selectImage(btn.getAttribute("data-src")));
+      });
+      document.querySelectorAll(".detail-image-cell").forEach(btn => {
+        btn.addEventListener("click", () => selectImage(btn.getAttribute("data-src")));
+      });
+
+      // Shipping selector behaviour
+      const regionSelect = document.getElementById("shipping-region");
+      const shippingInfo = document.getElementById("shipping-info");
+      if (regionSelect && shippingInfo && shippingRegions.length) {
+        regionSelect.addEventListener("change", () => {
+          const val = regionSelect.value;
+          const found = shippingRegions.find(r => r.id === val);
+          if (!found) {
+            shippingInfo.textContent = "Transit time and total cost depend on your exact port and shipping schedule.";
+          } else {
+            shippingInfo.textContent = `${found.label}: approx. transit ${found.eta}. ${found.note}`;
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>APP International — Japanese Vehicles & Machinery Exporter</title>
+
+  <!-- Meta / SEO -->
+  <meta name="description" content="APP International — Trusted exporter of Japanese cars and heavy machinery. Cars, Trucks, Buses, Excavators. CIF/FOB quotes.">
+  <meta property="og:title" content="APP International — Japanese Vehicles & Machinery Exporter">
+  <meta property="og:description" content="Cars • Trucks • Buses • Excavators • Heavy Machinery">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/logo.png">
+  <link rel="icon" href="images/logo.png" type="image/png"/>
+
+  <!-- Fonts (for partner styles, optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto+Slab:wght@700&family=Pacifico&family=Oswald:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand:#003366;
+      --brand-2:#0055aa;
+      --logo-blue:#1e3a8a;
+      --logo-orange:#ea580c;
+      --logo-gold:#f59e0b;
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --ring:#e5e7eb;
+      --shadow:0 2px 8px rgba(0,0,0,.08);
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:#111}
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:10;
+      background:#fff;border-bottom:1px solid var(--ring);
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 20px;
+    }
+    .logo-wrap{display:flex;align-items:center;gap:10px}
+    .logo-wrap img{height:44px;width:auto}
+    .logo-title{margin:0;font-size:18px;color:var(--brand);font-weight:700}
+    nav a{
+      margin:0 10px;text-decoration:none;color:#374151;font-weight:600;
+    }
+    nav a:hover{color:var(--logo-orange)}
+    .lang-switch button{
+      border:none;background:linear-gradient(135deg, var(--logo-blue), #2563eb);color:#fff;font-weight:700;
+      padding:6px 10px;border-radius:8px;cursor:pointer;margin-left:6px;
+    }
+    .lang-switch button:hover{background:linear-gradient(135deg, var(--logo-orange), #c2410c)}
+
+    /* Hero — deep blue base with subtle warm accent (logo-aligned, no red/blue split) */
+    .hero{
+      position:relative;overflow:hidden;color:#fff;text-align:center;
+      padding:80px 16px;
+      background:linear-gradient(180deg, #0f172a 0%, #1e3a8a 35%, #172554 70%, #0f172a 100%);
+    }
+    .hero::before{
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(ellipse 90% 70% at 50% 30%, rgba(245,158,11,.08) 0%, transparent 55%);
+      pointer-events:none;
+    }
+    .hero::after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(180deg, rgba(255,255,255,.04) 0%, transparent 30%, transparent 70%, rgba(0,0,0,.2) 100%);
+      pointer-events:none;
+    }
+    .hero h2{margin:0 0 10px;font-size:36px;letter-spacing:.02em;position:relative;z-index:1;color:#fff;font-weight:700}
+    .hero p{margin:0 0 18px;font-size:18px;color:rgba(255,255,255,.92);position:relative;z-index:1}
+    .hero .btn{position:relative;z-index:1}
+    .hero .badge{position:relative;z-index:1}
+    .btn{
+      background:linear-gradient(135deg, #ea580c 0%, #c2410c 100%);color:#fff;border-radius:10px;
+      padding:12px 18px;text-decoration:none;font-weight:800;display:inline-block;margin:6px 4px;
+      box-shadow:0 4px 14px rgba(234,88,12,.4);
+    }
+    .btn:hover{background:linear-gradient(135deg, #f97316 0%, #ea580c 100%);box-shadow:0 6px 20px rgba(234,88,12,.5)}
+
+    /* Sections */
+    section{max-width:1160px;margin:48px auto;padding:0 18px}
+    section h2{margin:0 0 18px;text-align:center;font-size:26px;color:var(--brand)}
+
+    /* Filters / search */
+    .filters{
+      background:#fff;
+      border-radius:var(--radius);
+      border:1px solid var(--ring);
+      box-shadow:var(--shadow);
+      padding:14px 16px 10px;
+      margin-top:-32px;
+      max-width:1160px;
+      position:relative;
+      z-index:5;
+    }
+    .filters-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:flex-end;
+    }
+    .filters-group{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      min-width:140px;
+      flex:1 1 140px;
+    }
+    .filters-label{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      color:var(--muted);
+    }
+    .filters input,
+    .filters select{
+      padding:6px 8px;
+      border-radius:8px;
+      border:1px solid var(--ring);
+      font-size:13px;
+      min-height:32px;
+    }
+    .filters input:focus,
+    .filters select:focus{
+      outline:none;
+      border-color:var(--brand-2);
+      box-shadow:0 0 0 1px rgba(59,130,246,.15);
+    }
+    .filters-actions{
+      display:flex;
+      gap:8px;
+      margin-top:6px;
+      justify-content:flex-end;
+    }
+    .btn-reset{
+      border-radius:10px;
+      padding:7px 12px;
+      border:1px solid var(--ring);
+      background:#f9fafb;
+      cursor:pointer;
+      font-size:13px;
+      color:#374151;
+    }
+    .btn-reset:hover{
+      background:#eef2ff;
+    }
+
+    /* Grids */
+    .grid{display:grid;gap:18px}
+    .grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .card{
+      position:relative;
+      background:var(--card);border:1px solid var(--ring);border-radius:var(--radius);
+      box-shadow:var(--shadow); overflow:hidden; transition:transform .18s ease, box-shadow .18s ease;
+      color:inherit;
+    }
+    .card-link{
+      display:block;
+      text-decoration:none;
+      color:inherit;
+    }
+    .card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.10)}
+    .card img{width:100%;height:180px;object-fit:cover;display:block}
+    .card-body{padding:14px}
+    .card-body h3{margin:0 0 6px;font-size:18px;line-height:1.25}
+    .meta{color:var(--muted);font-size:14px}
+    .price{color:var(--brand);font-weight:800;margin-top:6px}
+
+    .save-btn{
+      position:absolute;
+      top:8px;
+      right:8px;
+      border:none;
+      border-radius:999px;
+      padding:4px 9px;
+      font-size:11px;
+      font-weight:600;
+      background:rgba(255,255,255,.95);
+      color:#111827;
+      box-shadow:0 1px 3px rgba(0,0,0,.15);
+      cursor:pointer;
+    }
+    .save-btn.is-saved{
+      background:#facc15;
+      color:#92400e;
+    }
+    .save-btn:focus{
+      outline:none;
+      box-shadow:0 0 0 2px rgba(59,130,246,.4);
+    }
+
+    /* Section headings – enhanced */
+    .section-head{text-align:center;margin-bottom:32px}
+    .section-head h2{margin:0 0 8px;font-size:28px;color:var(--brand);font-weight:800;letter-spacing:-.02em}
+    .section-head .section-sub{margin:0;font-size:15px;color:var(--muted);max-width:520px;margin:0 auto}
+    .section-head .shortlist-note{margin-top:8px}
+
+    /* Explore by Brands – tile design */
+    .brands-section{background:linear-gradient(180deg, #f8fafc 0%, #fff 100%);padding:40px 18px;border-radius:16px;margin:32px 0}
+    .brands{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+    .brand{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:14px 20px;border-radius:12px;
+      background:#fff;color:var(--logo-blue);font-weight:700;text-decoration:none;font-size:15px;
+      border:1px solid rgba(30,58,138,.12);box-shadow:0 2px 8px rgba(0,0,0,.06);
+      transition:transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .brand:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(30,58,138,.15);border-color:rgba(234,88,12,.3);color:var(--logo-orange)}
+    .brand .brand-count{font-size:12px;opacity:.8;font-weight:600}
+
+    /* How to Buy – timeline stepper */
+    .how-section{background:linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);padding:48px 24px;border-radius:20px;margin:40px 0;color:#fff}
+    .how-section .section-head h2{color:#fff}
+    .how-section .section-head .section-sub{color:rgba(255,255,255,.75)}
+    .how-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;max-width:900px;margin:0 auto}
+    @media (max-width:800px){.how-steps{grid-template-columns:1fr;gap:16px}}
+    .how-step{
+      background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+      border-radius:14px;padding:24px 18px;text-align:center;
+      position:relative;backdrop-filter:blur(8px);transition:background .2s
+    }
+    .how-step:hover{background:rgba(255,255,255,.12)}
+    .how-step-num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg, var(--logo-orange), #c2410c);color:#fff;font-weight:800;font-size:16px;margin-bottom:12px}
+    .how-step h3{margin:0 0 8px;font-size:16px;font-weight:700;color:#fff}
+    .how-step p{margin:0;font-size:13px;color:rgba(255,255,255,.85);line-height:1.5}
+
+    /* Partners – elegant cards */
+    .partners-section{background:#f8fafc;padding:40px 18px;border-radius:16px;margin:32px 0}
+    .partners-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+    .partner{
+      background:#fff;border-radius:14px;padding:24px 20px;text-align:center;
+      border:1px solid rgba(30,58,138,.08);box-shadow:0 4px 12px rgba(0,0,0,.05);
+      font-weight:700;font-size:15px;color:#334155;transition:transform .2s, box-shadow .2s
+    }
+    .partner:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(30,58,138,.12)}
+    .partner::before{content:"";display:block;width:36px;height:3px;background:linear-gradient(90deg, var(--logo-blue), var(--logo-orange));border-radius:2px;margin:0 auto 12px}
+
+    /* Shortlist – refined empty state */
+    .shortlist-section{background:linear-gradient(180deg, #fff 0%, #f8fafc 100%);padding:40px 18px;border-radius:16px;border:2px dashed rgba(30,58,138,.15)}
+    .shortlist-section .shortlist-note{text-align:center;font-size:15px;color:var(--muted);margin-top:-8px;margin-bottom:24px;line-height:1.5}
+    .shortlist-section.has-items{border-style:solid;border-color:rgba(30,58,138,.2)}
+
+    /* Testimonials – quote cards */
+    .testimonials-section{padding:48px 18px}
+    .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    @media (max-width:800px){.testimonials-grid{grid-template-columns:1fr}}
+    .testi{
+      background:#fff;border-radius:16px;padding:28px 24px;
+      border:1px solid rgba(30,58,138,.1);box-shadow:0 4px 20px rgba(0,0,0,.06);
+      position:relative;transition:transform .2s, box-shadow .2s
+    }
+    .testi::before{content:'"';position:absolute;top:12px;left:20px;font-size:48px;font-family:Georgia,serif;color:rgba(30,58,138,.12);line-height:1}
+    .testi:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
+    .testi blockquote{margin:0 0 16px;font-size:15px;line-height:1.65;color:#334155;font-style:italic}
+    .testi .testi-author{font-size:14px;font-weight:700;color:var(--logo-blue)}
+    .testi .testi-location{font-size:13px;color:var(--muted);margin-top:2px}
+
+    /* Footer */
+    footer{
+      background:linear-gradient(180deg, #f8fafc 0%, #eff6ff 50%, #e0e7ff 100%);
+      border-top:1px solid rgba(30,58,138,.12);
+      padding:48px 24px 24px;margin-top:56px;color:#334155;
+    }
+    .footer-inner{
+      max-width:1100px;margin:0 auto;
+      display:grid;grid-template-columns:1fr 1fr 1fr;
+      gap:32px;align-items:start;text-align:left;
+    }
+    @media (max-width:720px){
+      .footer-inner{grid-template-columns:1fr;text-align:center;gap:28px}
+    }
+    .footer-brand{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+    @media (max-width:720px){.footer-brand{align-items:center}}
+    .footer-brand img{height:52px;width:auto}
+    .footer-brand h3{margin:0;font-size:18px;color:var(--brand);font-weight:700}
+    .footer-brand p{margin:0;font-size:13px;color:#64748b;line-height:1.5}
+    .footer-col h4{margin:0 0 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--logo-blue);font-weight:700}
+    .footer-col ul{list-style:none;padding:0;margin:0}
+    .footer-col li{margin-bottom:8px}
+    .footer-col a{color:#475569;text-decoration:none;font-size:14px;transition:color .2s}
+    .footer-col a:hover{color:var(--logo-orange)}
+    .footer-contact p{margin:0 0 8px;font-size:14px;line-height:1.6;color:#475569}
+    .footer-contact a{color:var(--brand);font-weight:600}
+    .footer-socials{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+    .footer-socials a{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:40px;height:40px;border-radius:10px;
+      background:rgba(30,58,138,.1);color:var(--logo-blue);
+      text-decoration:none;
+      transition:background .2s,color .2s
+    }
+    .footer-socials a:hover{background:var(--logo-orange);color:#fff}
+    .footer-socials a svg{width:20px;height:20px;fill:currentColor}
+    .footer-bottom{
+      max-width:1100px;margin:32px auto 0;padding-top:24px;
+      border-top:1px solid rgba(30,58,138,.1);text-align:center;
+    }
+    .footer-bottom p{margin:0;font-size:13px;color:#64748b}
+
+    /* Small tweaks */
+    .badge{display:inline-block;padding:4px 8px;border-radius:6px;background:#eef2ff;color:#3730a3;font-size:12px;font-weight:700}
+    @media (max-width:720px){
+      .hero h2{font-size:28px}
+      nav{display:none} /* keep header clean on mobile */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-wrap">
+      <a href="index.html" aria-label="APP International — Home">
+        <img src="images/logo.png" alt="APP International" loading="eager">
+      </a>
+      <h1 id="site-title" class="logo-title">APP International</h1>
+    </div>
+
+    <nav>
+      <a href="#cars" id="nav-cars">Available Cars</a>
+      <a href="#machinery" id="nav-machinery">Heavy Machinery</a>
+      <a href="#how" id="nav-how">How to Buy</a>
+      <a href="#testimonials" id="nav-testimonials">Testimonials</a>
+      <a href="#contact" id="nav-contact">Contact</a>
+    </nav>
+
+    <div class="lang-switch" aria-label="Language">
+      <button type="button" onclick="setLanguage('en')" aria-label="English">EN</button>
+      <button type="button" onclick="setLanguage('jp')" aria-label="Japanese">日本語</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2 id="hero-title">Trusted Japanese Vehicle & Machinery Exporter</h2>
+    <p id="hero-sub">Cars • Trucks • Buses • Excavators • Heavy Machinery</p>
+    <a href="#cars" class="btn" id="btn-cars">Browse Cars</a>
+    <a href="#machinery" class="btn" id="btn-machinery">Browse Heavy Machinery</a>
+    <div style="margin-top:10px"><span class="badge">Tokyo, Japan</span></div>
+  </section>
+
+  <!-- Filters / Search -->
+  <section aria-label="Filter and search inventory">
+    <div class="filters">
+      <div class="filters-row">
+        <div class="filters-group" style="flex:2 1 220px;">
+          <label class="filters-label" for="search-text">Search</label>
+          <input id="search-text" type="text" placeholder="Search by model, year, or keyword"/>
+        </div>
+        <div class="filters-group">
+          <label class="filters-label" for="filter-type">Type</label>
+          <select id="filter-type">
+            <option value="">All types</option>
+            <option value="car">Cars</option>
+            <option value="excavator">Heavy Machinery</option>
+          </select>
+        </div>
+        <div class="filters-group">
+          <label class="filters-label" for="filter-brand">Brand</label>
+          <select id="filter-brand">
+            <option value="">All brands</option>
+          </select>
+        </div>
+        <div class="filters-group">
+          <label class="filters-label" for="filter-year-min">Year</label>
+          <div style="display:flex;gap:4px;">
+            <input id="filter-year-min" type="number" min="1990" placeholder="From" style="flex:1 1 0;">
+            <input id="filter-year-max" type="number" min="1990" placeholder="To" style="flex:1 1 0;">
+          </div>
+        </div>
+        <div class="filters-group">
+          <label class="filters-label" for="filter-price-min">Price (USD)</label>
+          <div style="display:flex;gap:4px;">
+            <input id="filter-price-min" type="number" min="0" placeholder="Min" style="flex:1 1 0;">
+            <input id="filter-price-max" type="number" min="0" placeholder="Max" style="flex:1 1 0;">
+          </div>
+        </div>
+        <div class="filters-group">
+          <label class="filters-label" for="filter-mileage-max">Max mileage (km)</label>
+          <input id="filter-mileage-max" type="number" min="0" placeholder="Any"/>
+        </div>
+      </div>
+      <div class="filters-actions">
+        <button type="button" class="btn-reset" id="filters-reset">Reset filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cars -->
+  <section id="cars" aria-labelledby="cars-title">
+    <h2 id="cars-title">Available Cars</h2>
+    <div class="grid grid-3" id="car-grid"></div>
+  </section>
+
+  <!-- Heavy Machinery -->
+  <section id="machinery" aria-labelledby="machinery-title">
+    <h2 id="machinery-title">Heavy Machinery</h2>
+    <p style="text-align:center;color:var(--muted);margin-top:-8px;margin-bottom:18px;">Hitachi • Kobelco • Komatsu</p>
+    <div class="grid grid-3" id="exc-grid"></div>
+  </section>
+
+  <!-- Brands -->
+  <section class="brands-section" aria-labelledby="brands-title">
+    <div class="section-head">
+      <h2 id="brands-title">Explore by Brands</h2>
+      <p class="section-sub">Filter our inventory by your preferred manufacturer</p>
+    </div>
+    <div class="brands" id="brand-list"></div>
+  </section>
+
+  <!-- How to buy -->
+  <section id="how" class="how-section" aria-labelledby="how-title">
+    <div class="section-head">
+      <h2 id="how-title">How to Buy</h2>
+      <p class="section-sub">Simple, transparent process from selection to delivery</p>
+    </div>
+    <div class="how-steps">
+      <div class="how-step"><span class="how-step-num">1</span><h3>Browse &amp; Select</h3><p>Find your car or excavator from our live stock.</p></div>
+      <div class="how-step"><span class="how-step-num">2</span><h3>Get Invoice</h3><p>We send CIF/FOB quotation in minutes.</p></div>
+      <div class="how-step"><span class="how-step-num">3</span><h3>Payment</h3><p>Bank Transfer / LC supported.</p></div>
+      <div class="how-step"><span class="how-step-num">4</span><h3>Shipping</h3><p>Trusted carriers, fast export processing.</p></div>
+      <div class="how-step"><span class="how-step-num">5</span><h3>Customs &amp; Pickup</h3><p>Clear customs and drive home confidently.</p></div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section class="partners-section" aria-labelledby="partners-title">
+    <div class="section-head">
+      <h2 id="partners-title">Our Partner Companies</h2>
+      <p class="section-sub">Trusted partners across Africa, Asia &amp; South America</p>
+    </div>
+    <div class="partners-grid">
+      <div class="partner">Hikaru Auto Lanka</div>
+      <div class="partner">LAKE Spare Parts</div>
+      <div class="partner">ISW International</div>
+      <div class="partner">GAIN MAX</div>
+      <div class="partner">TIMINA INDIW ENTERPRISE</div>
+    </div>
+  </section>
+
+  <!-- Shortlist -->
+  <section id="shortlist" class="shortlist-section" aria-labelledby="shortlist-title">
+    <div class="section-head">
+      <h2 id="shortlist-title">Saved Vehicles</h2>
+      <p id="shortlist-note" class="shortlist-note">Save units from the list above to quickly compare and share with your team.</p>
+    </div>
+    <div class="grid grid-3" id="shortlist-grid"></div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-title">
+    <div class="section-head">
+      <h2 id="testimonials-title">What Buyers Say</h2>
+      <p class="section-sub">Real feedback from customers worldwide</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi">“Smooth process and fast shipment. Highly recommended.” <br>– Sahan, Sri Lanka</div>
+      <div class="testi">“Car condition was exactly as described. Trustworthy exporter.” <br>– Grace, Kenya</div>
+      <div class="testi">“Transparent pricing and great support during customs.” <br>– Luis, Chile</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" aria-label="APP International — Home">
+          <img src="images/logo.png" alt="APP International" loading="lazy">
+        </a>
+        <h3 id="footer-company">APP International LLC</h3>
+        <p>Your trusted source for quality Japanese vehicles and heavy machinery. Exporting to Africa, Asia & South America since 2010.</p>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>Contact</h4>
+        <p><strong>Address</strong><br>270-1471, Chiba-ken, Funabashi-shi, Komuro-cho 1112-13, Japan</p>
+        <p><strong>Phone</strong><br>Tel: 047-404-8717 | Mobile: 080-7313-6728</p>
+        <p><strong>Email</strong><br><a href="mailto:appinternational@gmail.com">appinternational@gmail.com</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="#cars">Available Cars</a></li>
+          <li><a href="#machinery">Heavy Machinery</a></li>
+          <li><a href="#how">How to Buy</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+        <h4 style="margin-top:18px">Follow us</h4>
+        <div class="footer-socials">
+          <a href="https://facebook.com/appinternational" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://instagram.com/appinternational" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="https://www.linkedin.com/company/appinternational" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://youtube.com/@appinternational" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="https://wa.me/818073136728" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p id="footer-text">© 2025 APP International. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- DATA + RENDERING -->
+  <!-- 1) Inventory data (must be loaded before the script below) -->
+  <script src="data.js"></script>
+
+  <!-- 2) Page rendering -->
+  <script>
+    // ------- helpers -------
+    const $ = sel => document.querySelector(sel);
+    const el = (tag, attrs={}, children=[])=>{
+      const n=document.createElement(tag);
+      for(const [k,v] of Object.entries(attrs||{})){ k==='class' ? n.className=v : n.setAttribute(k,v) }
+      ;(Array.isArray(children)?children:[children]).filter(Boolean)
+        .forEach(c=>n.appendChild(typeof c==='string'?document.createTextNode(c):c));
+      return n;
+    };
+
+    // ------- saved shortlist -------
+    const SAVED_KEY = "app-intl-saved-vehicles";
+    let savedIds = new Set();
+
+    function loadSaved(){
+      try{
+        const raw = localStorage.getItem(SAVED_KEY);
+        if(!raw) return;
+        const arr = JSON.parse(raw);
+        if(Array.isArray(arr)) savedIds = new Set(arr);
+      }catch(e){}
+    }
+    function persistSaved(){
+      try{
+        localStorage.setItem(SAVED_KEY, JSON.stringify(Array.from(savedIds)));
+      }catch(e){}
+    }
+    function isSaved(id){ return savedIds.has(id); }
+    function toggleSaved(id){
+      if(savedIds.has(id)) savedIds.delete(id); else savedIds.add(id);
+      persistSaved();
+      renderHome(); // cards need updated save state
+      renderShortlist();
+    }
+
+    // ------- filters -------
+    function parseYear(item){
+      const y = parseInt(item.specs && item.specs.year, 10);
+      return isNaN(y) ? null : y;
+    }
+    function parsePrice(item){
+      const n = parseFloat(String(item.price||"").replace(/[^0-9.]/g,""));
+      return isNaN(n) ? null : n;
+    }
+    function parseMileage(item){
+      const n = parseInt(String(item.mileage||"").replace(/[^0-9]/g,""), 10);
+      return isNaN(n) ? null : n;
+    }
+
+    function getFilters(){
+      const search = ($("#search-text")?.value || "").trim().toLowerCase();
+      const type = $("#filter-type")?.value || "";
+      const brand = $("#filter-brand")?.value || "";
+      const yearMin = parseInt($("#filter-year-min")?.value || "",10);
+      const yearMax = parseInt($("#filter-year-max")?.value || "",10);
+      const priceMin = parseFloat($("#filter-price-min")?.value || "");
+      const priceMax = parseFloat($("#filter-price-max")?.value || "");
+      const mileageMax = parseInt($("#filter-mileage-max")?.value || "",10);
+      return {
+        search,
+        type,
+        brand,
+        yearMin: isNaN(yearMin)?null:yearMin,
+        yearMax: isNaN(yearMax)?null:yearMax,
+        priceMin: isNaN(priceMin)?null:priceMin,
+        priceMax: isNaN(priceMax)?null:priceMax,
+        mileageMax: isNaN(mileageMax)?null:mileageMax
+      };
+    }
+
+    function applyFilters(list){
+      const f = getFilters();
+      return list.filter(v=>{
+        if(f.type && v.type !== f.type) return false;
+        if(f.brand && v.brand !== f.brand) return false;
+
+        const y = parseYear(v);
+        if(f.yearMin!=null && (y==null || y < f.yearMin)) return false;
+        if(f.yearMax!=null && (y==null || y > f.yearMax)) return false;
+
+        const p = parsePrice(v);
+        if(f.priceMin!=null && (p==null || p < f.priceMin)) return false;
+        if(f.priceMax!=null && (p==null || p > f.priceMax)) return false;
+
+        const m = parseMileage(v);
+        if(f.mileageMax!=null && (m==null || m > f.mileageMax)) return false;
+
+        if(f.search){
+          const hay = [
+            v.title,
+            v.brand,
+            v.type,
+            v.mileage,
+            v.price,
+            v.specs && v.specs.year
+          ].map(x=>String(x||"").toLowerCase()).join(" ");
+          if(!hay.includes(f.search)) return false;
+        }
+        return true;
+      });
+    }
+
+    // ------- cards / rendering -------
+    function card(item){
+      const saved = isSaved(item.id);
+
+      // Choose best image source from new data model
+      const primaryImage =
+        item.featuredImage ||
+        (item.images && item.images.length && (typeof item.images[0] === "string" ? item.images[0] : item.images[0].url)) ||
+        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80";
+
+      const priceText = window.DB && window.DB.utils
+        ? window.DB.utils.formatPrice(item.priceCIF || item.priceFOB)
+        : (item.priceCIF || item.priceFOB ? "USD " + String(item.priceCIF || item.priceFOB) : "POA");
+
+      const mileageText = window.DB && window.DB.utils
+        ? window.DB.utils.formatMileage(item.mileage)
+        : (item.mileage ? "Mileage: " + item.mileage : "");
+
+      const btn = el("button", {
+        class: "save-btn" + (saved ? " is-saved" : ""),
+        type: "button",
+        "data-id": item.id,
+        title: saved ? "Remove from shortlist" : "Save from shortlist"
+      }, saved ? "★ Saved" : "☆ Save");
+
+      btn.addEventListener("click", (e)=>{
+        e.stopPropagation();
+        e.preventDefault();
+        toggleSaved(item.id);
+      });
+
+      const vehicleUrl = "vehicle.html#" + encodeURIComponent(item.id);
+      const link = el("a",{
+        href:vehicleUrl,
+        class:"card-link",
+        title:item.title
+      },[
+        el("img",{
+          src:primaryImage,
+          alt:item.title,
+          loading:"lazy",
+          onerror:"this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80';this.onerror=null;"
+        }),
+        el("div",{class:"card-body"},[
+          el("h3",{},item.title),
+          el("div",{class:"meta"},[mileageText]),
+          el("div",{class:"price"},priceText)
+        ])
+      ]);
+
+      return el("div",{class:"card"},[btn,link]);
+    }
+
+    function renderHome(){
+      const list = window.DB?.vehicles || [];
+      const filtered = applyFilters(list);
+      const cars = filtered.filter(v=>v.type==="car");
+      const ex   = filtered.filter(v=>v.type==="excavator");
+
+      const cg = $("#car-grid"); const eg = $("#exc-grid");
+      cg.innerHTML = ""; eg.innerHTML = "";
+      cars.forEach(v=>cg.appendChild(card(v)));
+      ex.forEach(v=>eg.appendChild(card(v)));
+
+      // Brands (chips + filter dropdown)
+      const brandWrap = $("#brand-list"); brandWrap.innerHTML = "";
+      const brandSelect = $("#filter-brand");
+      const brands = window.DB?.brands || [];
+
+      // Populate brand pills
+      brands.forEach(b=>{
+        const count = list.filter(v=>v.brand===b).length;
+        const a = el("a",{href:`brand.html?brand=${encodeURIComponent(b)}`, class:"brand", title:`View ${b} inventory`}, [
+          b,
+          count ? el("span",{class:"brand-count"}, ` (${count})`) : ""
+        ].filter(Boolean));
+        brandWrap.appendChild(a);
+      });
+
+      // Populate brand select once (preserve current selection)
+      if(brandSelect && !brandSelect._initialized){
+        const current = brandSelect.value;
+        while(brandSelect.options.length>1){ brandSelect.remove(1); }
+        brands.forEach(b=>{
+          const opt = document.createElement("option");
+          opt.value = b;
+          opt.textContent = b;
+          brandSelect.appendChild(opt);
+        });
+        brandSelect.value = current;
+        brandSelect._initialized = true;
+      }
+    }
+
+    function renderShortlist(){
+      const grid = $("#shortlist-grid");
+      const note = $("#shortlist-note");
+      if(!grid || !note) return;
+
+      const list = window.DB?.vehicles || [];
+      const items = list.filter(v=>savedIds.has(v.id));
+      grid.innerHTML = "";
+      const section = document.getElementById("shortlist");
+      if(section) section.classList.toggle("has-items", items.length > 0);
+      if(!items.length){
+        note.textContent = "You have no saved vehicles yet. Click “Save” on any unit to build your shortlist.";
+        return;
+      }
+
+      note.textContent = `You have ${items.length} saved unit${items.length>1?"s":""}. Click “Saved” again to remove.`;
+      items.forEach(v=>grid.appendChild(card(v)));
+    }
+
+    // Language support
+    const translations = {
+      en: {
+        "site-title":"APP International","nav-cars":"Available Cars","nav-machinery":"Heavy Machinery","nav-how":"How to Buy",
+        "nav-testimonials":"Testimonials","nav-contact":"Contact","hero-title":"Trusted Japanese Vehicle & Machinery Exporter",
+        "hero-sub":"Cars • Trucks • Buses • Excavators • Heavy Machinery","btn-cars":"Browse Cars","btn-machinery":"Browse Heavy Machinery",
+        "cars-title":"Available Cars","machinery-title":"Heavy Machinery","brands-title":"Explore by Brands",
+        "how-title":"How to Buy","partners-title":"Our Partner Companies","testimonials-title":"What Buyers Say",
+        "footer-company":"APP International","footer-text":"© 2025 APP International. All rights reserved."
+      },
+      jp: {
+        "site-title":"APPインターナショナル","nav-cars":"販売中の車","nav-machinery":"重機","nav-how":"購入方法",
+        "nav-testimonials":"お客様の声","nav-contact":"お問い合わせ","hero-title":"信頼できる日本車・建設機械輸出業者",
+        "hero-sub":"自動車 • トラック • バス • 油圧ショベル • 重機","btn-cars":"車を見る","btn-machinery":"重機を見る",
+        "cars-title":"販売中の車","machinery-title":"重機","brands-title":"メーカー別に探す",
+        "how-title":"購入の流れ","partners-title":"パートナー企業","testimonials-title":"お客様の声",
+        "footer-company":"APPインターナショナル","footer-text":"© 2025 APPインターナショナル. 無断転載を禁ず。"
+      }
+    };
+    function setLanguage(lang){
+      const t = translations[lang] || translations.en;
+      Object.keys(t).forEach(id=>{
+        const node = document.getElementById(id);
+        if(node) node.textContent = t[id];
+      });
+      try{ localStorage.setItem("lang", lang); }catch(e){}
+    }
+
+    // Boot
+    (function init(){
+      loadSaved();
+
+      // Hook filters
+      const inputs = [
+        "#search-text",
+        "#filter-type",
+        "#filter-brand",
+        "#filter-year-min",
+        "#filter-year-max",
+        "#filter-price-min",
+        "#filter-price-max",
+        "#filter-mileage-max"
+      ];
+      inputs.forEach(sel=>{
+        const node = $(sel);
+        if(!node) return;
+        const evt = node.tagName==="SELECT" ? "change" : "input";
+        node.addEventListener(evt, ()=>{ renderHome(); });
+      });
+      const reset = $("#filters-reset");
+      if(reset){
+        reset.addEventListener("click", ()=>{
+          ["#search-text","#filter-type","#filter-brand","#filter-year-min","#filter-year-max","#filter-price-min","#filter-price-max","#filter-mileage-max"].forEach(sel=>{
+            const n = $(sel);
+            if(!n) return;
+            if(n.tagName==="SELECT") n.value="";
+            else n.value="";
+          });
+          renderHome();
+        });
+      }
+
+      renderHome();
+      renderShortlist();
+
+      // restore language choice
+      let lang = "en";
+      try{ lang = localStorage.getItem("lang") || "en"; }catch(e){}
+      setLanguage(lang);
+    })();
+  </script>
+</body>
+</html>

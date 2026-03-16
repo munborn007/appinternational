@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Brand Inventory | APP International</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <a href="index.html">⬅ Back to Home</a>
+  </header>
+
+  <main>
+    <h1 id="brand-title"></h1>
+    <p id="brand-sub" class="muted"></p>
+    <div id="brand-items" class="grid grid-3"></div>
+  </main>
+
+  <script src="data.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const brand = params.get("brand");
+    const titleEl = document.getElementById("brand-title");
+    const subEl = document.getElementById("brand-sub");
+    const wrap = document.getElementById("brand-items");
+
+    const all = (window.DB && window.DB.vehicles) || [];
+    const items = all.filter(v => v.brand === brand);
+
+    titleEl.textContent = brand ? (brand + " Inventory") : "Inventory";
+    subEl.textContent = items.length
+      ? `Showing ${items.length} unit${items.length > 1 ? "s" : ""} for ${brand}.`
+      : "No units currently listed for this brand. Please contact us for upcoming stock.";
+
+    wrap.innerHTML = items.map(i => `
+      <a class="card" href="vehicle.html#${encodeURIComponent(i.id)}">
+        <img src="${i.img}" alt="${i.title}">
+        <div class="card-body">
+          <h3>${i.title}</h3>
+          <div class="meta">
+            ${i.mileage ? i.mileage + " • " : ""}${i.specs && i.specs.year ? i.specs.year : ""}
+          </div>
+          <div class="price">${i.price}</div>
+        </div>
+      </a>
+    `).join("");
+  </script>
+</body>
+</html>
