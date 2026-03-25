@@ -307,6 +307,304 @@
       .hero h2{font-size:28px}
       nav{display:none} /* keep header clean on mobile */
     }
+
+    /* ── PARTS & COMPONENTS STYLES ────────────────────────────────────────────── */
+    /* Section container */
+    .section{
+      max-width:1160px;
+      margin:48px auto;
+      padding:0 18px;
+    }
+    .section-header{
+      text-align:center;
+      margin-bottom:32px;
+    }
+    .section-title{
+      margin:0 0 8px;
+      font-size:28px;
+      color:var(--brand);
+      font-weight:800;
+      letter-spacing:-.02em;
+    }
+    .section-subtitle{
+      margin:0;
+      font-size:15px;
+      color:var(--muted);
+      max-width:520px;
+      margin:0 auto;
+    }
+
+    /* Tab Navigation */
+    .parts-tabs{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      justify-content:center;
+      margin-bottom:20px;
+    }
+    .tab-btn{
+      border:none;
+      border-radius:12px;
+      padding:10px 16px;
+      font-weight:700;
+      font-size:14px;
+      background:#eef2ff;
+      color:#3730a3;
+      cursor:pointer;
+      transition:all .2s;
+      box-shadow:0 1px 3px rgba(0,0,0,.08);
+    }
+    .tab-btn:hover{
+      background:#dbeafe;
+      transform:translateY(-1px);
+    }
+    .tab-btn.active{
+      background:linear-gradient(135deg, var(--logo-blue), #2563eb);
+      color:#fff;
+      box-shadow:0 4px 12px rgba(30,58,138,.35);
+    }
+
+    /* Filter Controls */
+    .parts-filters{
+      background:#fff;
+      border-radius:12px;
+      border:1px solid var(--ring);
+      box-shadow:var(--shadow);
+      padding:14px 16px 10px;
+      margin-bottom:24px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      align-items:flex-end;
+    }
+    .filter-group{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      min-width:160px;
+      flex:1 1 160px;
+    }
+    .filter-group label{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      color:var(--muted);
+    }
+    .filter-group select{
+      padding:8px 10px;
+      border-radius:8px;
+      border:1px solid var(--ring);
+      font-size:13px;
+      min-height:36px;
+    }
+    .filter-group select:focus{
+      outline:none;
+      border-color:var(--brand-2);
+      box-shadow:0 0 0 1px rgba(59,130,246,.15);
+    }
+    .btn-secondary{
+      border-radius:10px;
+      padding:8px 14px;
+      border:1px solid var(--ring);
+      background:#f9fafb;
+      cursor:pointer;
+      font-size:13px;
+      color:#374151;
+      font-weight:600;
+    }
+    .btn-secondary:hover{
+      background:#eef2ff;
+    }
+
+    /* Parts Grid */
+    .grid.grid-3{
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    }
+    .card.parts-card{
+      border:1px solid rgba(30,58,138,.12);
+      background:linear-gradient(180deg, #fff 0%, #fafafa 100%);
+      transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .card.parts-card:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 24px rgba(0,0,0,.12);
+      border-color:rgba(30,58,138,.2);
+    }
+    .card.parts-card img{
+      height:180px;
+      object-fit:cover;
+    }
+    .card.parts-card .card-body{
+      padding:16px;
+    }
+    .card.parts-card h3{
+      margin:0 0 6px;
+      font-size:18px;
+      line-height:1.25;
+      color:#111827;
+    }
+    .card.parts-card .meta{
+      color:#64748b;
+      font-size:13px;
+      margin-bottom:8px;
+    }
+    .card.parts-card .price{
+      color:#0f172a;
+      font-weight:800;
+      margin-top:6px;
+    }
+    .card.parts-card .save-btn{
+      top:10px;
+      right:10px;
+      font-size:12px;
+      padding:6px 10px;
+    }
+
+    /* Category-specific styling */
+    .card.parts-card[data-category="engine"] .card-body h3{color:#b91c1c}
+    .card.parts-card[data-category="body"] .card-body h3{color:#059669}
+    .card.parts-card[data-category="equipment"] .card-body h3{color:#7c3aed}
+    .card.parts-card[data-category="component"] .card-body h3{color:#0ea5e9}
+
+    /* Modal Overlay */
+    .modal-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.5);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:1000;
+      padding:20px;
+    }
+    .modal-content{
+      background:#fff;
+      border-radius:16px;
+      box-shadow:0 10px 40px rgba(0,0,0,.25);
+      max-width:800px;
+      width:100%;
+      max-height:90vh;
+      overflow:auto;
+    }
+    .modal-close{
+      position:absolute;
+      top:14px;
+      right:14px;
+      background:transparent;
+      border:none;
+      font-size:24px;
+      color:#64748b;
+      cursor:pointer;
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:background .2s, color .2s;
+    }
+    .modal-close:hover{
+      background:#f3f4f6;
+      color:#111827;
+    }
+    .modal-body{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      padding:24px;
+    }
+    @media (max-width:720px){
+      .modal-body{
+        grid-template-columns:1fr;
+      }
+    }
+    .modal-image{
+      border-radius:12px;
+      overflow:hidden;
+      background:#f3f4f6;
+    }
+    .modal-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .modal-details h3{
+      margin:0 0 12px;
+      font-size:22px;
+      color:#111827;
+    }
+    .modal-details p{
+      margin:0 0 16px;
+      color:#374155;
+      line-height:1.6;
+    }
+    .modal-specs{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-bottom:20px;
+    }
+    @media (max-width:720px){
+      .modal-specs{
+        grid-template-columns:1fr;
+      }
+    }
+    .spec-item{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      padding:12px;
+      background:#f8fafc;
+      border-radius:10px;
+    }
+    .spec-label{
+      font-size:12px;
+      color:#64748b;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+    }
+    .spec-value{
+      font-size:14px;
+      font-weight:700;
+      color:#111827;
+    }
+    .modal-actions{
+      display:flex;
+      gap:12px;
+      margin-top:16px;
+    }
+    .modal-actions .btn-primary{
+      flex:1;
+      text-align:center;
+      padding:12px 16px;
+      border-radius:10px;
+      background:linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+      border:none;
+      cursor:pointer;
+      box-shadow:0 4px 14px rgba(234,88,12,.4);
+    }
+    .modal-actions .btn-primary:hover{
+      background:linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+      box-shadow:0 6px 20px rgba(234,88,12,.5);
+    }
+    .modal-actions .btn-secondary{
+      flex:1;
+      text-align:center;
+      padding:12px 16px;
+      border-radius:10px;
+      background:#f9fafb;
+      color:#374151;
+      border:1px solid var(--ring);
+      cursor:pointer;
+      font-weight:700;
+    }
+    .modal-actions .btn-secondary:hover{
+      background:#eef2ff;
+    }
   </style>
 </head>
 <body>
@@ -322,10 +620,12 @@
 
     <nav>
       <a href="#cars" id="nav-cars">Available Cars</a>
+      <a href="#bikes" id="nav-bikes">Motor Bikes</a>
       <a href="#machinery" id="nav-machinery">Heavy Machinery</a>
       <a href="#how" id="nav-how">How to Buy</a>
       <a href="#testimonials" id="nav-testimonials">Testimonials</a>
       <a href="#contact" id="nav-contact">Contact</a>
+      <a href="parts.html" id="nav-parts">Parts & Components</a>
     </nav>
 
     <div class="lang-switch" aria-label="Language">
@@ -337,11 +637,11 @@
   <!-- Hero -->
   <section class="hero">
     <h2 id="hero-title">Trusted Japanese Vehicle & Machinery Exporter</h2>
-    <p id="hero-sub">Cars • Trucks • Buses • Excavators • Heavy Machinery</p>
+    <p id="hero-sub">Cars • Motor Bikes • Heavy Machinery</p>
     <a href="#cars" class="btn" id="btn-cars">Browse Cars</a>
+    <a href="#bikes" class="btn" id="btn-bikes">Browse Motor Bikes</a>
     <a href="#machinery" class="btn" id="btn-machinery">Browse Heavy Machinery</a>
-    <div style="margin-top:10px"><span class="badge">Tokyo, Japan</span></div>
-  </section>
+    <a href="parts.html" class="btn" id="btn-parts">Browse Parts</a>
 
   <!-- Filters / Search -->
   <section aria-label="Filter and search inventory">
@@ -356,6 +656,7 @@
           <select id="filter-type">
             <option value="">All types</option>
             <option value="car">Cars</option>
+            <option value="bike">Motor Bikes</option>
             <option value="excavator">Heavy Machinery</option>
           </select>
         </div>
@@ -396,11 +697,110 @@
     <div class="grid grid-3" id="car-grid"></div>
   </section>
 
+  <!-- Motor Bikes -->
+  <section id="bikes" aria-labelledby="bikes-title">
+    <h2 id="bikes-title">Motor Bikes</h2>
+    <p style="text-align:center;color:var(--muted);margin-top:-8px;margin-bottom:18px;">Honda • Yamaha • Suzuki • Kawasaki</p>
+    <div class="grid grid-3" id="bike-grid"></div>
+  </section>
+
   <!-- Heavy Machinery -->
   <section id="machinery" aria-labelledby="machinery-title">
     <h2 id="machinery-title">Heavy Machinery</h2>
     <p style="text-align:center;color:var(--muted);margin-top:-8px;margin-bottom:18px;">Hitachi • Kobelco • Komatsu</p>
     <div class="grid grid-3" id="exc-grid"></div>
+  </section>
+
+  <!-- ── PARTS & COMPONENTS SECTION ────────────────────────────────────────────── -->
+  <section id="parts" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Parts & Components</h2>
+        <p class="section-subtitle">Engines, bodies, and workshop equipment for all your needs</p>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="parts-tabs">
+        <button class="tab-btn active" data-category="all">All</button>
+        <button class="tab-btn" data-category="engine">Engines</button>
+        <button class="tab-btn" data-category="body">Vehicle Bodies</button>
+        <button class="tab-btn" data-category="equipment">Workshop Equipment</button>
+        <button class="tab-btn" data-category="component">Components</button>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="parts-filters">
+        <div class="filter-group">
+          <label for="brand-filter">Brand</label>
+          <select id="brand-filter">
+            <option value="all">All Brands</option>
+            <option value="Isuzu">Isuzu</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Yamaha">Yamaha</option>
+            <option value="Yanmar">Yanmar</option>
+            <option value="Various">Various</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="price-filter">Price Range</label>
+          <select id="price-filter">
+            <option value="all">All Prices</option>
+            <option value="under-5000">Under $5,000</option>
+            <option value="5000-15000">$5,000 - $15,000</option>
+            <option value="15000-30000">$15,000 - $30,000</option>
+            <option value="over-30000">Over $30,000</option>
+          </select>
+        </div>
+        <button id="reset-filters" class="btn-secondary">Reset Filters</button>
+      </div>
+
+      <!-- Parts Grid -->
+      <div id="parts-grid" class="grid grid-3">
+        <!-- Parts will be loaded here by JavaScript -->
+      </div>
+
+      <!-- Quick View Modal -->
+      <div id="parts-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+          <button class="modal-close">&times;</button>
+          <div class="modal-body">
+            <div class="modal-image">
+              <img id="modal-image" src="" alt="">
+            </div>
+            <div class="modal-details">
+              <h3 id="modal-title"></h3>
+              <p id="modal-description"></p>
+              <div class="modal-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Price (FOB):</span>
+                  <span class="spec-value" id="modal-price-fob"></span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Price (CIF):</span>
+                  <span class="spec-value" id="modal-price-cif"></span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Brand:</span>
+                  <span class="spec-value" id="modal-brand"></span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Category:</span>
+                  <span class="spec-value" id="modal-category"></span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Stock No:</span>
+                  <span class="spec-value" id="modal-stock"></span>
+                </div>
+              </div>
+              <div class="modal-actions">
+                <a href="contact.html?subject=Quote Request: [Part Name]" class="btn-primary">Request Quote</a>
+                <button class="btn-secondary modal-close">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Brands -->
@@ -476,25 +876,26 @@
       </div>
       <div class="footer-col footer-contact">
         <h4>Contact</h4>
-        <p><strong>Address</strong><br>270-1471, Chiba-ken, Funabashi-shi, Komuro-cho 1112-13, Japan</p>
-        <p><strong>Phone</strong><br>Tel: 047-404-8717 | Mobile: 080-7313-6728</p>
-        <p><strong>Email</strong><br><a href="mailto:appinternational@gmail.com">appinternational@gmail.com</a></p>
+        <p><strong>Address</strong><br><span id="footer-address">Funabashi, Chiba, Japan</span></p>
+        <p><strong>Phone</strong><br><span id="footer-phone">047-404-8717</span><span id="footer-mobile-wrap"> | Mobile: <span id="footer-mobile">080-7313-6728</span></span></p>
+        <p><strong>Email</strong><br><a id="footer-email" href="contact.html">Contact us</a></p>
       </div>
       <div class="footer-col">
         <h4>Quick links</h4>
         <ul>
           <li><a href="#cars">Available Cars</a></li>
+          <li><a href="#bikes">Motor Bikes</a></li>
           <li><a href="#machinery">Heavy Machinery</a></li>
           <li><a href="#how">How to Buy</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
         </ul>
         <h4 style="margin-top:18px">Follow us</h4>
         <div class="footer-socials">
-          <a href="https://facebook.com/appinternational" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-          <a href="https://instagram.com/appinternational" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-          <a href="https://www.linkedin.com/company/appinternational" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-          <a href="https://youtube.com/@appinternational" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-          <a href="https://wa.me/818073136728" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+          <a id="footer-facebook" href="https://facebook.com/appinternational" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a id="footer-instagram" href="https://instagram.com/appinternational" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a id="footer-linkedin" href="https://www.linkedin.com/company/appinternational" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a id="footer-youtube" href="https://youtube.com/@appinternational" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a id="footer-whatsapp" href="https://wa.me/818073136728" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
         </div>
       </div>
     </div>
@@ -668,11 +1069,13 @@
       const list = window.DB?.vehicles || [];
       const filtered = applyFilters(list);
       const cars = filtered.filter(v=>v.type==="car");
+      const bikes = filtered.filter(v=>v.type==="bike");
       const ex   = filtered.filter(v=>v.type==="excavator");
 
-      const cg = $("#car-grid"); const eg = $("#exc-grid");
-      cg.innerHTML = ""; eg.innerHTML = "";
+      const cg = $("#car-grid"); const bg = $("#bike-grid"); const eg = $("#exc-grid");
+      cg.innerHTML = ""; if(bg) bg.innerHTML = ""; eg.innerHTML = "";
       cars.forEach(v=>cg.appendChild(card(v)));
+      bikes.forEach(v=>bg && bg.appendChild(card(v)));
       ex.forEach(v=>eg.appendChild(card(v)));
 
       // Brands (chips + filter dropdown)
@@ -727,18 +1130,18 @@
     // Language support
     const translations = {
       en: {
-        "site-title":"APP International","nav-cars":"Available Cars","nav-machinery":"Heavy Machinery","nav-how":"How to Buy",
+        "site-title":"APP International","nav-cars":"Available Cars","nav-bikes":"Motor Bikes","nav-machinery":"Heavy Machinery","nav-how":"How to Buy",
         "nav-testimonials":"Testimonials","nav-contact":"Contact","hero-title":"Trusted Japanese Vehicle & Machinery Exporter",
-        "hero-sub":"Cars • Trucks • Buses • Excavators • Heavy Machinery","btn-cars":"Browse Cars","btn-machinery":"Browse Heavy Machinery",
-        "cars-title":"Available Cars","machinery-title":"Heavy Machinery","brands-title":"Explore by Brands",
+        "hero-sub":"Cars • Motor Bikes • Heavy Machinery","btn-cars":"Browse Cars","btn-bikes":"Browse Motor Bikes","btn-machinery":"Browse Heavy Machinery",
+        "cars-title":"Available Cars","bikes-title":"Motor Bikes","machinery-title":"Heavy Machinery","brands-title":"Explore by Brands",
         "how-title":"How to Buy","partners-title":"Our Partner Companies","testimonials-title":"What Buyers Say",
         "footer-company":"APP International","footer-text":"© 2025 APP International. All rights reserved."
       },
       jp: {
-        "site-title":"APPインターナショナル","nav-cars":"販売中の車","nav-machinery":"重機","nav-how":"購入方法",
+        "site-title":"APPインターナショナル","nav-cars":"販売中の車","nav-bikes":"バイク","nav-machinery":"重機","nav-how":"購入方法",
         "nav-testimonials":"お客様の声","nav-contact":"お問い合わせ","hero-title":"信頼できる日本車・建設機械輸出業者",
-        "hero-sub":"自動車 • トラック • バス • 油圧ショベル • 重機","btn-cars":"車を見る","btn-machinery":"重機を見る",
-        "cars-title":"販売中の車","machinery-title":"重機","brands-title":"メーカー別に探す",
+        "hero-sub":"自動車 • バイク • 重機","btn-cars":"車を見る","btn-bikes":"バイクを見る","btn-machinery":"重機を見る",
+        "cars-title":"販売中の車","bikes-title":"バイク","machinery-title":"重機","brands-title":"メーカー別に探す",
         "how-title":"購入の流れ","partners-title":"パートナー企業","testimonials-title":"お客様の声",
         "footer-company":"APPインターナショナル","footer-text":"© 2025 APPインターナショナル. 無断転載を禁ず。"
       }
@@ -752,9 +1155,193 @@
       try{ localStorage.setItem("lang", lang); }catch(e){}
     }
 
+    // ------- parts rendering -------
+    function partsCard(item){
+      const primaryImage =
+        item.featuredImage ||
+        (item.images && item.images.length && (typeof item.images[0] === "string" ? item.images[0] : item.images[0].url)) ||
+        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80";
+
+      const priceText = window.DB && window.DB.partsUtils
+        ? window.DB.partsUtils.formatPrice(item.priceCIF || item.priceFOB)
+        : (item.priceCIF || item.priceFOB ? "USD " + String(item.priceCIF || item.priceFOB) : "POA");
+
+      const btn = el("button", {
+        class: "save-btn" + (isSaved(item.id) ? " is-saved" : ""),
+        type: "button",
+        "data-id": item.id,
+        title: isSaved(item.id) ? "Remove from shortlist" : "Save from shortlist"
+      }, isSaved(item.id) ? "★ Saved" : "☆ Save");
+
+      btn.addEventListener("click", (e)=>{
+        e.stopPropagation();
+        e.preventDefault();
+        toggleSaved(item.id);
+      });
+
+      const link = el("a",{
+        href:"contact.html?subject=Quote Request: " + encodeURIComponent(item.title),
+        class:"card-link",
+        title:item.title
+      },[
+        el("img",{
+          src:primaryImage,
+          alt:item.title,
+          loading:"lazy",
+          onerror:"this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80';this.onerror=null;"
+        }),
+        el("div",{class:"card-body"},[
+          el("h3",{},item.title),
+          el("div",{class:"meta"},[item.brand]),
+          el("div",{class:"price"},priceText)
+        ])
+      ]);
+
+      const cardEl = el("div",{class:"card parts-card", "data-category": item.category},[btn,link]);
+      return cardEl;
+    }
+
+    function renderParts(){
+      const list = window.DB?.parts || [];
+      const grid = $("#parts-grid");
+      if(!grid) return;
+      grid.innerHTML = "";
+      list.forEach(p=>grid.appendChild(partsCard(p)));
+    }
+
+    // ------- parts interactions -------
+    function initPartsInteractions(){
+      // Tab buttons
+      const tabs = document.querySelectorAll(".parts-tabs .tab-btn");
+      tabs.forEach(btn=>{
+        btn.addEventListener("click", ()=>{
+          tabs.forEach(b=>b.classList.remove("active"));
+          btn.classList.add("active");
+          const cat = btn.getAttribute("data-category");
+          filterPartsByCategory(cat);
+        });
+      });
+
+      // Brand filter
+      const brandFilter = $("#brand-filter");
+      if(brandFilter){
+        brandFilter.addEventListener("change", ()=>{
+          const brand = brandFilter.value;
+          filterPartsByBrand(brand);
+        });
+      }
+
+      // Price filter
+      const priceFilter = $("#price-filter");
+      if(priceFilter){
+        priceFilter.addEventListener("change", ()=>{
+          const range = priceFilter.value;
+          filterPartsByPrice(range);
+        });
+      }
+
+      // Reset filters
+      const resetBtn = $("#reset-filters");
+      if(resetBtn){
+        resetBtn.addEventListener("click", ()=>{
+          brandFilter.value = "all";
+          priceFilter.value = "all";
+          tabs.forEach(b=>b.classList.remove("active"));
+          tabs[0].classList.add("active");
+          filterPartsByCategory("all");
+        });
+      }
+
+      // Modal
+      const modal = $("#parts-modal");
+      const modalClose = modal && modal.querySelector(".modal-close");
+      if(modalClose){
+        modalClose.addEventListener("click", ()=>{ modal.style.display = "none"; });
+      }
+      if(modal){
+        modal.addEventListener("click", (e)=>{
+          if(e.target === modal){ modal.style.display = "none"; }
+        });
+      }
+    }
+
+    function filterPartsByCategory(category){
+      const list = window.DB?.parts || [];
+      const grid = $("#parts-grid");
+      if(!grid) return;
+      grid.innerHTML = "";
+      const filtered = category === "all" ? list : list.filter(p=>p.category === category);
+      filtered.forEach(p=>grid.appendChild(partsCard(p)));
+    }
+
+    function filterPartsByBrand(brand){
+      const list = window.DB?.parts || [];
+      const grid = $("#parts-grid");
+      if(!grid) return;
+      grid.innerHTML = "";
+      const filtered = brand === "all" ? list : list.filter(p=>p.brand === brand);
+      filtered.forEach(p=>grid.appendChild(partsCard(p)));
+    }
+
+    function filterPartsByPrice(range){
+      const list = window.DB?.parts || [];
+      const grid = $("#parts-grid");
+      if(!grid) return;
+      grid.innerHTML = "";
+      const filtered = list.filter(p=>{
+        const price = p.priceCIF || p.priceFOB;
+        if(!price) return true;
+        if(range === "under-5000") return price < 5000;
+        if(range === "5000-15000") return price >= 5000 && price <= 15000;
+        if(range === "15000-30000") return price >= 15000 && price <= 30000;
+        if(range === "over-30000") return price > 30000;
+        return true;
+      });
+      filtered.forEach(p=>grid.appendChild(partsCard(p)));
+    }
+
     // Boot
     (function init(){
       loadSaved();
+      // Footer: keep contact/socials in sync with data.js
+      try{
+        const c = window.DB && window.DB.company;
+        const contact = window.DB && window.DB.contact;
+        const socials = window.DB && window.DB.socials;
+        if(c && c.name){
+          const n = document.getElementById("footer-company");
+          if(n) n.textContent = c.name;
+        }
+        const addr = document.getElementById("footer-address");
+        if(addr && c && c.address && c.address.en) addr.textContent = c.address.en;
+        const phone = document.getElementById("footer-phone");
+        if(phone && contact && contact.phone) phone.textContent = contact.phone;
+        const mobile = document.getElementById("footer-mobile");
+        const mobileWrap = document.getElementById("footer-mobile-wrap");
+        if(mobile && mobileWrap){
+          if(contact && contact.mobile){ mobile.textContent = contact.mobile; mobileWrap.style.display = ""; }
+          else { mobileWrap.style.display = "none"; }
+        }
+        const email = document.getElementById("footer-email");
+        if(email && contact && contact.email){
+          email.textContent = contact.email;
+          email.setAttribute("href","mailto:" + contact.email);
+        }
+        const setHref = (id, href) => { const a = document.getElementById(id); if(a && href) a.setAttribute("href", href); };
+        if(socials){
+          setHref("footer-facebook", socials.facebook);
+          setHref("footer-instagram", socials.instagram);
+          setHref("footer-linkedin", socials.linkedin);
+          setHref("footer-youtube", socials.youtube);
+          setHref("footer-whatsapp", socials.whatsapp || (contact && contact.whatsapp ? ("https://wa.me/" + contact.whatsapp) : ""));
+        }
+        // Copyright year
+        const ft = document.getElementById("footer-text");
+        if(ft){
+          const year = new Date().getFullYear();
+          ft.textContent = `© ${year} APP International. All rights reserved.`;
+        }
+      }catch(e){}
 
       // Hook filters
       const inputs = [
@@ -788,6 +1375,8 @@
 
       renderHome();
       renderShortlist();
+      renderParts();
+      initPartsInteractions();
 
       // restore language choice
       let lang = "en";

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Parts Details | APP International</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <a href="index.html">⬅ Back to Home</a>
+  </header>
+
+  <main id="detail"></main>
+
+  <script src="data.js"></script>
+  <script>
+    const container = document.getElementById("detail");
+    let id = (window.location.hash || "").replace(/^#/, "").trim();
+    if (!id) {
+      id = new URLSearchParams(window.location.search).get("id");
+    }
+    const parts = (window.DB && window.DB.parts) || [];
+    const item = id ? parts.find(p => p.id === id) : null;
+
+    if (!id) {
+      const firstPart = parts[0];
+      const sampleLink = firstPart ? ` Or view <a href="parts.html#${encodeURIComponent(firstPart.id)}">${firstPart.title}</a> directly.` : "";
+      container.innerHTML = `
+        <section class="detail-layout" aria-label="Parts details">
+          <div>
+            <h1 class="detail-title">No part selected</h1>
+            <p class="detail-price-note">
+              Please <a href="index.html">browse our parts inventory</a> and click on a part card to view full details.${sampleLink}
+            </p>
+          </div>
+        </section>
+      `;
+    } else if (!item) {
+      container.innerHTML = `
+        <section class="detail-layout" aria-label="Parts details">
+          <div>
+            <h1 class="detail-title">Part not found</h1>
+            <p class="detail-price-note">
+              This part may have been sold or the link may be incorrect.
+              <a href="index.html">Browse available parts →</a>
+            </p>
+          </div>
+        </section>
+      `;
+    } else {
+      document.title = (item.title || "Part") + " | APP International";
+      const imagesRaw = (item.images && item.images.length ? item.images : []);
+      const images = imagesRaw.map(function(img){
+        return typeof img === "string" ? img : (img && img.url);
+      }).filter(Boolean);
+      const firstImg = item.featuredImage || images[0] || "";
+      const allImages = firstImg && !images.includes(firstImg) ? [firstImg].concat(images) : (images.length ? images : [firstImg].filter(Boolean));
+      const specsEntries = Object.entries(item.specs || {});
+      const descEn = (item.description && item.description.en) || "High quality Japanese part inspected before export.";
+      const conditionNotes = (item.condition && item.condition.notes && item.condition.notes.en) || "";
+
+      const related = parts
+        .filter(p => p.id !== item.id && p.category === item.category)
+        .slice(0, 3);
+
+      const shippingRegions = (window.DB && window.DB.shippingRegions) || [];
+
+      container.innerHTML = `
+        <section class="detail-layout" aria-label="Parts details">
+          <div>
+            <div class="gallery-main">
+              <img id="main-photo"
+                   src="${firstImg}"
+                   alt="${item.title}"
+                   loading="eager"
+                   onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80';this.onerror=null;">
+            </div>
+            <div class="gallery-thumbs" aria-label="Part photos">
+              ${allImages.map(function(src, i){
+                return `
+                <button class="gallery-thumb ${i === 0 ? "is-active" : ""}" data-src="${src}" type="button">
+                  <img src="${src}"
+                       alt="${item.title} photo ${i + 1}"
+                       loading="lazy"
+                       onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80';this.onerror=null;">
+                </button>`;
+              }).join("")}
+            </div>
+
+            <div class="detail-panel detail-description">
+              <h3>Full description</h3>
+              <p class="detail-description-text">${descEn}</p>
+              ${conditionNotes ? `<div class="detail-condition-notes"><strong>Condition notes:</strong> ${conditionNotes}</div>` : ""}
+              <div class="muted" style="margin-top:12px;">
+                <span class="small-label">STOCK NO.</span>
+                ${item.stockNo || "On request"}
+              </div>
+            </div>
+
+            <div class="detail-panel detail-all-images">
+              <h3>All images</h3>
+              <div class="detail-image-grid" aria-label="All part images">
+                ${allImages.map(function(src, i){
+                  return `
+                  <button class="detail-image-cell ${i === 0 ? "is-active" : ""}" data-src="${src}" type="button">
+                    <img src="${src}"
+                         alt="${item.title} - Image ${i + 1}"
+                         loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80';this.onerror=null;">
+                  </button>`;
+                }).join("")}
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h1 class="detail-title">${item.title}</h1>
+            <p class="detail-sub">
+              <span class="badge-status">Available • Ready for export</span>
+              ${item.brand ? `<span class="pill">${item.brand}</span>` : ""}
+              ${item.category ? `<span class="pill">${
+                item.category === "engine" ? "Engine" :
+                item.category === "body" ? "Body Parts" :
+                item.category === "component" ? "Components" :
+                item.category === "equipment" ? "Equipment" :
+                "Parts"
+              }</span>` : ""}
+            </p>
+
+            <div class="detail-price">${window.DB.utils.formatPrice(item.priceCIF || item.priceFOB, item.currency)}</div>
+            <p class="detail-price-note">Price is indicative. Final CIF/FOB depends on destination port and options.</p>
+
+            <table class="spec-table" aria-label="Key specifications">
+              <tbody>
+                ${specsEntries.map(([k, v]) => `
+                  <tr>
+                    <th>${k.charAt(0).toUpperCase() + k.slice(1)}</th>
+                    <td>${v}</td>
+                  </tr>
+                `).join("")}
+                ${item.stockNo ? `
+                  <tr>
+                    <th>Stock No.</th>
+                    <td>${item.stockNo}</td>
+                  </tr>
+                ` : ""}
+                ${item.condition ? `
+                  <tr>
+                    <th>Condition</th>
+                    <td>${item.condition}</td>
+                  </tr>
+                ` : ""}
+              </tbody>
+            </table>
+
+            <div class="detail-panel">
+              <h3>Request invoice / proforma</h3>
+              <p>Send us your destination port and we will reply with a detailed CIF / FOB quotation for this part.</p>
+              <div class="cta-row">
+                <a
+                  class="btn"
+                  href="contact.html?subject=Parts%20Inquiry&part=${encodeURIComponent(item.title)}&stock=${encodeURIComponent(item.stockNo || "no stock number")}"
+                  target="_blank"
+                  rel="noopener">
+                  Email proforma invoice
+                </a>
+                <a
+                  class="btn secondary"
+                  href="${(window.DB.socials && window.DB.socials.whatsapp) || "#"}?text=${encodeURIComponent("Hello, I am interested in " + item.title + " (" + (item.stockNo || "no stock number") + "). Please send me more photos and full quotation.")}"
+                  target="_blank"
+                  rel="noopener">
+                  WhatsApp us
+                </a>
+              </div>
+              <p class="muted">We usually reply within the same business day (Tokyo time).</p>
+            </div>
+
+            <div class="detail-panel">
+              <h3>Shipping & delivery</h3>
+              <label class="small-label" for="shipping-region">Destination region</label>
+              <select id="shipping-region" class="shipping-select">
+                <option value="">Select your region</option>
+                ${shippingRegions.map(r => `
+                  <option value="${r.id}">${r.label}</option>
+                `).join("")}
+              </select>
+              <p id="shipping-info" class="shipping-note">
+                Transit time and total cost depend on your exact port and shipping schedule.
+              </p>
+              <ul>
+                <li>We arrange export paperwork in Japan.</li>
+                <li>Parts are shipped by air or sea freight depending on size and destination.</li>
+                <li>Original documents are sent by courier for smooth customs clearance.</li>
+              </ul>
+            </div>
+
+            ${related.length ? `
+              <div class="detail-panel">
+                <h3>Similar parts you may like</h3>
+                <div class="grid grid-3">
+                  ${related.map(p => {
+                    const relatedImg =
+                      p.featuredImage ||
+                      (p.images && p.images.length && (typeof p.images[0] === "string" ? p.images[0] : p.images[0].url)) ||
+                      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80";
+                    const relatedPrice = window.DB.utils.formatPrice(p.priceCIF || p.priceFOB, p.currency);
+                    return `
+                    <a class="card" href="parts.html#${encodeURIComponent(p.id)}">
+                      <img src="${relatedImg}"
+                           alt="${p.title}"
+                           loading="lazy"
+                           onerror="this.src='https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80';this.onerror=null;">
+                      <div class="card-body">
+                        <h3>${p.title}</h3>
+                        <div class="meta">${p.brand || ""}</div>
+                        <div class="price">${relatedPrice}</div>
+                      </div>
+                    </a>
+                    `;
+                  }).join("")}
+                </div>
+              </div>
+            ` : ""}
+          </div>
+        </section>
+      `;
+
+      // Set up gallery interactions (thumbs + image grid)
+      const mainPhoto = document.getElementById("main-photo");
+      const selectImage = (src) => {
+        if (src && mainPhoto) mainPhoto.src = src;
+        document.querySelectorAll(".gallery-thumb").forEach(b => b.classList.toggle("is-active", b.getAttribute("data-src") === src));
+        document.querySelectorAll(".detail-image-cell").forEach(b => b.classList.toggle("is-active", b.getAttribute("data-src") === src));
+      };
+      document.querySelectorAll(".gallery-thumb").forEach(btn => {
+        btn.addEventListener("click", () => selectImage(btn.getAttribute("data-src")));
+      });
+      document.querySelectorAll(".detail-image-cell").forEach(btn => {
+        btn.addEventListener("click", () => selectImage(btn.getAttribute("data-src")));
+      });
+
+      // Shipping selector behaviour
+      const regionSelect = document.getElementById("shipping-region");
+      const shippingInfo = document.getElementById("shipping-info");
+      if (regionSelect && shippingInfo && shippingRegions.length) {
+        regionSelect.addEventListener("change", () => {
+          const val = regionSelect.value;
+          const found = shippingRegions.find(r => r.id === val);
+          if (!found) {
+            shippingInfo.textContent = "Transit time and total cost depend on your exact port and shipping schedule.";
+          } else {
+            shippingInfo.textContent = `${found.label}: approx. transit ${found.eta}. ${found.note}`;
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>

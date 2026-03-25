@@ -119,7 +119,11 @@
             <p class="detail-sub">
               <span class="badge-status">Available • Ready for export</span>
               ${item.brand ? `<span class="pill">${item.brand}</span>` : ""}
-              ${item.type ? `<span class="pill">${item.type === "car" ? "Passenger vehicle" : "Heavy machinery"}</span>` : ""}
+              ${item.type ? `<span class="pill">${
+                item.type === "car" ? "Passenger vehicle" :
+                item.type === "bike" ? "Motor bike" :
+                "Heavy machinery"
+              }</span>` : ""}
             </p>
 
             <div class="detail-price">${window.DB.utils.formatPrice(item.priceCIF || item.priceFOB, item.currency)}</div>
@@ -154,7 +158,9 @@
               <div class="cta-row">
                 <a
                   class="btn"
-                  href="mailto:${window.DB.contact.email}?subject=Inquiry about ${encodeURIComponent(item.title)} (${encodeURIComponent(item.stockNo || "no stock number")})&body=Hello%20APP%20International%2C%0D%0A%0D%0AI%20am%20interested%20in%20the%20following%20unit%3A%0D%0A%0D%0A-%20Title%3A%20${encodeURIComponent(item.title)}%0D%0A-%20Stock%20No.%3A%20${encodeURIComponent(item.stockNo || "N/A")}%0D%0A%0D%0APlease%20send%20me%20a%20CIF%2FFOB%20invoice%20to%20the%20following%20destination%20port%3A%0D%0A%0D%0A-%20Country%3A%0D%0A-%20Port%3A%0D%0A-%20Preferred%20shipping%20month%3A%0D%0A%0D%0AThank%20you.">
+                  href="contact.html?subject=Vehicle%20Inquiry&vehicle=${encodeURIComponent(item.title)}&stock=${encodeURIComponent(item.stockNo || "no stock number")}"
+                  target="_blank"
+                  rel="noopener">
                   Email proforma invoice
                 </a>
                 <a
