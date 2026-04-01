@@ -17,11 +17,12 @@
   <script>
     const container = document.getElementById("detail");
     let id = (window.location.hash || "").replace(/^#/, "").trim();
-    if (!id) {
+      if (!id) {
       id = new URLSearchParams(window.location.search).get("id");
     }
     const vehicles = (window.DB && window.DB.vehicles) || [];
-    const item = id ? vehicles.find(v => v.id === id) : null;
+    const parts = (window.DB && window.DB.parts) || [];
+    const item = id ? vehicles.find(v => v.id === id) || parts.find(p => p.id === id) : null;
 
     if (!id) {
       const firstVehicle = vehicles[0];
@@ -63,6 +64,11 @@
       const related = vehicles
         .filter(v => v.id !== item.id && v.type === item.type)
         .slice(0, 3);
+if (item && item.category === "engine") {
+  related = parts
+    .filter(p => p.id !== item.id && p.category === "engine")
+    .slice(0, 3);
+}
 
       const shippingRegions = (window.DB && window.DB.shippingRegions) || [];
 

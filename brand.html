@@ -35,13 +35,13 @@
 
     wrap.innerHTML = items.map(i => `
       <a class="card" href="vehicle.html#${encodeURIComponent(i.id)}">
-        <img src="${i.img}" alt="${i.title}">
+        <img src="${i.featuredImage || (i.images && i.images.length && (typeof i.images[0] === "string" ? i.images[0] : i.images[0].url)) || "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80"}" alt="${i.title}">
         <div class="card-body">
           <h3>${i.title}</h3>
           <div class="meta">
             ${i.mileage ? i.mileage + " • " : ""}${i.specs && i.specs.year ? i.specs.year : ""}
           </div>
-          <div class="price">${i.price}</div>
+          <div class="price">${window.DB.utils.formatPrice(i.priceCIF || i.priceFOB, i.currency)}</div>
         </div>
       </a>
     `).join("");

@@ -923,9 +923,9 @@ window.DB = {
       type: "excavator",
       title: "Kobelco SK210 2016",
       status: "available",
-      featuredImage: "images/Kobelco SK210 2016-2026/Kobelco (2).jpg",
+      featuredImage: "images/Kobelco SK210 2016-2026/Kobelco (1).webp",
       images: [
-        { url: "images/Kobelco SK210 2016-2026/Kobelco (1).jpg", alt: "Kobelco SK210 front" },
+        { url: "images/Kobelco SK210 2016-2026/Kobelco (1).webp", alt: "Kobelco SK210 front" },
         { url: "images/Kobelco SK210 2016-2026/Kobelco (2).jpg", alt: "Kobelco SK210 digging" },
         { url: "images/Kobelco SK210 2016-2026/Kobelco (3).jpg", alt: "Kobelco SK210 at site" },
         { url: "images/Kobelco SK210 2016-2026/Kobelco (4).jpg", alt: "Kobelco SK210 side view" },
@@ -1005,733 +1005,743 @@ window.DB = {
       tags: ["20-tonne","diesel","komtrax","south-america","middle-east"]
     },
 
-  ] // end vehicles
+  ], // end vehicles
+
+  // ── PARTS & COMPONENTS ──────────────────────────────────────────────
+  parts: [
+    // Engines
+    {
+      id: "isuzu-4hg1-1995",
+      brand: "Isuzu",
+      category: "engine",
+      title: "Isuzu 4HG1 Engine 1995-2004",
+      status: "available",
+      featuredImage: "images/4HG1 engine 1995 - 2004/503862577_3134582263372435_5866893020462031082_n.jpg",
+      images: [
+        { url: "images/4HG1 engine 1995 - 2004/503862577_3134582263372435_5866893020462031082_n.jpg", alt: "Isuzu 4HG1 engine" },
+        { url: "images/4HG1 engine 1995 - 2004/504474412_17947587737993989_6275488952093681318_n.jpg", alt: "Isuzu 4HG1 engine front" },
+        { url: "images/4HG1 engine 1995 - 2004/503862577_3134582263372435_5866893020462031082_n.jpg", alt: "Isuzu 4HG1 engine side" },
+        { url: "images/4HG1 engine 1995 - 2004/504474412_17947587737993989_6275488952093681318_n.jpg", alt: "Isuzu 4HG1 engine detail" },
+        { url: "images/4HG1 engine 1995 - 2004/504860447_17947587725993989_2928188744439035256_n.jpg", alt: "Isuzu 4HG1 engine rear" },
+        { url: "images/4HG1 engine 1995 - 2004/505295325_3134582260039102_8133374230132411640_n.jpg", alt: "Isuzu 4HG1 engine top" },
+        { url: "images/4HG1 engine 1995 - 2004/651188648_870880679317656_6515030282569069050_n.jpg", alt: "Isuzu 4HG1 engine installed" },
+        { url: "images/4HG1 engine 1995 - 2004/651677133_869339672805090_3929810375449007865_n.jpg", alt: "Isuzu 4HG1 engine workshop" },
+        { url: "images/4HG1 engine 1995 - 2004/651766948_870817159324008_5884918748157632479_n.jpg", alt: "Isuzu 4HG1 engine closeup" },
+        { url: "images/4HG1 engine 1995 - 2004/653011783_872439962495061_4515378481383857600_n.jpg", alt: "Isuzu 4HG1 engine test" },
+        { url: "images/4HG1 engine 1995 - 2004/653704821_871009415971449_8151766085427935718_n.jpg", alt: "Isuzu 4HG1 engine dyno" },
+        { url: "images/4HG1 engine 1995 - 2004/653707766_872536022485455_6160120580055070382_n.jpg", alt: "Isuzu 4HG1 engine packaging" },
+        { url: "images/4HG1 engine 1995 - 2004/images (1).jpg", alt: "Isuzu 4HG1 engine manual" },
+        { url: "images/4HG1 engine 1995 - 2004/Screenshot_1.png", alt: "Isuzu 4HG1 engine specs" },
+        { url: "images/4HG1 engine 1995 - 2004/Screenshot_2.png", alt: "Isuzu 4HG1 engine dimensions" }
+      ],
+      priceFOB: 2800,
+      priceCIF: 3100,
+      currency: "USD",
+      stockNo: "APP-ENG-4HG1-001",
+      listedAt: "2025-03-15",
+      description: {
+        en: "Genuine Isuzu 4HG1 4-cylinder diesel engine. 2.771L displacement, 80-90 HP. Perfect for Isuzu NPR, NQR, and other light-duty trucks. Low mileage, fully tested, and ready for export.",
+        ja: "本物のいすゞ4HG1 4気筒ディーゼルエンジン。2.771L排気量、80-90馬力。いすゞNPR、NQR、その他の小型トラックに最適。低走行、完全テスト済み、輸出準備完了。"
+      },
+      specs: {
+        year: "1995-2004", make: "Isuzu", model: "4HG1",
+        engineCC: 2771, engineType: "4-cylinder Diesel",
+        fuelType: "Diesel", color: "Engine Grey",
+        condition: "Reconditioned",
+        steering: "N/A"
+      },
+      condition: {
+        grade: "A",
+        accidentHistory: false,
+        notes: { en: "Low mileage, fully tested, compression tested, oil pressure verified.", ja: "低走行、完全テスト済み、圧縮テスト、油圧確認済み。" }
+      },
+      shipping: { readyDate: "2025-03-20", loadingPort: "Yokohama", method: ["Container"] },
+      tags: ["engine","isuzu","4hg1","diesel","reconditioned"]
+    },
+    {
+      id: "isuzu-4hf1-1995",
+      brand: "Isuzu",
+      category: "engine",
+      title: "Isuzu 4HF1 Engine 1995-2004",
+      status: "available",
+      featuredImage: "images/Isuzu 4HF1 engine 1995 - 2004/PA99369846_b3aecf.jpg",
+      images: [
+        { url: "images/Isuzu 4HF1 engine 1995 - 2004/PA99369846_b3aecf.jpg", alt: "Isuzu 4HF1 engine" },
+        { url: "images/Isuzu 4HF1 engine 1995 - 2004/Screenshot_1.png", alt: "Isuzu 4HF1 engine front" },
+        { url: "images/Isuzu 4HF1 engine 1995 - 2004/Screenshot_2.png", alt: "Isuzu 4HF1 engine side" },
+        { url: "images/Isuzu 4HF1 engine 1995 - 2004/Screenshot_3.png", alt: "Isuzu 4HF1 engine detail" },
+        { url: "images/Isuzu 4HF1 engine 1995 - 2004/used-engine-1.webp", alt: "Isuzu 4HF1 engine rear" }
+      ],
+      priceFOB: 3200,
+      priceCIF: 3500,
+      currency: "USD",
+      stockNo: "APP-ENG-4HF1-001",
+      listedAt: "2025-03-16",
+      description: {
+        en: "Genuine Isuzu 4HF1 4-cylinder diesel engine. 3.856L displacement, 100-110 HP. Suitable for Isuzu FSR, FTR, and medium-duty trucks. High torque, reliable performance.",
+        ja: "本物のいすゞ4HF1 4気筒ディーゼルエンジン。3.856L排気量、100-110馬力。いすゞFSR、FTR、中型トラックに適合。高トルク、信頼性の高い性能。"
+      },
+      specs: {
+        year: "1995-2004", make: "Isuzu", model: "4HF1",
+        engineCC: 3856, engineType: "4-cylinder Diesel",
+        fuelType: "Diesel", color: "Engine Grey",
+        condition: "Reconditioned",
+        steering: "N/A"
+      },
+      condition: {
+        grade: "A",
+        accidentHistory: false,
+        notes: { en: "Low mileage, fully tested, high torque output verified.", ja: "低走行、完全テスト済み、高トルク出力確認済み。" }
+      },
+      shipping: { readyDate: "2025-03-22", loadingPort: "Yokohama", method: ["Container"] },
+      tags: ["engine","isuzu","4hf1","diesel","reconditioned"]
+    },
+    {
+      id: "toyota-1kz-te-1994",
+      brand: "Toyota",
+      category: "engine",
+      title: "Toyota 1KZ-TE Engine 1994-2004",
+      status: "available",
+      featuredImage: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/4223-IMG_2180.JPG",
+      images: [
+        { url: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/4223-IMG_2180.JPG", alt: "Toyota 1KZ-TE engine" },
+        { url: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/480114025_660882939620581_4192916998702719117_n.jpg", alt: "Toyota 1KZ-TE engine front" },
+        { url: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/480351002_660882956287246_7596464368082314498_n.jpg", alt: "Toyota 1KZ-TE engine side" },
+        { url: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/480472691_660882959620579_5577445754442029947_n.jpg", alt: "Toyota 1KZ-TE engine detail" },
+        { url: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/499234877_998016585832253_2216577100606014956_n.jpg", alt: "Toyota 1KZ-TE engine rear" },
+        { url: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/499579884_998016512498927_3420590639437566645_n.jpg", alt: "Toyota 1KZ-TE engine top" },
+        { url: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/499818613_998016589165586_7620017403270350705_n.jpg", alt: "Toyota 1KZ-TE engine installed" },
+        { url: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/img_7418.jpg", alt: "Toyota 1KZ-TE engine workshop" },
+        { url: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/s-l1200.webp", alt: "Toyota 1KZ-TE engine manual" }
+      ],
+      priceFOB: 2500,
+      priceCIF: 2800,
+      currency: "USD",
+      stockNo: "APP-ENG-1KZ-001",
+      listedAt: "2025-03-17",
+      description: {
+        en: "Genuine Toyota 1KZ-TE 4-cylinder turbo diesel engine. 2.982L displacement, 120-130 HP. Widely used in Toyota HiAce, Hilux, and Land Cruiser Prado. Excellent reliability and fuel efficiency.",
+        ja: "本物のトヨタ1KZ-TE 4気筒ターボディーゼルエンジン。2.982L排気量、120-130馬力。トヨタハイエース、ハイラックス、ランドクルーザープラドで広く使用。優れた信頼性と燃費効率。"
+      },
+      specs: {
+        year: "1994-2004", make: "Toyota", model: "1KZ-TE",
+        engineCC: 2982, engineType: "4-cylinder Turbo Diesel",
+        fuelType: "Diesel", color: "Engine Grey",
+        condition: "Reconditioned",
+        steering: "N/A"
+      },
+      condition: {
+        grade: "A",
+        accidentHistory: false,
+        notes: { en: "Low mileage, fully tested, turbo efficiency verified.", ja: "低走行、完全テスト済み、ターボ効率確認済み。" }
+      },
+      shipping: { readyDate: "2025-03-24", loadingPort: "Yokohama", method: ["Container"] },
+      tags: ["engine","toyota","1kz-te","turbo","diesel","reconditioned"]
+    },
+    {
+      id: "mazda-r2-1995",
+      brand: "Mazda",
+      category: "engine",
+      title: "Mazda R2 Engine 1995-2004",
+      status: "available",
+      featuredImage: "images/Mazda R2 engine 1995 - 2004/33333105_2083884375159422_1205863552124977152_n.jpg",
+      images: [
+        { url: "images/Mazda R2 engine 1995 - 2004/33333105_2083884375159422_1205863552124977152_n.jpg", alt: "Mazda R2 engine" },
+        { url: "images/Mazda R2 engine 1995 - 2004/33413494_2083884421826084_2155117750505177088_n.jpg", alt: "Mazda R2 engine front" },
+        { url: "images/Mazda R2 engine 1995 - 2004/33618953_2083884471826079_6364675279612280832_n.jpg", alt: "Mazda R2 engine side" },
+        { url: "images/Mazda R2 engine 1995 - 2004/480310129_122206494866249526_7808882842697656261_n.jpg", alt: "Mazda R2 engine detail" },
+        { url: "images/Mazda R2 engine 1995 - 2004/480342327_122206494920249526_8301908057291184895_n.jpg", alt: "Mazda R2 engine rear" },
+        { url: "images/Mazda R2 engine 1995 - 2004/480471791_122206494650249526_3884430189213297606_n.jpg", alt: "Mazda R2 engine view" }
+      ],
+      priceFOB: 2200,
+      priceCIF: 2500,
+      currency: "USD",
+      stockNo: "APP-ENG-R2-001",
+      listedAt: "2025-03-18",
+      description: {
+        en: "Genuine Mazda R2 4-cylinder diesel engine. 2.659L displacement, 75-85 HP. Used in Mazda Titan and other light-duty trucks. Compact and efficient.",
+        ja: "本物のマツダR2 4気筒ディーゼルエンジン。2.659L排気量、75-85馬力。マツダタイタン他小型トラックで使用。コンパクトで効率的。"
+      },
+      specs: {
+        year: "1995-2004", make: "Mazda", model: "R2",
+        engineCC: 2659, engineType: "4-cylinder Diesel",
+        fuelType: "Diesel", color: "Engine Grey",
+        condition: "Reconditioned",
+        steering: "N/A"
+      },
+      condition: {
+        grade: "A",
+        accidentHistory: false,
+        notes: { en: "Low mileage, fully tested, reliable performance.", ja: "低走行、完全テスト済み、信頼性の高い性能。" }
+      },
+      shipping: { readyDate: "2025-03-26", loadingPort: "Yokohama", method: ["Container"] },
+      tags: ["engine","mazda","r2","diesel","reconditioned"]
+    },
+
+    // Vehicle Bodies
+    {
+      id: "isuzu-back-tray",
+      brand: "Isuzu",
+      category: "body",
+      title: "Isuzu Back Tray with PTO",
+      status: "available",
+      featuredImage: "images/Isuzu back tray with PTO/isuzu-dmax-tf-roller-shutter-4-483x483.webp",
+      images: [
+        { url: "images/Isuzu back tray with PTO/isuzu-dmax-tf-roller-shutter-4-483x483.webp", alt: "Isuzu back tray front" },
+        { url: "images/Isuzu back tray with PTO/D-Max_RT1_roller_cover_4-resized_1024x1024_2x_34fb0e86-0bfa-4250-a415-8d8b59cf3598_1024x1024@2x.webp", alt: "Isuzu back tray side" },
+        { url: "images/Isuzu back tray with PTO/DMAXROLLER-02462_1024x1024@2x.webp", alt: "Isuzu back tray rear" },
+        { url: "images/Isuzu back tray with PTO/DMAXROLLER-02470_1024x1024@2x.webp", alt: "Isuzu back tray detail" },
+        { url: "images/Isuzu back tray with PTO/images (1).jpg", alt: "Isuzu back tray installed" }
+      ],
+      priceFOB: 1800,
+      priceCIF: 2100,
+      currency: "USD",
+      stockNo: "APP-BODY-ISUZU-001",
+      listedAt: "2025-03-19",
+      description: {
+        en: "Isuzu back tray with power take-off (PTO) system. Heavy-duty steel construction, hydraulic lift, and roller shutter. Perfect for light trucks and pickups.",
+        ja: "いすゞバックトレイ（PTO付き）。重量級スチール製、油圧リフト、ローラーシャッター。小型トラック・ピックアップに最適。"
+      },
+      specs: {
+        make: "Isuzu", model: "Back Tray",
+        material: "Steel", color: "Black",
+        length: "2.4m", width: "1.8m", height: "0.6m",
+        condition: "New",
+        steering: "N/A"
+      },
+      condition: {
+        grade: "A",
+        accidentHistory: false,
+        notes: { en: "New condition, complete with PTO system and hydraulic lift.", ja: "新品、PTOシステムと油圧リフト付属。" }
+      },
+      shipping: { readyDate: "2025-03-28", loadingPort: "Yokohama", method: ["Container"] },
+      tags: ["body","isuzu","back-tray","pto","hydraulic"]
+    },
+    {
+      id: "isuzu-dump-cabins",
+      brand: "Isuzu",
+      category: "body",
+      title: "Isuzu Dump Cabins",
+      status: "available",
+      featuredImage: "images/Isuzu dump cabins/Isuzu-dump-truck.jpg",
+      images: [
+        { url: "images/Isuzu dump cabins/Isuzu-dump-truck.jpg", alt: "Isuzu dump cabin front" },
+        { url: "images/Isuzu dump cabins/Double-Row-Cabin-Isuzu-Mini-Dump-Truck-with-3-Cbm-Dump-Box.avif", alt: "Isuzu dump cabin side" }
+      ],
+      priceFOB: 2500,
+      priceCIF: 2800,
+      currency: "USD",
+      stockNo: "APP-BODY-ISUZU-002",
+      listedAt: "2025-03-20",
+      description: {
+        en: "Isuzu dump truck cabins with hydraulic dump system. Double-row seating, reinforced frame, and weatherproof design. Ideal for construction and mining applications.",
+        ja: "いすゞダンプトラックキャビン（油圧ダンプ付き）。ダブルシート、補強フレーム、防水設計。建設・鉱業に最適。"
+      },
+      specs: {
+        make: "Isuzu", model: "Dump Cabin",
+        material: "Steel", color: "White",
+        seats: 2, doors: 2,
+        condition: "Used",
+        steering: "N/A"
+      },
+      condition: {
+        grade: "B+",
+        accidentHistory: false,
+        notes: { en: "Used condition, hydraulic system tested, cabin cleaned.", ja: "使用済み、油圧システムテスト済み、キャビン清掃済み。" }
+      },
+      shipping: { readyDate: "2025-03-30", loadingPort: "Yokohama", method: ["Container"] },
+      tags: ["body","isuzu","dump-cabin","hydraulic","construction"]
+    },
+    {
+      id: "mazda-titan-cabins",
+      brand: "Mazda",
+      category: "body",
+      title: "Mazda Titan Cabins",
+      status: "available",
+      featuredImage: "images/Mazda Titan cabins/1.jpg",
+      images: [
+        { url: "images/Mazda Titan cabins/1.jpg", alt: "Mazda Titan cabin front" },
+        { url: "images/Mazda Titan cabins/2.jpg", alt: "Mazda Titan cabin side" },
+        { url: "images/Mazda Titan cabins/3.jpg", alt: "Mazda Titan cabin rear" },
+        { url: "images/Mazda Titan cabins/4.jpg", alt: "Mazda Titan cabin detail" },
+        { url: "images/Mazda Titan cabins/5.jpg", alt: "Mazda Titan cabin interior" },
+        { url: "images/Mazda Titan cabins/6.jpg", alt: "Mazda Titan cabin view" },
+        { url: "images/Mazda Titan cabins/7.jpg", alt: "Mazda Titan cabin angle" },
+        { url: "images/Mazda Titan cabins/8.jpg", alt: "Mazda Titan cabin exterior" },
+        { url: "images/Mazda Titan cabins/9.jpg", alt: "Mazda Titan cabin closeup" },
+        { url: "images/Mazda Titan cabins/10.jpg", alt: "Mazda Titan cabin profile" },
+        { url: "images/Mazda Titan cabins/11.jpg", alt: "Mazda Titan cabin full view" },
+        { url: "images/Mazda Titan cabins/12.jpg", alt: "Mazda Titan cabin alternate" }
+      ],
+      priceFOB: 1500,
+      priceCIF: 1800,
+      currency: "USD",
+      stockNo: "APP-BODY-MAZDA-001",
+      listedAt: "2025-03-21",
+      description: {
+        en: "Mazda Titan truck cabins. Single or double-row options, weatherproof construction, and ergonomic design. Perfect for light-duty truck conversions.",
+        ja: "マツダタイタントラックキャビン。シングル/ダブルシートオプション、防水設計、人間工学に基づいたデザイン。小型トラック改造に最適。"
+      },
+      specs: {
+        make: "Mazda", model: "Titan Cabin",
+        material: "Steel", color: "White",
+        seats: 1-2, doors: 2,
+        condition: "Used",
+        steering: "N/A"
+      },
+      condition: {
+        grade: "B",
+        accidentHistory: false,
+        notes: { en: "Used condition, cleaned and inspected.", ja: "使用済み、清掃・点検済み。" }
+      },
+      shipping: { readyDate: "2025-03-31", loadingPort: "Yokohama", method: ["Container"] },
+      tags: ["body","mazda","titan-cabin","light-duty","construction"]
+    },
+    {
+      id: "mitsubishi-canter-cabins",
+      brand: "Mitsubishi",
+      category: "body",
+      title: "Mitsubishi Canter Cabins",
+      status: "available",
+      featuredImage: "images/Mitsubishi Canter Cabins/1.jpg",
+      images: [
+        { url: "images/Mitsubishi Canter Cabins/1.jpg", alt: "Mitsubishi Canter cabin front" },
+        { url: "images/Mitsubishi Canter Cabins/2.jpg", alt: "Mitsubishi Canter cabin side" },
+        { url: "images/Mitsubishi Canter Cabins/3.jpg", alt: "Mitsubishi Canter cabin rear" },
+        { url: "images/Mitsubishi Canter Cabins/4.jpg", alt: "Mitsubishi Canter cabin detail" },
+        { url: "images/Mitsubishi Canter Cabins/5.jpg", alt: "Mitsubishi Canter cabin interior" },
+        { url: "images/Mitsubishi Canter Cabins/6.jpg", alt: "Mitsubishi Canter cabin view" },
+        { url: "images/Mitsubishi Canter Cabins/7.jpg", alt: "Mitsubishi Canter cabin angle" },
+        { url: "images/Mitsubishi Canter Cabins/8.jpg", alt: "Mitsubishi Canter cabin exterior" },
+        { url: "images/Mitsubishi Canter Cabins/9.jpg", alt: "Mitsubishi Canter cabin closeup" },
+        { url: "images/Mitsubishi Canter Cabins/10.jpg", alt: "Mitsubishi Canter cabin profile" },
+        { url: "images/Mitsubishi Canter Cabins/11.jpg", alt: "Mitsubishi Canter cabin full view" },
+        { url: "images/Mitsubishi Canter Cabins/12.jpg", alt: "Mitsubishi Canter cabin alternate" },
+        { url: "images/Mitsubishi Canter Cabins/13.webp", alt: "Mitsubishi Canter cabin additional" },
+        { url: "images/Mitsubishi Canter Cabins/14.jpeg", alt: "Mitsubishi Canter cabin extra" }
+      ],
+      priceFOB: 1800,
+      priceCIF: 2100,
+      currency: "USD",
+      stockNo: "APP-BODY-MITSUBISHI-001",
+      listedAt: "2025-03-22",
+      description: {
+        en: "Mitsubishi Canter truck cabins. Reliable and durable construction, suitable for various truck models. Weather-resistant and comfortable.",
+        ja: "三菱キャンタートラックキャビン。信頼性の高い耐久性のある構造、さまざまなトラックモデルに適合。耐候性と快適性。"
+      },
+      specs: {
+        make: "Mitsubishi", model: "Canter Cabin",
+        material: "Steel", color: "White",
+        seats: 2-3, doors: 2,
+        condition: "Used",
+        steering: "N/A"
+      },
+      condition: {
+        grade: "B+",
+        accidentHistory: false,
+        notes: { en: "Used condition, inspected and cleaned.", ja: "使用済み、点検・清掃済み。" }
+      },
+      shipping: { readyDate: "2025-04-01", loadingPort: "Yokohama", method: ["Container"] },
+      tags: ["body","mitsubishi","canter-cabin","durable","construction"]
+    },
+
+    // Workshop Equipment
+    {
+      id: "air-compressor",
+      brand: "Various",
+      category: "equipment",
+      title: "Air Compressor",
+      status: "available",
+      featuredImage: "images/AIR COMPRESSOR/1.jpg",
+      images: [
+        { url: "images/AIR COMPRESSOR/1.jpg", alt: "Air compressor front" },
+        { url: "images/AIR COMPRESSOR/2.jpg", alt: "Air compressor side" },
+        { url: "images/AIR COMPRESSOR/3.jpg", alt: "Air compressor rear" },
+        { url: "images/AIR COMPRESSOR/4.jpg", alt: "Air compressor detail" },
+        { url: "images/AIR COMPRESSOR/5.jpg", alt: "Air compressor control panel" },
+        { url: "images/AIR COMPRESSOR/6.jpg", alt: "Air compressor pressure gauge" },
+        { url: "images/AIR COMPRESSOR/7.jpg", alt: "Air compressor motor" },
+        { url: "images/AIR COMPRESSOR/8.jpg", alt: "Air compressor tank" },
+        { url: "images/AIR COMPRESSOR/9.jpg", alt: "Air compressor base" },
+        { url: "images/AIR COMPRESSOR/10.jpg", alt: "Air compressor accessories" },
+        { url: "images/AIR COMPRESSOR/11.webp", alt: "Air compressor installation" }
+      ],
+      priceFOB: 850,
+      priceCIF: 950,
+      currency: "USD",
+      stockNo: "APP-EQUIP-AC-001",
+      listedAt: "2025-03-23",
+      description: {
+        en: "Industrial air compressor for workshop use. 220V, 50L tank, 2HP motor. Perfect for tire changing, painting, and general pneumatic tools.",
+        ja: "工業用エアーコンプレッサー（ワークショップ用）。220V、50Lタンク、2HPモーター。タイヤ交換、塗装、一般的な空気工具に最適。"
+      },
+      specs: {
+        make: "Various", model: "Air Compressor",
+        voltage: "220V", frequency: "50Hz",
+        tankCapacity: "50L", motorPower: "2HP",
+        pressure: "8 Bar", color: "Red",
+        condition: "Used",
+        steering: "N/A"
+      },
+      condition: {
+        grade: "B",
+        accidentHistory: false,
+        notes: { en: "Used condition, serviced, pressure tested.", ja: "使用済み、整備済み、圧力テスト済み。" }
+      },
+      shipping: { readyDate: "2025-04-02", loadingPort: "Yokohama", method: ["Container"] },
+      tags: ["equipment","air-compressor","workshop","industrial"]
+    },
+    {
+      id: "tyre-changing-machine",
+      brand: "Various",
+      category: "equipment",
+      title: "Tyre Changing Machine",
+      status: "available",
+      featuredImage: "images/Tyre changing machine japan/75133d20c9dd4b362d460e126c834a6e.jpg",
+      images: [
+        { url: "images/Tyre changing machine japan/75133d20c9dd4b362d460e126c834a6e.jpg", alt: "Tyre changing machine front" },
+        { url: "images/Tyre changing machine japan/1451619406bf5c26723de6edb59c79fb9f9568794a.jpg", alt: "Tyre changing machine side" },
+        { url: "images/Tyre changing machine japan/1451619406bf5c26723de6edb59c79fb9f9568794a (1).jpg", alt: "Tyre changing machine rear" },
+        { url: "images/Tyre changing machine japan/14516192765c3bc0c0ef81cc6b6468a26c2fe66d47.jpg", alt: "Tyre changing machine detail" },
+        { url: "images/Tyre changing machine japan/product-jpeg.jpg", alt: "Tyre changing machine control panel" },
+        { url: "images/Tyre changing machine japan/semi-automatic-tyre-changing-m-20250409122936784.jpeg", alt: "Tyre changing machine operation" },
+        { url: "images/Tyre changing machine japan/10-24-Used-Japan-Tire-Tyre-Changer-Machine-Spare-Partsprice-for-Sale.avif", alt: "Tyre changing machine full view" },
+        { url: "images/Tyre changing machine japan/Tire-Changer-10-28-Simple-Tire-Lifting-System-Turntable-Free-Tire-Removal-Equipment.avif", alt: "Tyre changing machine profile" }
+      ],
+      priceFOB: 1200,
+      priceCIF: 1350,
+      currency: "USD",
+      stockNo: "APP-EQUIP-TCM-001",
+      listedAt: "2025-03-24",
+      description: {
+        en: "Professional tyre changing machine for passenger cars and light trucks. Manual operation, durable construction, and easy to use.",
+        ja: "乗用車・小型トラック用プロフェッショナルタイヤ交換機。手動操作、耐久性のある構造、使いやすい。"
+      },
+      specs: {
+        make: "Various", model: "Tyre Changing Machine",
+        voltage: "220V", frequency: "50Hz",
+        maxWheelSize: "24 inches", color: "Blue",
+        condition: "Used",
+        steering: "N/A"
+      },
+      condition: {
+        grade: "B+",
+        accidentHistory: false,
+        notes: { en: "Used condition, cleaned and lubricated.", ja: "使用済み、清掃・潤滑済み。" }
+      },
+      shipping: { readyDate: "2025-04-03", loadingPort: "Yokohama", method: ["Container"] },
+      tags: ["equipment","tyre-changing","workshop","manual"]
+    },
+    {
+      id: "car-hydraulic-lifting-system",
+      brand: "Various",
+      category: "equipment",
+      title: "Car Hydraulic Lifting System",
+      status: "available",
+      featuredImage: "images/Car Hydrolic Lifting System/1.avif",
+      images: [
+        { url: "images/Car Hydrolic Lifting System/1.avif", alt: "Car hydraulic lifting system front" },
+        { url: "images/Car Hydrolic Lifting System/2.avif", alt: "Car hydraulic lifting system side" },
+        { url: "images/Car Hydrolic Lifting System/3.avif", alt: "Car hydraulic lifting system rear" },
+        { url: "images/Car Hydrolic Lifting System/4.jpg", alt: "Car hydraulic lifting system detail" },
+        { url: "images/Car Hydrolic Lifting System/5.jpg", alt: "Car hydraulic lifting system operation" },
+        { url: "images/Car Hydrolic Lifting System/6291116315001_694.jpg", alt: "Car hydraulic lifting system capacity" },
+        { url: "images/Car Hydrolic Lifting System/Best-Selling-New-2024-Two-Post-Car-Lifts-12000lbs-Hydraulic-Car-Lifting-Machine-2-Post-Car-Lift.avif", alt: "Car hydraulic lifting system two-post" },
+        { url: "images/Car Hydrolic Lifting System/CE-Certification-2-Post-Double-Cylinder-Hydraulic-Car-Lift (1).avif", alt: "Car hydraulic lifting system certification" },
+        { url: "images/Car Hydrolic Lifting System/CE-Certification-2-Post-Double-Cylinder-Hydraulic-Car-Lift.avif", alt: "Car hydraulic lifting system safety" },
+        { url: "images/Car Hydrolic Lifting System/Good-Quality-Launch-TLT240SBA-Advanced-Hydraulic-2-Post-Car-Lift-TLT-240SBA-for-Home-Garage-Sale.avif", alt: "Car hydraulic lifting system advanced" },
+        { url: "images/Car Hydrolic Lifting System/hydraulic-two-post-car-lift.jpg", alt: "Car hydraulic lifting system two-post operation" },
+        { url: "images/Car Hydrolic Lifting System/images (1).jpg", alt: "Car hydraulic lifting system manual" }
+      ],
+      priceFOB: 2800,
+      priceCIF: 3100,
+      currency: "USD",
+      stockNo: "APP-EQUIP-CHLS-001",
+      listedAt: "2025-03-25",
+      description: {
+        en: "Hydraulic car lifting system for workshop use. 2-post or 4-post options available. 4-ton capacity, safety locks, and easy operation.",
+        ja: "ワークショップ用油圧車両リフトシステム。2本立てまたは4本立てオプションあり。4トン容量、安全ロック、簡単操作。"
+      },
+      specs: {
+        make: "Various", model: "Car Hydraulic Lifting System",
+        capacity: "4 tons", voltage: "220V",
+        frequency: "50Hz", color: "Blue/Yellow",
+        condition: "Used",
+        steering: "N/A"
+      },
+      condition: {
+        grade: "B+",
+        accidentHistory: false,
+        notes: { en: "Used condition, serviced, safety tested.", ja: "使用済み、整備済み、安全テスト済み。" }
+      },
+      shipping: { readyDate: "2025-04-04", loadingPort: "Yokohama", method: ["Container"] },
+      tags: ["equipment","hydraulic-lifting","workshop","car-lift"]
+    },
+    {
+      id: "lath-machines",
+      brand: "Various",
+      category: "equipment",
+      title: "Lath Machines",
+      status: "available",
+      featuredImage: "images/Lath Machines/OKUMA-LATHE-LT-1969YEAR-1.jpg",
+      images: [
+        { url: "images/Lath Machines/OKUMA-LATHE-LT-1969YEAR-1.jpg", alt: "Lath machine front" },
+        { url: "images/Lath Machines/MS850G-3.jpg", alt: "Lath machine side" },
+        { url: "images/Lath Machines/okuma-lathe-machine-923.jpg", alt: "Lath machine rear" },
+        { url: "images/Lath Machines/Image84.jpeg", alt: "Lath machine detail" },
+        { url: "images/Lath Machines/images (1).jpg", alt: "Lath machine operation" },
+        { url: "images/Lath Machines/images (2).jpg", alt: "Lath machine view" }
+      ],
+      priceFOB: 1500,
+      priceCIF: 1700,
+      currency: "USD",
+      stockNo: "APP-EQUIP-LM-001",
+      listedAt: "2025-03-26",
+      description: {
+        en: "Industrial lath machines for metal and wood working. Variable speed, precision control, and durable construction.",
+        ja: "金属・木工用工業用旋盤。可変速、精密制御、耐久性のある構造。"
+      },
+      specs: {
+        make: "Various", model: "Lath Machine",
+        voltage: "220V", frequency: "50Hz",
+        swing: "300mm", distanceBetweenCenters: "1000mm",
+        color: "Green", condition: "Used",
+        steering: "N/A"
+      },
+      condition: {
+        grade: "B",
+        accidentHistory: false,
+        notes: { en: "Used condition, serviced, calibrated.", ja: "使用済み、整備済み、較正済み。" }
+      },
+      shipping: { readyDate: "2025-04-05", loadingPort: "Yokohama", method: ["Container"] },
+      tags: ["equipment","lath-machine","workshop","industrial"]
+    },
+
+    // Components
+    {
+      id: "toyota-prius-abs-unit",
+      brand: "Toyota",
+      category: "component",
+      title: "Toyota Prius ABS Unit",
+      status: "available",
+      featuredImage: "images/Toyota prius ABS unit/0000005488_0_bbf7a753-3b11-4358-8769-e1fe3a9717ed.jpg",
+      images: [
+        { url: "images/Toyota prius ABS unit/0000005488_0_bbf7a753-3b11-4358-8769-e1fe3a9717ed.jpg", alt: "Toyota Prius ABS unit front" },
+        { url: "images/Toyota prius ABS unit/296283-46.jpg", alt: "Toyota Prius ABS unit side" },
+        { url: "images/Toyota prius ABS unit/189324101_5444264678980389_2804083464902788047_n.jpg", alt: "Toyota Prius ABS unit rear" },
+        { url: "images/Toyota prius ABS unit/468959458_580222324496117_4695785951197454279_n.jpg", alt: "Toyota Prius ABS unit detail" },
+        { url: "images/Toyota prius ABS unit/i-img640x480-1663728826oqmfjo435.jpg", alt: "Toyota Prius ABS unit installation" },
+        { url: "images/Toyota prius ABS unit/s-l1200.jpg", alt: "Toyota Prius ABS unit full view" }
+      ],
+      priceFOB: 350,
+      priceCIF: 400,
+      currency: "USD",
+      stockNo: "APP-COMP-ABS-001",
+      listedAt: "2025-03-27",
+      description: {
+        en: "Toyota Prius ABS (Anti-lock Braking System) unit. Genuine OEM part, tested and working condition.",
+        ja: "トヨタプリウスABS（アンチロックブレーキシステム）ユニット。純正OEM部品、テスト済み、動作良好。"
+      },
+      specs: {
+        make: "Toyota", model: "Prius ABS Unit",
+        condition: "Used",
+        steering: "N/A"
+      },
+      condition: {
+        grade: "A",
+        accidentHistory: false,
+        notes: { en: "Tested, working condition, cleaned.", ja: "テスト済み、動作良好、清掃済み。" }
+      },
+      shipping: { readyDate: "2025-04-06", loadingPort: "Yokohama", method: ["Container"] },
+      tags: ["component","toyota","abs-unit","brakes","prius"]
+    },
+    {
+      id: "toyota-prius-doors-fenders",
+      brand: "Toyota",
+      category: "component",
+      title: "Toyota Prius Doors and Fenders",
+      status: "available",
+      featuredImage: "images/Toyota prius all doors and fenders/474066276_122132200382532065_5960039564783661684_n.jpg",
+      images: [
+        { url: "images/Toyota prius all doors and fenders/474066276_122132200382532065_5960039564783661684_n.jpg", alt: "Toyota Prius doors and fenders front" },
+        { url: "images/Toyota prius all doors and fenders/474368820_122132200238532065_1040089637055762160_n.jpg", alt: "Toyota Prius doors and fenders side" },
+        { url: "images/Toyota prius all doors and fenders/474550541_122132200334532065_1801893086559769445_n.jpg", alt: "Toyota Prius doors and fenders rear" },
+        { url: "images/Toyota prius all doors and fenders/474730162_122132200292532065_8846451673721393087_n.jpg", alt: "Toyota Prius doors and fenders detail" },
+        { url: "images/Toyota prius all doors and fenders/633706976_122120720505067435_892509989308057470_n.jpg", alt: "Toyota Prius doors and fenders installation" },
+        { url: "images/Toyota prius all doors and fenders/633706976_122120720505067435_892509989308057470_n (1).jpg", alt: "Toyota Prius doors and fenders view" },
+        { url: "images/Toyota prius all doors and fenders/633799992_122120720607067435_1982915097270159859_n.jpg", alt: "Toyota Prius doors and fenders angle" },
+        { url: "images/Toyota prius all doors and fenders/633799992_122120720607067435_1982915097270159859_n (1).jpg", alt: "Toyota Prius doors and fenders profile" },
+        { url: "images/Toyota prius all doors and fenders/633844237_122120720619067435_3267989245830796999_n.jpg", alt: "Toyota Prius doors and fenders closeup" },
+        { url: "images/Toyota prius all doors and fenders/636705304_122120720517067435_5573790144833135122_n.jpg", alt: "Toyota Prius doors and fenders full view" },
+        { url: "images/Toyota prius all doors and fenders/images (1).jpg", alt: "Toyota Prius doors and fenders additional" }
+      ],
+      priceFOB: 450,
+      priceCIF: 500,
+      currency: "USD",
+      stockNo: "APP-COMP-DF-001",
+      listedAt: "2025-03-28",
+      description: {
+        en: "Toyota Prius doors and fenders set. Complete set including front/rear doors and fenders. OEM quality, ready to install.",
+        ja: "トヨタプリウスドア＆フェンダーセット。フロント/リアドアとフェンダー完全セット。純正品質、取り付け準備完了。"
+      },
+      specs: {
+        make: "Toyota", model: "Prius Doors and Fenders",
+        color: "Silver", condition: "Used",
+        steering: "N/A"
+      },
+      condition: {
+        grade: "B+",
+        accidentHistory: false,
+        notes: { en: "Used condition, cleaned, minor scratches.", ja: "使用済み、清掃済み、小傷あり。" }
+      },
+      shipping: { readyDate: "2025-04-07", loadingPort: "Yokohama", method: ["Container"] },
+      tags: ["component","toyota","doors-fenders","prius","body-parts"]
+    },
+    {
+      id: "toyota-prius-buffers",
+      brand: "Toyota",
+      category: "component",
+      title: "Toyota Prius Buffers",
+      status: "available",
+      featuredImage: "images/Toyota prius buffers/489845244_122203243904175043_2009985342568679090_n.jpg",
+      images: [
+        { url: "images/Toyota prius buffers/489845244_122203243904175043_2009985342568679090_n.jpg", alt: "Toyota Prius buffers front" },
+        { url: "images/Toyota prius buffers/493946651_1009429334615231_1330881933758536303_n.jpg", alt: "Toyota Prius buffers side" },
+        { url: "images/Toyota prius buffers/494689265_1009429267948571_7380655083325235631_n.jpg", alt: "Toyota Prius buffers rear" },
+        { url: "images/Toyota prius buffers/495157070_1009429387948559_3117512907677050304_n.jpg", alt: "Toyota Prius buffers detail" }
+      ],
+      priceFOB: 200,
+      priceCIF: 250,
+      currency: "USD",
+      stockNo: "APP-COMP-BUF-001",
+      listedAt: "2025-03-29",
+      description: {
+        en: "Toyota Prius front and rear buffers. OEM quality, ready to install.",
+        ja: "トヨタプリウスフロント＆リアバッファー。純正品質、取り付け準備完了。"
+      },
+      specs: {
+        make: "Toyota", model: "Prius Buffers",
+        color: "Black", condition: "Used",
+        steering: "N/A"
+      },
+      condition: {
+        grade: "A",
+        accidentHistory: false,
+        notes: { en: "Used condition, cleaned, ready to install.", ja: "使用済み、清掃済み、取り付け準備完了。" }
+      },
+      shipping: { readyDate: "2025-04-08", loadingPort: "Yokohama", method: ["Container"] },
+      tags: ["component","toyota","buffers","prius","body-parts"]
+    },
+    {
+      id: "yamaha-marine-engines",
+      brand: "Yamaha",
+      category: "component",
+      title: "Yamaha Marine Engines",
+      status: "available",
+      featuredImage: "images/Yamaha Marine Engines 2015 - 2025/9123732_20231106103619967_1_LARGE.jpg",
+      images: [
+        { url: "images/Yamaha Marine Engines 2015 - 2025/9123732_20231106103619967_1_LARGE.jpg", alt: "Yamaha marine engine front" },
+        { url: "images/Yamaha Marine Engines 2015 - 2025/487352398_1460030848636411_6319481911279011054_n.jpg", alt: "Yamaha marine engine side" },
+        { url: "images/Yamaha Marine Engines 2015 - 2025/487451707_1460030825303080_5762299983795034990_n.jpg", alt: "Yamaha marine engine rear" },
+        { url: "images/Yamaha Marine Engines 2015 - 2025/487457711_1460031018636394_3014507817400918197_n.jpg", alt: "Yamaha marine engine detail" },
+        { url: "images/Yamaha Marine Engines 2015 - 2025/487563788_1460030985303064_5573569950662502827_n.jpg", alt: "Yamaha marine engine installation" },
+        { url: "images/Yamaha Marine Engines 2015 - 2025/487860749_1460031008636395_8015785897232094848_n.jpg", alt: "Yamaha marine engine view" },
+        { url: "images/Yamaha Marine Engines 2015 - 2025/IMG_6751__32190.jpg", alt: "Yamaha marine engine profile" },
+        { url: "images/Yamaha Marine Engines 2015 - 2025/Screenshot_1.png", alt: "Yamaha marine engine specs" },
+        { url: "images/Yamaha Marine Engines 2015 - 2025/Screenshot_2.png", alt: "Yamaha marine engine details" },
+        { url: "images/Yamaha Marine Engines 2015 - 2025/Screenshot_3.png", alt: "Yamaha marine engine info" },
+        { url: "images/Yamaha Marine Engines 2015 - 2025/Screenshot_6.png", alt: "Yamaha marine engine additional" }
+      ],
+      priceFOB: 3500,
+      priceCIF: 3800,
+      currency: "USD",
+      stockNo: "APP-COMP-ME-001",
+      listedAt: "2025-03-30",
+      description: {
+        en: "Yamaha marine engines for boats and watercraft. Various models and horsepower available. Reliable and efficient.",
+        ja: "ボート・水上バイク用ヤマハマリンエンジン。各種モデルと馬力あり。信頼性と効率性。"
+      },
+      specs: {
+        make: "Yamaha", model: "Marine Engines",
+        condition: "Used",
+        steering: "N/A"
+      },
+      condition: {
+        grade: "B+",
+        accidentHistory: false,
+        notes: { en: "Used condition, serviced, tested.", ja: "使用済み、整備済み、テスト済み。" }
+      },
+      shipping: { readyDate: "2025-04-09", loadingPort: "Yokohama", method: ["Container"] },
+      tags: ["component","yamaha","marine-engine","boat","watercraft"]
+    },
+    {
+      id: "yamaha-xto-japan",
+      brand: "Yamaha",
+      category: "component",
+      title: "Yamaha XTO Japan",
+      status: "available",
+      featuredImage: "images/Yamaha xto Japan 2025/XTO-cowl.jpg",
+      images: [
+        { url: "images/Yamaha xto Japan 2025/XTO-cowl.jpg", alt: "Yamaha XTO engine front" },
+        { url: "images/Yamaha xto Japan 2025/Image-1.png.jpeg", alt: "Yamaha XTO engine side" },
+        { url: "images/Yamaha xto Japan 2025/images (1).jpg", alt: "Yamaha XTO engine rear" },
+        { url: "images/Yamaha xto Japan 2025/maxresdefault (1).jpg", alt: "Yamaha XTO engine detail" },
+        { url: "images/Yamaha xto Japan 2025/Untitled-design-84.jpg", alt: "Yamaha XTO engine installation" },
+        { url: "images/Yamaha xto Japan 2025/yamaha-300hp-reverse-thrust.jpg", alt: "Yamaha XTO engine operation" },
+        { url: "images/Yamaha xto Japan 2025/Yamaha-XTO-450hp-9.jpeg", alt: "Yamaha XTO engine full view" },
+        { url: "images/Yamaha xto Japan 2025/Yamaha-XTO-side-shot.png", alt: "Yamaha XTO engine profile" },
+        { url: "images/Yamaha xto Japan 2025/Yamahai4andv6sidebyside.webp", alt: "Yamaha XTO engine comparison" }
+      ],
+      priceFOB: 4800,
+      priceCIF: 5200,
+      currency: "USD",
+      stockNo: "APP-COMP-XTO-001",
+      listedAt: "2025-03-31",
+      description: {
+        en: "Yamaha XTO high-performance marine engine. Powerful and reliable for professional use.",
+        ja: "ヤマハXTO高性能マリンエンジン。プロ用の高出力・高信頼性。"
+      },
+      specs: {
+        make: "Yamaha", model: "XTO",
+        condition: "Used",
+        steering: "N/A"
+      },
+      condition: {
+        grade: "A",
+        accidentHistory: false,
+        notes: { en: "Used condition, serviced, high performance.", ja: "使用済み、整備済み、高性能。" }
+      },
+      shipping: { readyDate: "2025-04-10", loadingPort: "Yokohama", method: ["Container"] },
+      tags: ["component","yamaha","xto","marine-engine","high-performance"]
+    }
+
+  ] // end parts
 
 }; // end DB
 
-// ── Parts & Components ────────────────────────────────────────────────
-// New inventory: engines, vehicle bodies, and components
-window.DB.parts = [
-  {
-    id: "4hg1-engine",
-    category: "engine",
-    title: "4HG1 engine 1995 - 2004",
-    brand: "Isuzu",
-    type: "diesel-engine",
-    status: "available",
-    featuredImage: "images/4HG1 engine 1995 - 2004/504860447_17947587725993989_2928188744439035256_n.jpg",
-    images: [
-      { url: "images/4HG1 engine 1995 - 2004/504860447_17947587725993989_2928188744439035256_n.jpg", alt: "4HG1 Engine assembly" },
-      { url: "images/4HG1 engine 1995 - 2004/348233236_266025382555419_5892199277079779542_n.jpg", alt: "4HG1 Engine front" },
-      { url: "images/4HG1 engine 1995 - 2004/503862577_3134582263372435_5866893020462031082_n.jpg", alt: "4HG1 Engine side" },
-      { url: "images/4HG1 engine 1995 - 2004/504474412_17947587737993989_6275488952093681318_n.jpg", alt: "4HG1 Engine detail" },
-      { url: "images/4HG1 engine 1995 - 2004/505295325_3134582260039102_8133374230132411640_n.jpg", alt: "4HG1 Engine close-up" }
-    ],
-    priceFOB: 12000,
-    priceCIF: 12800,
-    currency: "USD",
-    stockNo: "APP-4HG1-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Isuzu 4HG1 4-cylinder diesel engine. 3.0L, 130hp. Complete with turbocharger, injectors, and mounting hardware. Ideal for light trucks and commercial vehicles.",
-      ja: "いすゞ4HG1 4気筒ディーゼルエンジン。3.0L、130馬力。ターボチャージャー、インジェクター、マウントハードウェア付き。小型トラック・商用車に最適。"
-    },
-    specs: {
-      displacement: "3.0L",
-      cylinders: 4,
-      power: "130hp",
-      torque: "280Nm",
-      fuelType: "Diesel",
-      condition: "Reconditioned",
-      mounting: "Standard Isuzu pattern"
-    },
-    tags: ["engine","diesel","isuzu","4hg1","reconditioned"]
-  },
-  {
-    id: "4hf1-engine",
-    category: "engine",
-    title: "Isuzu 4HF1 engine 1995 - 2004",
-    brand: "Isuzu",
-    type: "diesel-engine",
-    status: "available",
-    featuredImage: "images/Isuzu 4hf1 engine 1995 - 2004/PA99369846_b3aecf.jpg",
-    images: [
-      { url: "images/Isuzu 4hf1 engine 1995 - 2004/PA99369846_b3aecf.jpg", alt: "4HF1 Engine front" },
-      { url: "images/Isuzu 4hf1 engine 1995 - 2004/used-engine-1.webp", alt: "4HF1 Engine side" }
-    ],
-    priceFOB: 14000,
-    priceCIF: 15000,
-    currency: "USD",
-    stockNo: "APP-4HF1-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Isuzu 4HF1 4-cylinder diesel engine. 3.0L, 150hp. High torque, fuel-efficient. Complete assembly with turbo, injectors, and accessories.",
-      ja: "いすゞ4HF1 4気筒ディーゼルエンジン。3.0L、150馬力。高出力・低燃費。ターボ、インジェクター、アクセサリー付き完全アセンブリ。"
-    },
-    specs: {
-      displacement: "3.0L",
-      cylinders: 4,
-      power: "150hp",
-      torque: "350Nm",
-      fuelType: "Diesel",
-      condition: "Reconditioned",
-      mounting: "Standard Isuzu pattern"
-    },
-    tags: ["engine","diesel","isuzu","4hf1","reconditioned"]
-  },
-  {
-    id: "r2-engine",
-    category: "engine",
-    title: "Mazda R2 engine 1995 - 2004",
-    brand: "Toyota",
-    type: "diesel-engine",
-    status: "available",
-    featuredImage: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/4223-IMG_2180.JPG",
-    images: [
-      { url: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/4223-IMG_2180.JPG", alt: "R2 Engine front" },
-      { url: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/480114025_660882939620581_4192916998702719117_n.jpg", alt: "R2 Engine side" },
-      { url: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/480351002_660882956287246_7596464368082314498_n.jpg", alt: "R2 Engine detail" },
-      { url: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/480472691_660882959620579_5577445754442029947_n.jpg", alt: "R2 Engine assembly" }
-    ],
-    priceFOB: 11000,
-    priceCIF: 11800,
-    currency: "USD",
-    stockNo: "APP-R2-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Toyota R2 4-cylinder diesel engine. 2.2L, 85hp. Reliable and economical. Complete with turbocharger and mounting kit.",
-      ja: "トヨタR2 4気筒ディーゼルエンジン。2.2L、85馬力。信頼性と経済性。ターボチャージャーとマウントキット付き。"
-    },
-    specs: {
-      displacement: "2.2L",
-      cylinders: 4,
-      power: "85hp",
-      torque: "190Nm",
-      fuelType: "Diesel",
-      condition: "Reconditioned",
-      mounting: "Standard Toyota pattern"
-    },
-    tags: ["engine","diesel","toyota","r2","reconditioned"]
-  },
-  {
-    id: "kz1-engine",
-    category: "engine",
-    title: "JDM TOYOTA 1KZ-TE 1994 - 2004",
-    brand: "Toyota",
-    type: "diesel-engine",
-    status: "available",
-    featuredImage: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/499234877_998016585832253_2216577100606014956_n.jpg",
-    images: [
-      { url: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/499234877_998016585832253_2216577100606014956_n.jpg", alt: "KZ1 Engine front" },
-      { url: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/499579884_998016512498927_3420590639437566645_n.jpg", alt: "KZ1 Engine side" },
-      { url: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/499818613_998016589165586_7620017403270350705_n.jpg", alt: "KZ1 Engine detail" },
-      { url: "images/JDM TOYOTA 1KZ-TE 1994 - 2004/img_7418.jpg", alt: "KZ1 Engine assembly" }
-    ],
-    priceFOB: 13000,
-    priceCIF: 13900,
-    currency: "USD",
-    stockNo: "APP-KZ1-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Toyota KZ1 4-cylinder diesel engine. 2.8L, 120hp. High torque, excellent for commercial use. Complete assembly with turbo and accessories.",
-      ja: "トヨタKZ1 4気筒ディーゼルエンジン。2.8L、120馬力。高出力・商用向けに最適。ターボとアクセサリー付き完全アセンブリ。"
-    },
-    specs: {
-      displacement: "2.8L",
-      cylinders: 4,
-      power: "120hp",
-      torque: "260Nm",
-      fuelType: "Diesel",
-      condition: "Reconditioned",
-      mounting: "Standard Toyota pattern"
-    },
-    tags: ["engine","diesel","toyota","kz1","reconditioned"]
-  },
-  {
-    id: "toyota-prius-2010-2015",
-    category: "vehicle",
-    title: "JDM 2010-2015 Toyota Prius",
-    brand: "Toyota",
-    type: "hybrid-car",
-    status: "available",
-    featuredImage: "images/JDM 2010-2015 TOYOTA PRIUS/419-IMG_6976.JPG",
-    images: [
-      { url: "images/JDM 2010-2015 TOYOTA PRIUS/419-IMG_6976.JPG", alt: "Toyota Prius front" },
-      { url: "images/JDM 2010-2015 TOYOTA PRIUS/IMG_8272_1024x1024@2x.webp", alt: "Toyota Prius side" },
-      { url: "images/JDM 2010-2015 TOYOTA PRIUS/P1130971_1024x1024@2x.webp", alt: "Toyota Prius rear" },
-      { url: "images/JDM 2010-2015 TOYOTA PRIUS/P1130972_1024x1024@2x.webp", alt: "Toyota Prius interior" }
-    ],
-    priceFOB: 8500,
-    priceCIF: 9100,
-    currency: "USD",
-    mileage: 75000,
-    stockNo: "APP-TP-2010-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Toyota Prius 2010-2015. Hybrid system in excellent condition. Low mileage, full service history. Ideal for eco-conscious buyers and fleet operators.",
-      ja: "トヨタプリウス2010-2015。ハイブリッドシステム優れた状態。低走行、完全なサービス履歴。環境意識の高いバイヤー・フリートオペレーターに最適。"
-    },
-    specs: {
-      year: "2010-2015",
-      make: "Toyota",
-      model: "Prius",
-      engineCC: 1800,
-      engineType: "2ZR-FXE Hybrid",
-      transmission: "CVT",
-      fuelType: "Hybrid",
-      color: "Silver",
-      doors: 5,
-      seats: 5,
-      condition: "Grade 4",
-      steering: "Right Hand Drive"
-    },
-    tags: ["hybrid","toyota","prius","low-mileage","eco-friendly"]
-  },
-  {
-    id: "toyota-prius-abs-unit",
-    category: "component",
-    title: "Toyota Prius ABS Unit",
-    brand: "Toyota",
-    type: "brake-system",
-    status: "available",
-    featuredImage: "images/Toyota prius ABS unit/0000005488_0_bbf7a753-3b11-4358-8769-e1fe3a9717ed.jpg",
-    images: [
-      { url: "images/Toyota prius ABS unit/0000005488_0_bbf7a753-3b11-4358-8769-e1fe3a9717ed.jpg", alt: "ABS Unit front" },
-      { url: "images/Toyota prius ABS unit/296283-46.jpg", alt: "ABS Unit side" },
-      { url: "images/Toyota prius ABS unit/189324101_5444264678980389_2804083464902788047_n.jpg", alt: "ABS Unit detail" }
-    ],
-    priceFOB: 800,
-    priceCIF: 860,
-    currency: "USD",
-    stockNo: "APP-ABS-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Toyota Prius ABS control unit. Complete with sensors and wiring harness. Tested and verified. Direct replacement for failed units.",
-      ja: "トヨタプリウスABSコントロールユニット。センサーと配線ハーネス付き。テスト済み・検証済み。故障ユニットの直接交換用。"
-    },
-    specs: {
-      compatibility: "Toyota Prius 2010-2015",
-      condition: "Tested",
-      warranty: "3 months",
-      mounting: "Standard Prius pattern"
-    },
-    tags: ["abs","brake","toyota","prius","replacement"]
-  },
-  {
-    id: "toyota-prius-doors-fenders",
-    category: "body",
-    title: "Toyota Prius All Doors and Fenders",
-    brand: "Toyota",
-    type: "body-parts",
-    status: "available",
-    featuredImage: "images/Toyota prius all doors and fenders/474066276_122132200382532065_5960039564783661684_n.jpg",
-    images: [
-      { url: "images/Toyota prius all doors and fenders/474066276_122132200382532065_5960039564783661684_n.jpg", alt: "Doors and fenders set" },
-      { url: "images/Toyota prius all doors and fenders/474368820_122132200238532065_1040089637055762160_n.jpg", alt: "Door detail" },
-      { url: "images/Toyota prius all doors and fenders/474550541_122132200334532065_1801893086559769445_n.jpg", alt: "Fender detail" }
-    ],
-    priceFOB: 2500,
-    priceCIF: 2680,
-    currency: "USD",
-    stockNo: "APP-DOORS-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Complete set of Toyota Prius doors and fenders. All panels in excellent condition, no dents or rust. Includes front fenders, rear doors, front doors, and rear quarter panels.",
-      ja: "完全なトヨタプリウスドアとフェンダーセット。すべてのパネル優れた状態、へこみや錆なし。フロントフェンダー、リアドア、フロントドア、リアクォーターパネル付き。"
-    },
-    specs: {
-      compatibility: "Toyota Prius 2010-2015",
-      condition: "Excellent",
-      finish: "Original paint",
-      quantity: "Complete set"
-    },
-    tags: ["doors","fenders","body","toyota","prius"]
-  },
-  {
-    id: "toyota-prius-buffers",
-    category: "body",
-    title: "Toyota Prius Buffers",
-    brand: "Toyota",
-    type: "body-parts",
-    status: "available",
-    featuredImage: "images/Toyota prius buffers/489845244_122203243904175043_2009985342568679090_n.jpg",
-    images: [
-      { url: "images/Toyota prius buffers/489845244_122203243904175043_2009985342568679090_n.jpg", alt: "Front buffer" },
-      { url: "images/Toyota prius buffers/493946651_1009429334615231_1330881933758536303_n.jpg", alt: "Rear buffer" },
-      { url: "images/Toyota prius buffers/494689265_1009429267948571_7380655083325235631_n.jpg", alt: "Buffer detail" }
-    ],
-    priceFOB: 300,
-    priceCIF: 320,
-    currency: "USD",
-    stockNo: "APP-BUFFERS-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Toyota Prius front and rear buffers. Original equipment, excellent condition. Direct fit replacement.",
-      ja: "トヨタプリウスフロント・リアバッファーセット。純正部品、優れた状態。直接交換用。"
-    },
-    specs: {
-      compatibility: "Toyota Prius 2010-2015",
-      condition: "Excellent",
-      finish: "Original paint"
-    },
-    tags: ["buffers","bumper","toyota","prius"]
-  },
-  {
-    id: "isuzu-dump-cabins",
-    category: "body",
-    title: "Isuzu Dump Cabins",
-    brand: "Isuzu",
-    type: "truck-body",
-    status: "available",
-    featuredImage: "images/Isuzu dump cabins/Double-Row-Cabin-Isuzu-Mini-Dump-Truck-with-3-Cbm-Dump-Box.avif",
-    images: [
-      { url: "images/Isuzu dump cabins/Double-Row-Cabin-Isuzu-Mini-Dump-Truck-with-3-Cbm-Dump-Box.avif", alt: "Dump cabin front" },
-      { url: "images/Isuzu dump cabins/Isuzu-dump-truck.jpg", alt: "Dump cabin side" }
-    ],
-    priceFOB: 6500,
-    priceCIF: 6960,
-    currency: "USD",
-    stockNo: "APP-DUMP-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Isuzu dump truck cabins. Complete with wiring harness, dashboard, and mounting brackets. Compatible with Isuzu Elf and Forward chassis.",
-      ja: "いすゞダンプトラックキャビン。配線ハーネス、ダッシュボード、マウントブラケット付き。いすゞエルフ・フォワードシャーシ互換。"
-    },
-    specs: {
-      compatibility: "Isuzu Elf/Forward",
-      condition: "Excellent",
-      finish: "Original paint",
-      includes: ["Wiring harness","Dashboard","Mounting brackets"]
-    },
-    tags: ["cabins","dump","isuzu","truck-body"]
-  },
-  {
-    id: "isuzu-back-tray-pt",
-    category: "body",
-    title: "Isuzu Back Tray with PTO",
-    brand: "Isuzu",
-    type: "truck-body",
-    status: "available",
-    featuredImage: "images/Isuzu back tray with PTO/D-Max_RT1_roller_cover_4-resized_1024x1024_2x_34fb0e86-0bfa-4250-a415-8d8b59cf3598_1024x1024@2x.webp",
-    images: [
-      { url: "images/Isuzu back tray with PTO/D-Max_RT1_roller_cover_4-resized_1024x1024_2x_34fb0e86-0bfa-4250-a415-8d8b59cf3598_1024x1024@2x.webp", alt: "Back tray with PTO" },
-      { url: "images/Isuzu back tray with PTO/DMAXROLLER-02462_1024x1024@2x.webp", alt: "PTO detail" },
-      { url: "images/Isuzu back tray with PTO/DMAXROLLER-02470_1024x1024@2x.webp", alt: "Tray detail" }
-    ],
-    priceFOB: 8500,
-    priceCIF: 9100,
-    currency: "USD",
-    stockNo: "APP-TRAY-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Isuzu back tray with Power Take-Off (PTO) system. Heavy-duty construction, suitable for dump and utility applications. Includes hydraulic pump and mounting hardware.",
-      ja: "いすゞバックトレイ・パワーテイクオフ(PTO)システム付き。頑丈な構造、ダンプ・ユーティリティ用途に最適。油圧ポンプとマウントハードウェア付き。"
-    },
-    specs: {
-      compatibility: "Isuzu Elf/Forward",
-      condition: "Excellent",
-      material: "High-strength steel",
-      includes: ["PTO system","Hydraulic pump","Mounting hardware"]
-    },
-    tags: ["tray","pto","isuzu","truck-body","hydraulic"]
-  },
-  {
-    id: "isuzu-differential-hub",
-    category: "component",
-    title: "Isuzu Differential & Pine Hub",
-    brand: "Isuzu",
-    type: "drivetrain",
-    status: "available",
-    featuredImage: "images/Isuzu dump cabins/Isuzu-dump-truck.jpg",
-    images: [
-      { url: "images/Isuzu dump cabins/Isuzu-dump-truck.jpg", alt: "Differential front" },
-      { url: "images/Isuzu dump cabins/Double-Row-Cabin-Isuzu-Mini-Dump-Truck-with-3-Cbm-Dump-Box.avif", alt: "Pine hub detail" },
-      { url: "images/Isuzu back tray with PTO/DMAXROLLER-02462_1024x1024@2x.webp", alt: "Differential side" }
-    ],
-    priceFOB: 2200,
-    priceCIF: 2360,
-    currency: "USD",
-    stockNo: "APP-DIFF-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Isuzu differential assembly with pine hub. Complete with gears, bearings, and seals. Tested and ready for installation.",
-      ja: "いすゞディファレンシャルアセンブリ・パインハブ付き。ギア、ベアリング、シール付き。テスト済み・取付可能。"
-    },
-    specs: {
-      compatibility: "Isuzu Elf/Forward",
-      condition: "Reconditioned",
-      includes: ["Gears","Bearings","Seals"],
-      warranty: "6 months"
-    },
-    tags: ["differential","drivetrain","isuzu","reconditioned"]
-  },
-  {
-    id: "lorry-bodies",
-    category: "body",
-    title: "All Type of Lorry Bodies",
-    brand: "Various",
-    type: "truck-body",
-    status: "available",
-    featuredImage: "images/All type of Lorry Bodies/01_im04.jpg",
-    images: [
-      { url: "images/All type of Lorry Bodies/01_im04.jpg", alt: "Lorry body front" },
-      { url: "images/All type of Lorry Bodies/01_im06.jpg", alt: "Lorry body side" },
-      { url: "images/All type of Lorry Bodies/01_im07.jpg", alt: "Lorry body rear" },
-      { url: "images/All type of Lorry Bodies/02_im04.jpg", alt: "Lorry body detail" }
-    ],
-    priceFOB: 5000,
-    priceCIF: 5360,
-    currency: "USD",
-    stockNo: "APP-LORRY-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Various types of lorry bodies available. Dropside, flatbed, box, and custom configurations. Heavy-duty construction, suitable for all cargo types.",
-      ja: "さまざまなタイプのロリーボディーを提供。ドロップサイド、フラットベッド、ボックス、カスタム構成可能。頑丈な構造、すべての貨物タイプに適応。"
-    },
-    specs: {
-      types: ["Dropside","Flatbed","Box","Custom"],
-      material: "High-strength steel",
-      condition: "New/Used",
-      customization: "Available"
-    },
-    tags: ["lorry","body","truck","custom","heavy-duty"]
-  },
-  {
-    id: "yamaha-marine-engines-2015-2025",
-    category: "engine",
-    title: "Yamaha Marine Engines 2015 - 2025",
-    brand: "Yamaha",
-    type: "marine-engine",
-    status: "available",
-    featuredImage: "images/Yamaha Marine Engines 2015 - 2025/9123732_20231106103619967_1_LARGE.jpg",
-    images: [
-      { url: "images/Yamaha Marine Engines 2015 - 2025/9123732_20231106103619967_1_LARGE.jpg", alt: "Marine engine front" },
-      { url: "images/Yamaha Marine Engines 2015 - 2025/487352398_1460030848636411_6319481911279011054_n.jpg", alt: "Marine engine side" },
-      { url: "images/Yamaha Marine Engines 2015 - 2025/487451707_1460030825303080_5762299983795034990_n.jpg", alt: "Marine engine detail" }
-    ],
-    priceFOB: 15000,
-    priceCIF: 16050,
-    currency: "USD",
-    stockNo: "APP-YME-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Yamaha marine engines 2015-2025. Range from 25hp to 425hp. Outboard and inboard options. Excellent condition, full service history.",
-      ja: "ヤマハマリンエンジン2015-2025。25馬力から425馬力まで。舷外機・舷内機オプション。優れた状態、完全なサービス履歴。"
-    },
-    specs: {
-      range: "25hp - 425hp",
-      types: ["Outboard","Inboard"],
-      condition: "Excellent",
-      warranty: "Available"
-    },
-    tags: ["marine","yamaha","engine","outboard","inboard"]
-  },
-  {
-    id: "yamaha-xto-japan-2025",
-    category: "engine",
-    title: "Yamaha XTO Japan 2025",
-    brand: "Yamaha",
-    type: "marine-engine",
-    status: "available",
-    featuredImage: "images/Yamaha xto Japan 2025/Yamaha-XTO-450hp-9.jpeg",
-    images: [
-      { url: "images/Yamaha xto Japan 2025/Yamaha-XTO-450hp-9.jpeg", alt: "XTO engine front" },
-      { url: "images/Yamaha xto Japan 2025/Yamaha-XTO-side-shot.png", alt: "XTO engine side" },
-      { url: "images/Yamaha xto Japan 2025/yamaha-300hp-reverse-thrust.jpg", alt: "XTO engine detail" }
-    ],
-    priceFOB: 28000,
-    priceCIF: 29960,
-    currency: "USD",
-    stockNo: "APP-XTO-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Yamaha XTO 2025 model. 425hp V8 outboard engine. Latest technology, fuel-efficient, low emissions. Perfect for high-performance boats.",
-      ja: "ヤマハXTO 2025モデル。425馬力V8舷外機。最新技術、低燃費、低排出ガス。高性能ボートに最適。"
-    },
-    specs: {
-      horsepower: "425hp",
-      engineType: "V8",
-      fuelType: "Petrol",
-      condition: "New",
-      warranty: "3 years"
-    },
-    tags: ["xto","yamaha","marine","v8","425hp","new"]
-  },
-  {
-    id: "yanmar-6czas-gt-630hp",
-    category: "engine",
-    title: "YANMAR 6CZAS-GT 630hp(2.03)",
-    brand: "Yanmar",
-    type: "marine-engine",
-    status: "available",
-    featuredImage: "images/YANMAR 6CZAS-GT 630hp(2.03)/00006169-1773897190-0359.jpg",
-    images: [
-      { url: "images/YANMAR 6CZAS-GT 630hp(2.03)/00006169-1773897190-0359.jpg", alt: "Yanmar engine front" },
-      { url: "images/YANMAR 6CZAS-GT 630hp(2.03)/00006169-1773897191-0327.jpg", alt: "Yanmar engine side" },
-      { url: "images/YANMAR 6CZAS-GT 630hp(2.03)/00006169-1773897192-0041.jpg", alt: "Yanmar engine detail" }
-    ],
-    priceFOB: 45000,
-    priceCIF: 48150,
-    currency: "USD",
-    stockNo: "APP-YANMAR-630-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Yanmar 6CZAS-GT 630hp marine diesel engine. 2.03:1 reduction gear. Industrial-grade reliability, suitable for commercial vessels and large yachts.",
-      ja: "ヤンマー6CZAS-GT 630馬力マリンディーゼルエンジン。2.03:1減速ギア。産業グレードの信頼性、商用船・大型ヨットに最適。"
-    },
-    specs: {
-      horsepower: "630hp",
-      displacement: "18.0L",
-      cylinders: 6,
-      fuelType: "Diesel",
-      reductionRatio: "2.03:1",
-      condition: "Reconditioned",
-      warranty: "12 months"
-    },
-    tags: ["yanmar","marine","diesel","630hp","commercial","reconditioned"]
-  },
-  {
-    id: "yanmar-6chk-dt-230hp",
-    category: "engine",
-    title: "YANMAR 6CHK-DT 230hp(3.53)",
-    brand: "Yanmar",
-    type: "marine-engine",
-    status: "available",
-    featuredImage: "images/YANMAR 6CHK-DT 230hp (3.53)/00006144-1772425592-0386.jpg",
-    images: [
-      { url: "images/YANMAR 6CHK-DT 230hp (3.53)/00006144-1772425590-0544.jpg", alt: "Yanmar engine front" },
-      { url: "images/YANMAR 6CHK-DT 230hp (3.53)/00006144-1772425591-0325.jpg", alt: "Yanmar engine side" },
-      { url: "images/YANMAR 6CHK-DT 230hp (3.53)/00006144-1772425592-0386.jpg", alt: "Yanmar engine detail" }
-    ],
-    priceFOB: 22000,
-    priceCIF: 23540,
-    currency: "USD",
-    stockNo: "APP-YANMAR-230-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Yanmar 6CHK-DT 230hp marine diesel engine. 3.53:1 reduction gear. Compact design, excellent fuel economy. Ideal for fishing boats and work vessels.",
-      ja: "ヤンマー6CHK-DT 230馬力マリンディーゼルエンジン。3.53:1減速ギア。コンパクト設計、優れた燃費。漁船・作業船に最適。"
-    },
-    specs: {
-      horsepower: "230hp",
-      displacement: "7.7L",
-      cylinders: 6,
-      fuelType: "Diesel",
-      reductionRatio: "3.53:1",
-      condition: "Reconditioned",
-      warranty: "12 months"
-    },
-    tags: ["yanmar","marine","diesel","230hp","fishing","reconditioned"]
-  },
-  {
-    id: "tyre-changing-machine",
-    category: "equipment",
-    title: "Tyre Changing Machine",
-    brand: "Various",
-    type: "workshop-equipment",
-    status: "available",
-    featuredImage: "images/Tyre changing machine japan/1451619406bf5c26723de6edb59c79fb9f9568794a.jpg",
-    images: [
-      { url: "images/Tyre changing machine japan/1451619406bf5c26723de6edb59c79fb9f9568794a.jpg", alt: "Tyre changer front" },
-      { url: "images/Tyre changing machine japan/14516192765c3bc0c0ef81cc6b6468a26c2fe66d47.jpg", alt: "Tyre changer side" },
-      { url: "images/Tyre changing machine japan/semi-automatic-tyre-changing-m-20250409122936784.jpeg", alt: "Tyre changer detail" }
-    ],
-    priceFOB: 1800,
-    priceCIF: 1926,
-    currency: "USD",
-    stockNo: "APP-TYRE-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Professional tyre changing machine. Suitable for passenger cars, light trucks, and SUVs. Complete with mounting/demounting tools and safety features.",
-      ja: "プロフェッショナルタイヤ交換機。乗用車、小型トラック、SUVに適応。取付/取外しツールと安全機能付き。"
-    },
-    specs: {
-      compatibility: "Passenger cars, light trucks, SUVs",
-      power: "Electric/Hydraulic",
-      condition: "Excellent",
-      warranty: "6 months"
-    },
-    tags: ["tyre","changer","workshop","equipment"]
-  },
-  {
-    id: "air-compressor",
-    category: "equipment",
-    title: "Air Compressor",
-    brand: "Various",
-    type: "workshop-equipment",
-    status: "available",
-    featuredImage: "images/AIR COMPRESSOR/1.jpg",
-    images: [
-      { url: "images/AIR COMPRESSOR/1.jpg", alt: "Air compressor front" },
-      { url: "images/AIR COMPRESSOR/2.jpg", alt: "Air compressor side" },
-      { url: "images/AIR COMPRESSOR/3.jpg", alt: "Air compressor detail" }
-    ],
-    priceFOB: 1200,
-    priceCIF: 1284,
-    currency: "USD",
-    stockNo: "APP-COMP-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Industrial air compressor. 10HP, 100L tank. Suitable for workshops, garages, and industrial applications. Complete with pressure regulator and safety valve.",
-      ja: "産業用エアーコンプレッサー。10馬力、100Lタンク。作業場、ガレージ、産業用途に適応。圧力レギュレーターと安全弁付き。"
-    },
-    specs: {
-      power: "10HP",
-      tank: "100L",
-      pressure: "8 bar",
-      condition: "Excellent",
-      warranty: "6 months"
-    },
-    tags: ["compressor","air","workshop","industrial"]
-  },
-  {
-    id: "lathe-machines",
-    category: "equipment",
-    title: "Lath Machines",
-    brand: "Various",
-    type: "workshop-equipment",
-    status: "available",
-    featuredImage: "images/Lath Machines/MS850G-3.jpg",
-    images: [
-      { url: "images/Lath Machines/MS850G-3.jpg", alt: "Lathe machine front" },
-      { url: "images/Lath Machines/OKUMA-LATHE-LT-1969YEAR-1.jpg", alt: "Lathe machine side" },
-      { url: "images/Lath Machines/okuma-lathe-machine-923.jpg", alt: "Lathe machine detail" }
-    ],
-    priceFOB: 3500,
-    priceCIF: 3745,
-    currency: "USD",
-    stockNo: "APP-LATHE-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Precision lathe machines. Various sizes available. Suitable for metalworking, automotive, and general machining. Complete with tooling and accessories.",
-      ja: "精密旋盤機。さまざまなサイズを提供。金属加工、自動車、一般機械加工に適応。工具とアクセサリー付き。"
-    },
-    specs: {
-      sizes: ["Small","Medium","Large"],
-      power: "Electric",
-      condition: "Excellent",
-      warranty: "12 months"
-    },
-    tags: ["lathe","machine","metalworking","precision"]
-  },
-  {
-    id: "car-hydraulic-lifting-system",
-    category: "equipment",
-    title: "Car Hydraulic Lifting System",
-    brand: "Various",
-    type: "workshop-equipment",
-    status: "available",
-    featuredImage: "images/Car Hydrolic Lifting System/1.avif",
-    images: [
-      { url: "images/Car Hydrolic Lifting System/1.avif", alt: "Lifting system front" },
-      { url: "images/Car Hydrolic Lifting System/2.avif", alt: "Lifting system side" },
-      { url: "images/Car Hydrolic Lifting System/3.avif", alt: "Lifting system detail" }
-    ],
-    priceFOB: 3500,
-    priceCIF: 3745,
-    currency: "USD",
-    stockNo: "APP-LIFT-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Car hydraulic lifting system. 2-post design, 3.5-ton capacity. Complete with safety locks and hydraulic pump. Ideal for automotive workshops and garages.",
-      ja: "自動車用油圧リフティングシステム。2ポスト設計、3.5トン容量。安全ロックと油圧ポンプ付き。自動車作業場・ガレージに最適。"
-    },
-    specs: {
-      capacity: "3.5 tons",
-      type: "2-post hydraulic",
-      power: "Hydraulic",
-      condition: "Excellent",
-      warranty: "12 months"
-    },
-    tags: ["lifting","hydraulic","workshop","automotive"]
-  },
-  {
-    id: "mazda-titan-cabins",
-    category: "body",
-    title: "Mazda Titan Cabins",
-    brand: "Mazda",
-    type: "truck-body",
-    status: "available",
-    featuredImage: "images/Mazda Titan cabins/1.jpg",
-    images: [
-      { url: "images/Mazda Titan cabins/1.jpg", alt: "Titan cabin front" },
-      { url: "images/Mazda Titan cabins/2.jpg", alt: "Titan cabin side" },
-      { url: "images/Mazda Titan cabins/3.jpg", alt: "Titan cabin interior" }
-    ],
-    priceFOB: 4500,
-    priceCIF: 4820,
-    currency: "USD",
-    stockNo: "APP-TITAN-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Mazda Titan truck cabins. Complete with wiring harness, dashboard, and mounting brackets. Compatible with Mazda Titan chassis.",
-      ja: "マツダタイタントラックキャビン。配線ハーネス、ダッシュボード、マウントブラケット付き。マツダタイタンシャーシ互換。"
-    },
-    specs: {
-      compatibility: "Mazda Titan",
-      condition: "Excellent",
-      finish: "Original paint",
-      includes: ["Wiring harness","Dashboard","Mounting brackets"]
-    },
-    tags: ["cabins","mazda","titan","truck-body"]
-  },
-  {
-    id: "mitsubishi-canter-cabins",
-    category: "body",
-    title: "Mitsubishi Canter Cabins",
-    brand: "Mitsubishi",
-    type: "truck-body",
-    status: "available",
-    featuredImage: "images/Mitsubishi Canter Cabins/1.jpg",
-    images: [
-      { url: "images/Mitsubishi Canter Cabins/1.jpg", alt: "Canter cabin front" },
-      { url: "images/Mitsubishi Canter Cabins/2.jpg", alt: "Canter cabin side" },
-      { url: "images/Mitsubishi Canter Cabins/3.jpg", alt: "Canter cabin interior" }
-    ],
-    priceFOB: 5200,
-    priceCIF: 5570,
-    currency: "USD",
-    stockNo: "APP-CANTER-001",
-    listedAt: "2025-03-01",
-    description: {
-      en: "Mitsubishi Canter truck cabins. Complete with wiring harness, dashboard, and mounting brackets. Compatible with Mitsubishi Canter chassis.",
-      ja: "三菱キャンタートラックキャビン。配線ハーネス、ダッシュボード、マウントブラケット付き。三菱キャンターシャーシ互換。"
-    },
-    specs: {
-      compatibility: "Mitsubishi Canter",
-      condition: "Excellent",
-      finish: "Original paint",
-      includes: ["Wiring harness","Dashboard","Mounting brackets"]
-    },
-    tags: ["cabins","mitsubishi","canter","truck-body"]
+// Utility functions for formatting
+(function() {
+  if (!window.DB.utils) {
+    window.DB.utils = {
+      formatPrice: function(price, currency) {
+        currency = currency || "USD";
+        if (price == null || isNaN(price)) return "POA";
+        return currency + " " + price.toLocaleString();
+      },
+      formatMileage: function(mileage) {
+        if (mileage == null || isNaN(mileage)) return "";
+        return mileage.toLocaleString() + " km";
+      }
+    };
   }
-];
-
-// ── Parts Utilities ────────────────────────────────────────────────
-window.DB.partsUtils = {
-  getByCategory: (category) => window.DB.parts.filter(p => p.category === category),
-  getByBrand: (brand) => window.DB.parts.filter(p => p.brand === brand),
-  getByType: (type) => window.DB.parts.filter(p => p.type === type),
-  getAvailable: () => window.DB.parts.filter(p => p.status === "available"),
-  formatPrice: (n) => n ? `USD ${n.toLocaleString()}` : "POA",
-  getCategories: () => [...new Set(window.DB.parts.map(p => p.category))],
-  getBrands: () => [...new Set(window.DB.parts.map(p => p.brand))]
-};
-
-// ── Utilities ────────────────────────────────────────────────
-// TODO: Replace window.DB with fetch('/api/vehicles') when backend is ready
-window.DB.utils = {
-  getById:       (id)    => window.DB.vehicles.find(v => v.id === id),
-  getByBrand:    (brand) => window.DB.vehicles.filter(v => v.brand === brand),
-  getByType:     (type)  => window.DB.vehicles.filter(v => v.type === type),
-  getAvailable:  ()      => window.DB.vehicles.filter(v => v.status === "available"),
-  formatPrice:   (n)     => n ? `USD ${n.toLocaleString()}` : "POA",
-  formatMileage: (n)     => n ? `${n.toLocaleString()} km` : "—",
-  getHoursOrMileage: (v) => {
-    if (v.type === "excavator" || v.type === "machinery") {
-      const hrs = v.specs?.operatingHours;
-      return hrs ? `${hrs.toLocaleString()} hrs` : "See description";
-    }
-    return window.DB.utils.formatMileage(v.mileage);
+  
+  if (!window.DB.partsUtils) {
+    window.DB.partsUtils = {
+      formatPrice: function(price, currency) {
+        currency = currency || "USD";
+        if (price == null || isNaN(price)) return "POA";
+        return currency + " " + price.toLocaleString();
+      }
+    };
   }
-};
+})();

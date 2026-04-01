@@ -166,7 +166,7 @@
     .card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.10)}
     .card img{width:100%;height:180px;object-fit:cover;display:block}
     .card-body{padding:14px}
-    .card-body h3{margin:0 0 6px;font-size:18px;line-height:1.25}
+    .card-body h3{margin:0 0 6px;font-size:18px;line-height:1.25;color:#000 !important}
     .meta{color:var(--muted);font-size:14px}
     .price{color:var(--brand);font-weight:800;margin-top:6px}
 
@@ -251,13 +251,14 @@
     .testi{
       background:#fff;border-radius:16px;padding:28px 24px;
       border:1px solid rgba(30,58,138,.1);box-shadow:0 4px 20px rgba(0,0,0,.06);
-      position:relative;transition:transform .2s, box-shadow .2s
+      position:relative;transition:transform .2s, box-shadow .2s;
+      color:#0f172a;
     }
     .testi::before{content:'"';position:absolute;top:12px;left:20px;font-size:48px;font-family:Georgia,serif;color:rgba(30,58,138,.12);line-height:1}
     .testi:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
-    .testi blockquote{margin:0 0 16px;font-size:15px;line-height:1.65;color:#334155;font-style:italic}
-    .testi .testi-author{font-size:14px;font-weight:700;color:var(--logo-blue)}
-    .testi .testi-location{font-size:13px;color:var(--muted);margin-top:2px}
+    .testi blockquote{margin:0 0 16px;font-size:15px;line-height:1.65;color:#0f172a;font-style:italic}
+    .testi .testi-author{font-size:14px;font-weight:700;color:#0f172a}
+    .testi .testi-location{font-size:13px;color:#0f172a;margin-top:2px}
 
     /* Footer */
     footer{
@@ -423,7 +424,7 @@
     .card.parts-card{
       border:1px solid rgba(30,58,138,.12);
       background:linear-gradient(180deg, #fff 0%, #fafafa 100%);
-      transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      transition:transform .18s ease, box-shadow .2s ease, border-color .2s ease;
     }
     .card.parts-card:hover{
       transform:translateY(-2px);
@@ -819,11 +820,11 @@
       <p class="section-sub">Simple, transparent process from selection to delivery</p>
     </div>
     <div class="how-steps">
-      <div class="how-step"><span class="how-step-num">1</span><h3>Browse &amp; Select</h3><p>Find your car or excavator from our live stock.</p></div>
+      <div class="how-step"><span class="how-step-num">1</span><h3>Browse & Select</h3><p>Find your car or excavator from our live stock.</p></div>
       <div class="how-step"><span class="how-step-num">2</span><h3>Get Invoice</h3><p>We send CIF/FOB quotation in minutes.</p></div>
       <div class="how-step"><span class="how-step-num">3</span><h3>Payment</h3><p>Bank Transfer / LC supported.</p></div>
       <div class="how-step"><span class="how-step-num">4</span><h3>Shipping</h3><p>Trusted carriers, fast export processing.</p></div>
-      <div class="how-step"><span class="how-step-num">5</span><h3>Customs &amp; Pickup</h3><p>Clear customs and drive home confidently.</p></div>
+      <div class="how-step"><span class="how-step-num">5</span><h3>Customs & Pickup</h3><p>Clear customs and drive home confidently.</p></div>
     </div>
   </section>
 
@@ -831,7 +832,7 @@
   <section class="partners-section" aria-labelledby="partners-title">
     <div class="section-head">
       <h2 id="partners-title">Our Partner Companies</h2>
-      <p class="section-sub">Trusted partners across Africa, Asia &amp; South America</p>
+      <p class="section-sub">Trusted partners across Africa, Asia & South America</p>
     </div>
     <div class="partners-grid">
       <div class="partner">Hikaru Auto Lanka</div>
@@ -1018,7 +1019,7 @@
 
       // Choose best image source from new data model
       const primaryImage =
-        item.featuredImage ||
+        item.featuredImage && item.featuredImage.startsWith("images/") ? item.featuredImage :
         (item.images && item.images.length && (typeof item.images[0] === "string" ? item.images[0] : item.images[0].url)) ||
         "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80";
 
@@ -1067,15 +1068,24 @@
 
     function renderHome(){
       const list = window.DB?.vehicles || [];
+      console.log("Total vehicles loaded:", list.length);
       const filtered = applyFilters(list);
+      console.log("Filtered vehicles:", filtered.length);
       const cars = filtered.filter(v=>v.type==="car");
+      console.log("Cars after filtering:", cars.length);
       const bikes = filtered.filter(v=>v.type==="bike");
       const ex   = filtered.filter(v=>v.type==="excavator");
 
       const cg = $("#car-grid"); const bg = $("#bike-grid"); const eg = $("#exc-grid");
       cg.innerHTML = ""; if(bg) bg.innerHTML = ""; eg.innerHTML = "";
-      cars.forEach(v=>cg.appendChild(card(v)));
+      console.log("Rendering cars:");
+      cars.forEach(v=>{
+        console.log("Rendering car:", v.title);
+        cg.appendChild(card(v));
+      });
+      console.log("Rendering bikes:");
       bikes.forEach(v=>bg && bg.appendChild(card(v)));
+      console.log("Rendering excavators:");
       ex.forEach(v=>eg.appendChild(card(v)));
 
       // Brands (chips + filter dropdown)
@@ -1180,7 +1190,7 @@
       });
 
       const link = el("a",{
-        href:"contact.html?subject=Quote Request: " + encodeURIComponent(item.title),
+        href:"parts.html#" + encodeURIComponent(item.id),
         class:"card-link",
         title:item.title
       },[
